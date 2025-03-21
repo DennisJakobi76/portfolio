@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --background-color: rgba(41, 41, 41, 1);
+  --text-color: rgba(217, 217, 217, 1);
+}
+
+@font-face {
+  font-family: firaCode;
+  src: url(../public/assets/fonts/FiraCode-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Karla;
+  src: url(../public/assets/fonts/Karla-Italic-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: firaCode;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+body {
+  background-color: var(--background-color);
+}
