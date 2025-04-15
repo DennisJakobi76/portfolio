@@ -14,10 +14,11 @@
   width: 409px;
   height: 28px;
   gap: 24px;
-
+  color: rgba(255, 255, 255, 1);
   > img {
     width: 84px;
     height: 48px;
+    transition: all 0.3s ease-in-out;
   }
   & img:hover {
     cursor: pointer;
