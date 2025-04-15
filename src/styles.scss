@@ -27,3 +27,13 @@ body {
   color: var(--primary-font-color);
   background-color: var(--portfolio-bg);
 }
+
+a {
+  text-decoration: none;
+  color: var(--primary-font-color);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--active-font-color);
+  }
+}

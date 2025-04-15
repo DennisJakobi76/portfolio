@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 98px;
+  padding-left: 96px;
+  padding-right: 96px;
+}
+
+.header-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 409px;
+  height: 28px;
+  gap: 24px;
+
+  > img {
+    width: 84px;
+    height: 48px;
+  }
+  & img:hover {
+    cursor: pointer;
+    content: url("../../../../public/assets/icons/default_language_switch_hover.png");
+  }
+}
+
+.header-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-logo {
+  > img {
+    width: 35.17px;
+    height: 48px;
+  }
+}
+
+.header-name-container {
+  font-family: "Karla";
+  font-weight: 640;
+  font-size: 16px;
+  height: 48px;
+}
