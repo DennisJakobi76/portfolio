@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  //   padding-top: 49px;
   height: 98px;
   padding-left: 96px;
   padding-right: 96px;
@@ -10,19 +11,31 @@
 .header-button-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+
   width: 409px;
   height: 28px;
   gap: 24px;
   color: rgba(255, 255, 255, 1);
-  > img {
+  > #language-switch {
+    background-image: url("../../../../public/assets/icons/default_language_switch.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
     width: 84px;
     height: 48px;
     transition: all 0.3s ease-in-out;
   }
-  & img:hover {
+  & #language-switch:hover {
+    background-image: url("../../../../public/assets/icons/default_language_switch_hover.png");
     cursor: pointer;
-    content: url("../../../../public/assets/icons/default_language_switch_hover.png");
+  }
+
+  > .header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3px;
   }
 }
 
