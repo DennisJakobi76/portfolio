@@ -6,6 +6,12 @@
   --cursor-shadow-color: rgba(48, 112, 102, 1);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "Fira Code";
   src: url("/fonts/FiraCode-Regular.ttf") format("truetype");
@@ -18,4 +24,6 @@
 
 body {
   font-family: "Fira Code", "Karla", sans-serif;
+  color: var(--primary-font-color);
+  background-color: var(--portfolio-bg);
 }
