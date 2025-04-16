@@ -165,3 +165,16 @@ main {
   opacity: 1;
   transition: opacity 0.3s;
 }
+
+.title-button-container button {
+  overflow: hidden;
+}
+
+.title-button-container button span {
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+}
+
+.title-button-container button:hover span {
+  transform: translateX(-140%);
+}
