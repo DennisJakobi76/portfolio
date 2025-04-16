@@ -4,6 +4,9 @@
   --primary-font-color: rgba(217, 217, 2127, 1);
   --banner-bg: #434343;
   --cursor-shadow-color: rgba(48, 112, 102, 1);
+
+  --x: 50%;
+  --y: 50%;
 }
 
 * {
@@ -22,6 +25,7 @@
   src: url("../public/assets/fonts/Karla-Italic-VariableFont_wght.ttf");
 }
 
+html,
 body {
   font-family: "Fira Code", "Karla", sans-serif;
   color: var(--primary-font-color);
@@ -44,7 +48,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // align-items: center;
 }
 
 .primary-btn {
@@ -62,4 +65,26 @@ a {
     border-color: var(--active-font-color);
     color: var(--active-font-color);
   }
+}
+
+#mouse-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(48, 112, 102, 0.45) 0px,
+    rgba(48, 112, 102, 0.25) 40px,
+    rgba(48, 112, 102, 0.05) 100px,
+    transparent 120px
+  );
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background 0.05s ease;
 }

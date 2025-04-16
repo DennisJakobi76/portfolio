@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 
@@ -9,5 +9,12 @@ import { HeroComponent } from './hero/hero.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'portfolio';
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const x = (event.clientX / window.innerWidth) * 100 + '%';
+    const y = (event.clientY / window.innerHeight) * 100 + '%';
+
+    document.documentElement.style.setProperty('--x', x);
+    document.documentElement.style.setProperty('--y', y);
+  }
 }
