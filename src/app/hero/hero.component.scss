@@ -114,7 +114,7 @@ main {
 }
 
 .hero-container-right {
-  width: 30px;
+  width: 48px;
 }
 
 .hero-container-social-media-link {
@@ -123,4 +123,47 @@ main {
     width: 100%;
     height: 100%;
   }
+}
+
+.hero-link-checkpoint-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link-check-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > img {
+    opacity: 0;
+  }
+}
+
+#github-point {
+  margin-bottom: 8px;
+}
+
+#github-point-container img,
+#hero-github-link ~ #github-point-container img {
+  transition: opacity 0.3s;
+}
+
+#github-point-container:hover img,
+#hero-github-link:hover ~ #github-point-container img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+#linkedin-point-container img,
+#hero-linkedin-link ~ #linkedin-point-container img {
+  transition: opacity 0.3s;
+}
+
+#linkedin-point-container:hover img,
+#hero-linkedin-link:hover ~ #linkedin-point-container img {
+  opacity: 1;
+  transition: opacity 0.3s;
 }
