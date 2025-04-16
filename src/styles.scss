@@ -1,7 +1,7 @@
 :root {
   --portfolio-bg: #292929;
   --active-font-color: #40cdb5;
-  --primary-font-color: #ffffff;
+  --primary-font-color: rgba(217, 217, 2127, 1);
   --banner-bg: #434343;
   --cursor-shadow-color: rgba(48, 112, 102, 1);
 }
@@ -39,11 +39,11 @@ a {
   }
 }
 
-.flex-col-center {
+.flex-col-j-fe {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  // align-items: center;
 }
 
 .primary-btn {
