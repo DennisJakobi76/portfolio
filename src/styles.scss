@@ -39,6 +39,13 @@ a {
   }
 }
 
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .primary-btn {
   border: 1px solid rgba(255, 255, 255, 1);
   background: none;
@@ -52,5 +59,6 @@ a {
 
   &:hover {
     border-color: var(--active-font-color);
+    color: var(--active-font-color);
   }
 }
