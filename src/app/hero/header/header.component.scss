@@ -38,6 +38,33 @@
   }
 }
 
+.link-point-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-point-wrapper:hover a {
+  color: var(--active-font-color);
+}
+
+.header-point-container {
+  margin-top: -8px;
+
+  > img {
+    opacity: 0;
+  }
+}
+
+.header-point-container img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.link-point-wrapper:hover .header-point-container img {
+  opacity: 1;
+}
+
 .header-logo-container {
   display: flex;
   justify-content: center;
@@ -52,9 +79,23 @@
   }
 }
 
+.header-logo-first-name {
+  margin-top: -2px;
+}
+
 .header-name-container {
   font-family: "Karla";
   font-weight: 640;
-  font-size: 16px;
+  font-size: 20px;
   height: 48px;
+  text-shadow: -1px -1px 0 var(--portfolio-bg), 1px -1px 0 var(--portfolio-bg),
+    -1px 1px 0 var(--portfolio-bg), 1px 1px 0 var(--portfolio-bg);
+}
+
+.header-logo-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.header-logo-container:hover {
+  filter: invert(1);
 }
