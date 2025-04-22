@@ -1,5 +1,5 @@
 :root {
-  --portfolio-bg: #292929;
+  --portfolio-bg: rgba(28, 28, 28, 1);
   --active-font-color: #40cdb5;
   --primary-font-color: rgba(217, 217, 2127, 1);
   --banner-bg: #434343;
@@ -30,7 +30,7 @@ body {
   font-family: "Fira Code", "Karla", sans-serif;
   color: var(--primary-font-color);
   background-color: var(--portfolio-bg);
-  overflow: hidden;
+  overflow-x: hidden;
   cursor: default;
 }
 
