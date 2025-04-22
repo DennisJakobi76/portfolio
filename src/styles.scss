@@ -31,6 +31,10 @@ body {
   color: var(--primary-font-color);
   background-color: var(--portfolio-bg);
   overflow-x: hidden;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   cursor: default;
 }
 
