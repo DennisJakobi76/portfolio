@@ -35,3 +35,42 @@ img {
 .about-me-container img:last-child:hover {
   transform: translate(30px, -30px);
 }
+
+.about-me-content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  > .about-me-content-img-and-text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+}
+
+.about-me-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+#location-icon {
+  width: 21.33px;
+  height: 25.92px;
+}
+
+#new-releases-icon {
+  width: 28.64px;
+  height: 27.41px;
+}
+.about-me-content-icon {
+  width: 32px;
+  height: 32px;
+}
