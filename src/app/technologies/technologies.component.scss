@@ -1,0 +1,18 @@
+.technologies-container {
+  transform: translateY(260px);
+}
+
+.technologies-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.tech-skill-icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 632px;
+  height: 568px;
+}
