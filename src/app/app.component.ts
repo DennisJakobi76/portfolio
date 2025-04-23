@@ -2,10 +2,16 @@ import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeroComponent, AboutMeComponent],
+  imports: [
+    RouterOutlet,
+    HeroComponent,
+    AboutMeComponent,
+    TechnologiesComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
