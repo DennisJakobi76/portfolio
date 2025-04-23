@@ -23,6 +23,13 @@ h3 {
   height: 540px;
   border-radius: 30px;
   background-color: rgba(32, 47, 44, 1);
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: var(--primary-font-color);
+  text-align: justify;
 
   > h1 {
     font-size: 64px;

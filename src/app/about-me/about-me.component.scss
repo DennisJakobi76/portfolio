@@ -2,8 +2,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
 
-  height: calc(100vh - 98px);
+.about-me-info-card {
+  transform: translateY(160px);
 }
 
 img {
@@ -14,6 +16,7 @@ img {
 
 .about-me-container {
   position: relative;
+  margin-top: 144px;
 }
 
 .about-me-container img:first-child {
