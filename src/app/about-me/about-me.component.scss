@@ -47,18 +47,33 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
     gap: 12px;
     width: 100%;
+    margin-bottom: 12px;
+    margin-top: 12px;
+
+    &:hover {
+      > p {
+        color: var(--primary-font-color);
+      }
+    }
+
+    > p {
+      width: 100%;
+      font-family: "Karla";
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: 0%;
+      color: rgba(255, 255, 255, 0.8);
+    }
   }
 }
 
 .about-me-img-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 32px;
-  height: 32px;
 }
 
 #location-icon {
