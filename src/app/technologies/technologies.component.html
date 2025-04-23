@@ -2,6 +2,21 @@
 	<div class="technologies-content-container">
 		<app-info-card title="Technologies" headline="Skill Set">
 		</app-info-card>
-		<div class="tech-skill-icon-container"></div>
+		<div class="tech-skill-icon-container">
+			<ng-container *ngFor="let skillIcon of skillIcons; let i = index">
+				<div class="skill-icon-and-title-container"
+					[id]="skillIcon.title === 'Growth Mindset' ? 'growth-mindset' : null">
+					<div class="skill-icon-img">
+						<img [src]="skillIcon.path" [alt]="skillIcon.title">
+						<img *ngIf="skillIcon.title === 'Growth Mindset'"
+							src="assets/icons/skill_icons/interest_bubble_hover.png" alt="Think Bubble"
+							class="overlay-img">
+					</div>
+					<div class="skill-icon-name">
+						{{ skillIcon.title }}
+					</div>
+				</div>
+			</ng-container>
+		</div>
 	</div>
 </div>
