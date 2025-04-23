@@ -11,8 +11,67 @@
 }
 
 .tech-skill-icon-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  gap: 80px;
   width: 632px;
   height: 568px;
+  padding-top: 84px;
+}
+
+.skill-icon-and-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: -32px;
+}
+
+.skill-icon-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > img {
+    width: 60px;
+    height: 60px;
+
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+
+.skill-icon-name {
+  font-family: "Fira Code";
+  text-align: center;
+}
+
+#growth-mindset:hover .skill-icon-name {
+  color: rgba(61, 207, 182, 1);
+  transition: color 0.3s ease-in-out;
+}
+
+#growth-mindset .overlay-img {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#growth-mindset:hover .overlay-img {
+  opacity: 1;
+}
+
+.overlay-img {
+  position: absolute;
+  top: -60%;
+  left: -35%;
+  transform: translateY(-50%);
+  width: 188px !important;
+  height: 129px !important;
+  opacity: 0;
+  pointer-events: none;
 }
