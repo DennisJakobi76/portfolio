@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from './hero/hero.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +12,13 @@ import { TechnologiesComponent } from './technologies/technologies.component';
     HeroComponent,
     AboutMeComponent,
     TechnologiesComponent,
+    PortfolioComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  title = 'Dennis Jakobi';
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     const x = (event.clientX / window.innerWidth) * 100 + '%';
