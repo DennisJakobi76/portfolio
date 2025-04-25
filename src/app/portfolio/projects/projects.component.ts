@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-project',
+  selector: 'app-projects',
   imports: [],
-  templateUrl: './project.component.html',
-  styleUrl: './project.component.scss',
+  templateUrl: './projects.component.html',
+  styleUrl: './projects.component.scss',
 })
-export class ProjectComponent {
+export class ProjectsComponent {
   activeProject: string | null = null;
 
   showThumbnail(projectId: string) {
