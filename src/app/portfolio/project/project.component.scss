@@ -1,5 +1,8 @@
 .projects-and-thumbnails-container {
+  display: flex;
   margin-top: 32px;
+  margin-bottom: 124px;
+  width: 100%;
 }
 
 .project-borders {
@@ -48,4 +51,79 @@
   width: 23px;
   height: 100%;
   transition: all 0.2s ease-in-out;
+}
+
+.project-tech-name {
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: var(--primary-font-color);
+}
+
+.project-tech-separator {
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: var(--active-font-color);
+}
+
+.project-tech-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-img-container {
+  position: relative;
+  height: 192px;
+  width: 292.24px;
+  border-radius: 16px;
+  background-image: url("../../../../public/assets/img/project_thumbnails/project_thumbnail_bg.png");
+  display: none;
+}
+
+.project-img {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 295px;
+  height: 192px;
+  border-radius: 16px;
+}
+
+#join-project-thumbnail {
+  margin-top: 16px;
+  margin-left: 72px;
+}
+
+#el-pollo-loco-project-thumbnail {
+  margin-top: 90px;
+  margin-left: 72px;
+}
+
+#pokedex-project-thumbnail {
+  margin-top: 156px;
+  margin-left: 72px;
+}
+
+#join-project:hover ~ .project-thumbnails-container #join-project-thumbnail {
+  display: block;
+}
+
+#el-pollo-loco-project:hover
+  ~ .project-thumbnails-container
+  #el-pollo-loco-project-thumbnail {
+  display: block;
+}
+
+#pokedex-project:hover
+  ~ .project-thumbnails-container
+  #pokedex-project-thumbnail {
+  display: block;
 }
