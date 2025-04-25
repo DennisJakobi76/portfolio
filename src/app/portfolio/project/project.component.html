@@ -1,33 +1,74 @@
 <div class="projects-and-thumbnails-container">
 	<div class="projects-container">
-		<div class="single-project-container project-borders">
+		<div id="join-project" class="single-project-container project-borders" (mouseenter)="showThumbnail('join')"
+			(mouseleave)="hideThumbnail()">
 			<div class="project-title-and-arrow-container">
 				<div class="project-title-container">Join</div>
 				<div class="project-arrow-container "><img src="assets/icons/project_arrow.png" alt="Arrow"
 						class="display-none">
 				</div>
 			</div>
-			<div class="project-tech-container"></div>
+			<div class="project-tech-container">
+				<div class="project-tech-name">JavaScript</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">HTML</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">CSS</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">Firebase</div>
+			</div>
 		</div>
-		<div class="single-project-container">
+		<div id="el-pollo-loco-project" class="single-project-container" (mouseenter)="showThumbnail('pollo')"
+			(mouseleave)="hideThumbnail()">
 			<div class="project-title-and-arrow-container">
 				<div class="project-title-container">El Pollo Loco</div>
 				<div class="project-arrow-container "><img src="assets/icons/project_arrow.png" alt="Arrow"
 						class="display-none">
 				</div>
 			</div>
-			<div class="project-tech-container"></div>
+			<div class="project-tech-container">
+				<div class="project-tech-name">JavaScript</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">HTML</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">CSS</div>
+			</div>
 		</div>
-		<div class="single-project-container project-borders">
+		<div id="pokedex-project" class="single-project-container project-borders"
+			(mouseenter)="showThumbnail('pokedex')" (mouseleave)="hideThumbnail()">
 			<div class="project-title-and-arrow-container">
 				<div class="project-title-container">Pokedex</div>
 				<div class="project-arrow-container "><img src="assets/icons/project_arrow.png" alt="Arrow"
 						class="display-none">
 				</div>
 			</div>
-			<div class="project-tech-container"></div>
+			<div class="project-tech-container">
+				<div class="project-tech-name">JavaScript</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">HTML</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">CSS</div>
+				<div class="project-tech-separator">|</div>
+				<div class="project-tech-name">REST API</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="project-thumbnails-container"></div>
+	<div class="project-thumbnails-container">
+		<div class="project-img-container" id="join-project-thumbnail"
+			[style.display]="activeProject === 'join' ? 'block' : 'none'">
+			<img id="join-project-thumbnail-img" class="project-img"
+				src="assets/img/project_thumbnails/join_thumbnail.png" alt="Project Join Thumbnail">
+		</div>
+		<div class="project-img-container" id="el-pollo-loco-project-thumbnail"
+			[style.display]="activeProject === 'pollo' ? 'block' : 'none'">
+			<img id="el-pollo-loco-project-thumbnail-img" class="project-img"
+				src="assets/img/project_thumbnails/el_pollo_loco_thumbnail.png" alt="Project El Pollo Loco Thumbnail">
+		</div>
+		<div class="project-img-container" id="pokedex-project-thumbnail"
+			[style.display]="activeProject === 'pokedex' ? 'block' : 'none'">
+			<img id="pokedex-project-thumbnail-img" class="project-img"
+				src="assets/img/project_thumbnails/pokedex_thumbnail.png" alt="Project Pokedex Thumbnail">
+		</div>
+	</div>
 </div>
