@@ -39,6 +39,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.display-none {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: var(--primary-font-color);
