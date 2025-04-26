@@ -5,6 +5,10 @@
 }
 
 .project-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 1248px;
   height: 656px;
   border-radius: 30px;
@@ -167,4 +171,88 @@
     align-items: center;
     gap: 4px;
   }
+}
+
+.details-card-next-project-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+
+  &:hover {
+    cursor: pointer;
+    > .details-card-next-project-text {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    > div > img {
+      transform: translateX(3px);
+    }
+  }
+
+  .details-card-next-project-text {
+    width: 103px;
+    height: 22px;
+    font-family: "Karla";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: right;
+    margin-right: -8px;
+    color: var(--active-font-color);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .details-card-next-project-arrow {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      left: 14px;
+      transition: all 0.1s ease-in-out;
+    }
+  }
+}
+
+.details-card-close-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 48px;
+
+  //TODO: Create Cross and hover-animation
+
+  > img {
+    transition: all 3.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      content: url("../../../../public/assets/icons/details_close_hover.png");
+    }
+  }
+}
+
+.details-card-img-container {
+  > img {
+    width: 520px;
+    height: 369.78px;
+    border-radius: 30px;
+  }
+}
+
+#project-details-card-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  height: 100%;
 }
