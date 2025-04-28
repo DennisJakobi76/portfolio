@@ -41,7 +41,7 @@
 		<div class="details-card-img-container">
 			<img [src]="projectDetails.detailImage.src" [alt]="projectDetails.detailImage.alt">
 		</div>
-		<div class="details-card-next-project-btn-container">
+		<div class="details-card-next-project-btn-container" (click)="showNextProject()">
 			<div class="details-card-next-project-text">Next project</div>
 			<div class="details-card-next-project-arrow">
 				<img src="assets/icons/details_next_arrow.png" alt="Arrow">
