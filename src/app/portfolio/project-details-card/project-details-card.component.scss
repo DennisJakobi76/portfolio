@@ -229,14 +229,28 @@
   align-items: center;
   height: 48px;
 
-  //TODO: Create Cross and hover-animation
+  .close-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+  }
 
-  > img {
-    transition: all 3.3s ease-in-out;
+  .close-btn {
+    width: 17.85px;
+    height: 17.85px;
+    background-image: url("../../../../public/assets/icons/details_close.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
 
     &:hover {
-      cursor: pointer;
-      content: url("../../../../public/assets/icons/details_close_hover.png");
+      width: 24px;
+      height: 24px;
+      background-image: url("../../../../public/assets/icons/details_close_hover.png");
     }
   }
 }
