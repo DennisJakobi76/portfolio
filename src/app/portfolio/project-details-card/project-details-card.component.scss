@@ -51,7 +51,8 @@
 }
 
 .details-card-title {
-  width: 148px;
+  // width: 148px;
+  width: 500px;
   height: 51px;
   font-family: "Fira Code";
   font-weight: 700;
@@ -93,7 +94,7 @@
 
 .details-card-tech-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 480px;
   height: 24px;

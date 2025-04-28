@@ -1,7 +1,7 @@
 <div class="projects-and-thumbnails-container">
 	<div class="projects-container">
 		<div id="join-project" class="single-project-container project-borders" (mouseenter)="showThumbnail('join')"
-			(mouseleave)="hideThumbnail()">
+			(mouseleave)="hideThumbnail()" (click)="showDetails('join')"> <!-- Click-Event hinzugefügt -->
 			<div class="project-title-and-arrow-container">
 				<div class="project-title-container">Join</div>
 				<div class="project-arrow-container "><img src="assets/icons/project_arrow.png" alt="Arrow"
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div id="el-pollo-loco-project" class="single-project-container" (mouseenter)="showThumbnail('pollo')"
-			(mouseleave)="hideThumbnail()">
+			(mouseleave)="hideThumbnail()" (click)="showDetails('pollo')">
 			<div class="project-title-and-arrow-container">
 				<div class="project-title-container">El Pollo Loco</div>
 				<div class="project-arrow-container "><img src="assets/icons/project_arrow.png" alt="Arrow"
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<div id="pokedex-project" class="single-project-container project-borders"
-			(mouseenter)="showThumbnail('pokedex')" (mouseleave)="hideThumbnail()">
+			(mouseenter)="showThumbnail('pokedex')" (mouseleave)="hideThumbnail()" (click)="showDetails('pokedex')">
 			<div class="project-title-and-arrow-container">
 				<div class="project-title-container">Pokedex</div>
 				<div class="project-arrow-container "><img src="assets/icons/project_arrow.png" alt="Arrow"
