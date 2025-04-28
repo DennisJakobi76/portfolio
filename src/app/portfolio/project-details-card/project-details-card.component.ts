@@ -31,4 +31,17 @@ export class ProjectDetailsCardComponent implements OnInit {
   closeCard() {
     this.isVisible = false;
   }
+
+  showNextProject() {
+    // Aktuellen Index finden
+    const currentIndex = this.projectDatas.findIndex(
+      (project) => project.id === this.projectDetails.id
+    );
+
+    // Nächsten Index berechnen (zurück zu 0 wenn am Ende)
+    const nextIndex = (currentIndex + 1) % this.projectDatas.length;
+
+    // Nächstes Projekt setzen
+    this.projectDetails = this.projectDatas[nextIndex];
+  }
 }
