@@ -1,43 +1,32 @@
 <div class="project-details-container">
 	<div id="project-details-card-left-side" class="project-details-card-side-wrapper">
 		<div class="details-card-id-and-title-container">
-			<p class="details-card-id">01</p>
-			<p class="details-card-title">Join</p>
+			<span class="details-card-id">{{projectDetails.id}}</span>
+			<h3 class="details-card-title">{{projectDetails.title}}</h3>
 		</div>
 		<div class="details-card-description-container">
-			<p class="details-card-description-title">What is this project about?</p>
-			<p class="details-card-description">Task manager inspired by the Kanban System. Create and organize tasks
-				using drag and drop functions, assign users and categories.
-			</p>
+			<p class="details-card-description">{{projectDetails.description}}</p>
 			<div class="details-card-tech-container">
-				<div class="details-tech-img-and-name-container">
-					<img src="assets/icons/overlay_icons/javascript_overlay.png" alt="JavaScript Icon">
-					<p>JavaScript</p>
-				</div>
-				<div class="details-tech-img-and-name-container">
-					<img src="assets/icons/overlay_icons/html_overlay.png" alt="HTML Icon">
-					<p>HTML</p>
-				</div>
-				<div class="details-tech-img-and-name-container">
-					<img src="assets/icons/overlay_icons/css_overlay.png" alt="CSS Icon">
-					<p>CSS</p>
-				</div>
-				<div class="details-tech-img-and-name-container">
-					<img src="assets/icons/overlay_icons/firebase_overlay.png" alt="Firebase Icon">
-					<p>Firebase</p>
+				<div class="details-tech-img-and-name-container" *ngFor="let tech of projectDetails.technologies">
+					<img [src]="tech.iconSrc" [alt]="tech.iconAlt">
+					<p>{{tech.name}}</p>
 				</div>
 			</div>
 			<div class="details-link-buttons-container">
-				<a href="https://github.com/DennisJakobi76/Join" target="_blank" class="details-button">
-					<div class="details-button-text-and-arrow-container"><span>GitHub</span>
-						<div class="details-link-arrow-container"><img src="assets/icons/details_btn_arrow.png"
-								alt="Arrow Icon"></div>
+				<a [href]="projectDetails.links.github" target="_blank" class="details-button">
+					<div class="details-button-text-and-arrow-container">
+						<span>Github</span>
+						<div class="details-link-arrow-container">
+							<img src="assets/icons/details_btn_arrow.png" alt="Arrow Icon">
+						</div>
 					</div>
 				</a>
-				<a href="*" target="_blank" class="details-button">
-					<div class="details-button-text-and-arrow-container"><span>Live Test</span>
-						<div class="details-link-arrow-container"><img src="assets/icons/details_btn_arrow.png"
-								alt="Arrow Icon"></div>
+				<a [href]="projectDetails.links.live" target="_blank" class="details-button">
+					<div class="details-button-text-and-arrow-container">
+						<span>Live Test</span>
+						<div class="details-link-arrow-container">
+							<img src="assets/icons/details_btn_arrow.png" alt="Arrow Icon">
+						</div>
 					</div>
 				</a>
 			</div>
@@ -50,11 +39,12 @@
 			</div>
 		</div>
 		<div class="details-card-img-container">
-			<img src="assets/img/detail_cards_img/join_detail_img.png" alt="Project Join Image">
+			<img [src]="projectDetails.detailImage.src" [alt]="projectDetails.detailImage.alt">
 		</div>
 		<div class="details-card-next-project-btn-container">
 			<div class="details-card-next-project-text">Next project</div>
-			<div class="details-card-next-project-arrow"><img src="assets/icons/details_next_arrow.png" alt="Arrow">
+			<div class="details-card-next-project-arrow">
+				<img src="assets/icons/details_next_arrow.png" alt="Arrow">
 			</div>
 		</div>
 	</div>
