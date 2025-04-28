@@ -1,4 +1,4 @@
-<div class="project-details-container">
+<div class="project-details-container" [style.display]="isVisible ? 'flex' : 'none'">
 	<div id="project-details-card-left-side" class="project-details-card-side-wrapper">
 		<div class="details-card-id-and-title-container">
 			<span class="details-card-id">{{projectDetails.id}}</span>
@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	<div id="project-details-card-right-side" class="project-details-card-side-wrapper">
-		<div class="details-card-close-btn-container">
+		<div class="details-card-close-btn-container" (click)="closeCard()">
 			<div class="close-btn-container">
 				<div class="close-btn"></div>
 			</div>
