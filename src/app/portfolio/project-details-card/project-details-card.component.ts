@@ -9,7 +9,7 @@ import { ProjectDetailsService } from '../../shared/services/project-details.ser
 
 @Component({
   selector: 'app-project-details-card',
-  standalone: true, // Standalone hinzugefügt
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './project-details-card.component.html',
   styleUrls: ['./project-details-card.component.scss'],
@@ -33,15 +33,10 @@ export class ProjectDetailsCardComponent implements OnInit {
   }
 
   showNextProject() {
-    // Aktuellen Index finden
     const currentIndex = this.projectDatas.findIndex(
       (project) => project.id === this.projectDetails.id
     );
-
-    // Nächsten Index berechnen (zurück zu 0 wenn am Ende)
     const nextIndex = (currentIndex + 1) % this.projectDatas.length;
-
-    // Nächstes Projekt setzen
     this.projectDetails = this.projectDatas[nextIndex];
   }
 }
