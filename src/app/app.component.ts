@@ -4,6 +4,7 @@ import { HeroComponent } from './hero/hero.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ReferencesComponent } from './references/references.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     AboutMeComponent,
     TechnologiesComponent,
     PortfolioComponent,
+    ReferencesComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

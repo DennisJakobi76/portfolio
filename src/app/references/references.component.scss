@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  height: 452px;
+  margin-top: 80px;
+  gap: 48px;
+}
+
+h2 {
+  width: 100%;
+  font-family: "Fira Code";
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--active-font-color);
+  text-align: center;
+}
