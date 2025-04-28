@@ -1,7 +1,8 @@
 :host {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   max-width: 1440px;
   height: 452px;
   margin-top: 80px;
