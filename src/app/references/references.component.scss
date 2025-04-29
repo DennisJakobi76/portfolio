@@ -117,10 +117,12 @@ app-reference-card {
   }
 
   #prev-button:hover img {
+    content: url("../../../public/assets/icons/arrow_left_hover.png");
     transform: translateX(-5px);
   }
 
   #next-button:hover img {
+    content: url("../../../public/assets/icons/arrow_right_hover.png");
     transform: translateX(5px);
   }
 }
