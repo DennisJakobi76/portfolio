@@ -17,7 +17,7 @@ import { trigger, transition, animate } from '@angular/animations';
 })
 export class ReferencesComponent {
   references = REFERENCES;
-  currentSlideIndex = 0;
+  currentSlideIndex = Math.floor(this.references.length / 2);
 
   get displayedReferences() {
     const len = this.references.length;
@@ -39,7 +39,7 @@ export class ReferencesComponent {
       this.currentSlideIndex =
         (this.currentSlideIndex + 1) % this.references.length;
       this.slideDirection = null;
-    }, 500); // Dauer der CSS-Animation
+    }, 300);
   }
 
   prevSlide(): void {
@@ -49,6 +49,6 @@ export class ReferencesComponent {
         (this.currentSlideIndex - 1 + this.references.length) %
         this.references.length;
       this.slideDirection = null;
-    }, 500);
+    }, 300);
   }
 }
