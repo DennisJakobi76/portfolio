@@ -20,33 +20,14 @@ h2 {
   text-align: center;
 }
 
-// .carousel-shadow-wrapper {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 64px;
-//   width: 1440px;
-//   height: 274px;
-//   background: linear-gradient(
-//     90deg,
-//     #1c1c1c 0%,
-//     rgba(28, 28, 28, 0) 10%,
-//     rgba(28, 28, 28, 0) 90%,
-//     #1c1c1c 100%
-//   );
-//   z-index: 9;
-// }
-
 .carousel-shadow-wrapper {
-  position: relative; /* wichtig für das Overlay */
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // gap: 64px;
-  width: 1440px;
-  height: 274px;
-  z-index: 0;
   overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 274px;
 }
 
 .carousel-overlay {
@@ -80,12 +61,9 @@ h2 {
 
 .carousel-track {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
+  transition: all 0.5s ease-in-out;
+  gap: 24px;
   height: 100%;
-  gap: 64px;
 }
 
 .carousel-controls-container {
@@ -94,13 +72,6 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 32px;
-
-  // .control-point {
-  //   width: 8px;
-  //   height: 8px;
-  //   border-radius: 50%;
-  //   background-color: var(--white-text);
-  // }
 
   .control-point {
     width: 8px;
@@ -123,7 +94,7 @@ h2 {
     cursor: pointer;
 
     > img {
-      transition: transform 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
     > button > img {
       width: 32px;
@@ -147,21 +118,49 @@ h2 {
 }
 
 .card-wrapper {
-  transition: all 0.5s ease-in-out;
-  opacity: 0.5;
-  transform: scale(0.8);
-}
-
-.card-wrapper.active {
-  transform: scale(1);
-  opacity: 1;
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
 }
 
 .card-wrapper.left,
 .card-wrapper.right {
-  transform: scale(0.8);
   opacity: 0.5;
+  transform: scale(0.8);
   background-color: rgba(61, 207, 182, 0.1);
   border-color: rgba(61, 207, 182, 1);
   border-radius: 8px;
+}
+
+.card-wrapper.center {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.carousel-track.left {
+  animation: slide-left 0.5s forwards;
+}
+
+.carousel-track.right {
+  animation: slide-right 0.5s forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(33%);
+  }
 }
