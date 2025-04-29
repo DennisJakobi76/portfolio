@@ -19,3 +19,54 @@ h2 {
   color: var(--active-font-color);
   text-align: center;
 }
+
+// .carousel-shadow-wrapper {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 64px;
+//   width: 1440px;
+//   height: 274px;
+//   background: linear-gradient(
+//     90deg,
+//     #1c1c1c 0%,
+//     rgba(28, 28, 28, 0) 10%,
+//     rgba(28, 28, 28, 0) 90%,
+//     #1c1c1c 100%
+//   );
+//   z-index: 9;
+// }
+
+.carousel-shadow-wrapper {
+  position: relative; /* wichtig für das Overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  width: 1440px;
+  height: 274px;
+  z-index: 0;
+  overflow: hidden; /* falls Overlay oder Inhalt übersteht */
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #1c1c1c 0%,
+    rgba(28, 28, 28, 0) 10%,
+    rgba(28, 28, 28, 0) 90%,
+    #1c1c1c 100%
+  );
+  z-index: 1; /* über dem Inhalt */
+  pointer-events: none; /* verhindert Mausblockade */
+}
+
+.carousel-shadow-wrapper > app-reference-card {
+  position: relative;
+  z-index: 0; /* Karten liegen unter dem Overlay */
+}
