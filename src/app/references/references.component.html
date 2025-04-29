@@ -14,14 +14,14 @@
 </div>
 
 <div class="carousel-controls-container">
-	<button (click)="prevSlide()">
+	<button id="prev-button" (click)="prevSlide()">
 		<img src="assets/icons/arrow_left_default.png" alt="Arrow Left Icon" />
 	</button>
 
 	<div class="control-point" *ngFor="let ref of references; let i = index" [class.active]="i === currentSlideIndex">
 	</div>
 
-	<button (click)="nextSlide()">
+	<button id="next-button" (click)="nextSlide()">
 		<img src="assets/icons/arrow_right_default.png" alt="Arrow Right Icon" />
 	</button>
 </div>
