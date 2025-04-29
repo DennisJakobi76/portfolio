@@ -17,34 +17,17 @@ import { trigger, transition, animate } from '@angular/animations';
 })
 export class ReferencesComponent implements OnInit {
   references = REFERENCES;
-  currentSlide = 1; // Start with middle slide active
-  slides: any[] = [];
-
-  ngOnInit() {
-    // Initialize slides with scaling
-    this.updateSlides();
-  }
-
-  private updateSlides() {
-    const totalSlides = this.references.length;
-    this.slides = this.references.map((_, index) => ({
-      scale: index === this.currentSlide ? 1 : 0.8,
-      active: index === this.currentSlide,
-    }));
-  }
+  currentSlideIndex = 0;
 
   prevSlide(): void {
-    this.currentSlide =
-      (this.currentSlide - 1 + this.references.length) % this.references.length;
-    this.updateSlides();
+    this.currentSlideIndex =
+      (this.currentSlideIndex - 1 + this.references.length) %
+      this.references.length;
   }
 
   nextSlide(): void {
-    this.currentSlide = (this.currentSlide + 1) % this.references.length;
-    this.updateSlides();
-  }
+    this.currentSlideIndex =
+      (this.currentSlideIndex + 1) % this.references.length;
 
-  isActiveSlide(index: number): boolean {
-    return index === this.currentSlide;
   }
 }

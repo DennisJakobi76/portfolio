@@ -2,26 +2,28 @@
 
 <div class="carousel-shadow-wrapper">
 	<div class="carousel-overlay">
-		<img src="assets/icons/quotes.png" alt="Quotes Icon">
+		<img src="assets/icons/quotes.png" alt="Quotes Icon" />
 	</div>
-	<div class="carousel-content">
-		<app-reference-card *ngFor="let reference of references; let i = index" [text]="reference.text"
-			[author]="reference.author" [class.active]="isActiveSlide(i)"
-			[style.transform]="'scale(' + slides[i]?.scale + ')'">
-		</app-reference-card>
+
+	<div class="carousel-track">
+		<div *ngFor="let reference of references; let i = index" [ngClass]="{
+		  'card-wrapper': true,
+		  'active': i === currentSlideIndex,
+		  'left': i === currentSlideIndex - 1 || (currentSlideIndex === 0 && i === references.length - 1),
+		  'right': i === currentSlideIndex + 1 || (currentSlideIndex === references.length - 1 && i === 0)
+		}">
+			<app-reference-card [text]="reference.text" [author]="reference.author">
+			</app-reference-card>
+		</div>
 	</div>
+
 </div>
 
 <div class="carousel-controls-container">
-	<button id="prev-button" class="prev-button" (click)="prevSlide()">
-		<img src="assets/icons/arrow_left_default.png" alt="Arrow Left Icon">
-	</button>
-	<div class="control-points">
-		<div class="control-point" *ngFor="let reference of references; let i = index"
-			[class.active]="isActiveSlide(i)">
-		</div>
+	<button id="prev-button" class="prev-button" (click)="prevSlide()"><img src="assets/icons/arrow_left_default.png"
+			alt="Arrow Left Icon"></button>
+	<div class="control-point" *ngFor="let _ of references; let i = index" [class.active]="i === currentSlideIndex">
 	</div>
-	<button id="next-button" class="next-button" (click)="nextSlide()">
-		<img src="assets/icons/arrow_right_default.png" alt="Arrow Right Icon">
-	</button>
+	<button id="next-button" class="next-button" (click)="nextSlide()"><img src="assets/icons/arrow_right_default.png"
+			alt="Arrow Right Icon"></button>
 </div>
