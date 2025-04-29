@@ -15,7 +15,7 @@ import { trigger, transition, animate } from '@angular/animations';
     ]),
   ],
 })
-export class ReferencesComponent implements OnInit {
+export class ReferencesComponent {
   references = REFERENCES;
   currentSlideIndex = 0;
 
@@ -34,7 +34,6 @@ export class ReferencesComponent implements OnInit {
   slideDirection: 'left' | 'right' | null = null;
 
   nextSlide(): void {
-<<<<<<< HEAD
     this.slideDirection = 'left';
     setTimeout(() => {
       this.currentSlideIndex =
@@ -51,10 +50,5 @@ export class ReferencesComponent implements OnInit {
         this.references.length;
       this.slideDirection = null;
     }, 500);
-=======
-    this.currentSlideIndex =
-      (this.currentSlideIndex + 1) % this.references.length;
-
->>>>>>> 8909374c081f30788b1741f12b0ebfec855fff40
   }
 }
