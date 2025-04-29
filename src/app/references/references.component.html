@@ -1,8 +1,12 @@
 <h2>What my colleagues say about me</h2>
 
 <div class="carousel-shadow-wrapper">
-	<div class="carousel-overlay"></div>
-	<app-reference-card></app-reference-card>
-	<app-reference-card></app-reference-card>
-	<app-reference-card></app-reference-card>
+  <div class="carousel-overlay">
+    <img src="assets/icons/quotes.png" alt="Quotes Icon">
+  </div>
+  <app-reference-card 
+    *ngFor="let reference of references"
+    [text]="reference.text"
+    [author]="reference.author">
+  </app-reference-card>
 </div>
