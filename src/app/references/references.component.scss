@@ -20,33 +20,81 @@ h2 {
   text-align: center;
 }
 
-// .carousel-shadow-wrapper {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 64px;
-//   width: 1440px;
-//   height: 274px;
-//   background: linear-gradient(
-//     90deg,
-//     #1c1c1c 0%,
-//     rgba(28, 28, 28, 0) 10%,
-//     rgba(28, 28, 28, 0) 90%,
-//     #1c1c1c 100%
-//   );
-//   z-index: 9;
-// }
-
 .carousel-shadow-wrapper {
-  position: relative; /* wichtig für das Overlay */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 274px;
+  overflow: hidden;
+}
+
+.carousel-content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 64px;
-  width: 1440px;
-  height: 274px;
-  z-index: 0;
-  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+app-reference-card {
+  transition: all 0.3s ease-in-out;
+
+  &.active {
+    transform: scale(1);
+  }
+}
+
+.carousel-controls-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 24px;
+
+  .control-points {
+    display: flex;
+    gap: 32px;
+  }
+
+  .control-point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--white-text);
+    transition: background-color 0.3s ease;
+
+    &.active {
+      background-color: var(--active-font-color);
+    }
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    img {
+      transition: transform 0.2s ease;
+    }
+  }
+
+  #prev-button:hover img {
+    transform: translateX(-5px);
+  }
+
+  #next-button:hover img {
+    transform: translateX(5px);
+  }
 }
 
 .carousel-overlay {
@@ -64,61 +112,4 @@ h2 {
   );
   z-index: 1;
   pointer-events: none;
-
-  > img {
-    position: absolute;
-    top: 0;
-    left: 27.5%;
-    transform: translateX(-50%);
-  }
-}
-
-.carousel-shadow-wrapper > app-reference-card {
-  position: relative;
-  z-index: 0;
-}
-
-.carousel-controls-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 32px;
-
-  .control-point {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--white-text);
-  }
-
-  > button {
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    > img {
-      transition: transform 0.2s ease-in-out;
-    }
-    > button > img {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  #prev-button:hover {
-    > img {
-      content: url("../../../public/assets/icons/arrow_left_hover.png");
-      transform: translateX(-5px);
-    }
-  }
-
-  #next-button:hover {
-    > img {
-      content: url("../../../public/assets/icons/arrow_right_hover.png");
-      transform: translateX(5px);
-    }
-  }
 }
