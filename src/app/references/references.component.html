@@ -4,15 +4,24 @@
 	<div class="carousel-overlay">
 		<img src="assets/icons/quotes.png" alt="Quotes Icon">
 	</div>
-	<app-reference-card *ngFor="let reference of references" [text]="reference.text" [author]="reference.author">
-	</app-reference-card>
+	<div class="carousel-content">
+		<app-reference-card *ngFor="let reference of references; let i = index" [text]="reference.text"
+			[author]="reference.author" [class.active]="isActiveSlide(i)"
+			[style.transform]="'scale(' + slides[i]?.scale + ')'">
+		</app-reference-card>
+	</div>
 </div>
+
 <div class="carousel-controls-container">
-	<button id="prev-button" class="prev-button" (click)="prevSlide()"><img src="assets/icons/arrow_left_default.png"
-			alt="Arrow Left Icon"></button>
-	<div class="control-point"></div>
-	<div class="control-point"></div>
-	<div class="control-point"></div>
-	<button id="next-button" class="next-button" (click)="nextSlide()"><img src="assets/icons/arrow_right_default.png"
-			alt="Arrow Right Icon"></button>
+	<button id="prev-button" class="prev-button" (click)="prevSlide()">
+		<img src="assets/icons/arrow_left_default.png" alt="Arrow Left Icon">
+	</button>
+	<div class="control-points">
+		<div class="control-point" *ngFor="let reference of references; let i = index"
+			[class.active]="isActiveSlide(i)">
+		</div>
+	</div>
+	<button id="next-button" class="next-button" (click)="nextSlide()">
+		<img src="assets/icons/arrow_right_default.png" alt="Arrow Right Icon">
+	</button>
 </div>
