@@ -5,25 +5,23 @@
 		<img src="assets/icons/quotes.png" alt="Quotes Icon" />
 	</div>
 
-	<div class="carousel-track">
-		<div *ngFor="let reference of references; let i = index" [ngClass]="{
-		  'card-wrapper': true,
-		  'active': i === currentSlideIndex,
-		  'left': i === currentSlideIndex - 1 || (currentSlideIndex === 0 && i === references.length - 1),
-		  'right': i === currentSlideIndex + 1 || (currentSlideIndex === references.length - 1 && i === 0)
-		}">
-			<app-reference-card [text]="reference.text" [author]="reference.author">
-			</app-reference-card>
+	<div class="carousel-track" [ngClass]="slideDirection">
+		<div *ngFor="let ref of displayedReferences" class="card-wrapper" [ngClass]="ref.position">
+			<app-reference-card [text]="ref.text" [author]="ref.author"></app-reference-card>
 		</div>
 	</div>
 
 </div>
 
 <div class="carousel-controls-container">
-	<button id="prev-button" class="prev-button" (click)="prevSlide()"><img src="assets/icons/arrow_left_default.png"
-			alt="Arrow Left Icon"></button>
-	<div class="control-point" *ngFor="let _ of references; let i = index" [class.active]="i === currentSlideIndex">
+	<button (click)="prevSlide()">
+		<img src="assets/icons/arrow_left_default.png" alt="Arrow Left Icon" />
+	</button>
+
+	<div class="control-point" *ngFor="let ref of references; let i = index" [class.active]="i === currentSlideIndex">
 	</div>
-	<button id="next-button" class="next-button" (click)="nextSlide()"><img src="assets/icons/arrow_right_default.png"
-			alt="Arrow Right Icon"></button>
+
+	<button (click)="nextSlide()">
+		<img src="assets/icons/arrow_right_default.png" alt="Arrow Right Icon" />
+	</button>
 </div>

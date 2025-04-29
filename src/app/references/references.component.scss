@@ -21,6 +21,8 @@ h2 {
 }
 
 .carousel-shadow-wrapper {
+<<<<<<< HEAD
+=======
   position: relative; /* wichtig für das Overlay */
   // display: flex;
   // justify-content: center;
@@ -29,7 +31,14 @@ h2 {
 
   width: 1440px;
   height: 274px;
+>>>>>>> 8909374c081f30788b1741f12b0ebfec855fff40
   overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 274px;
 }
 
 .carousel-content {
@@ -50,12 +59,9 @@ app-reference-card {
 
 .carousel-track {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
+  transition: all 0.5s ease-in-out;
+  gap: 24px;
   height: 100%;
-  gap: 64px;
 }
 
 .carousel-controls-container {
@@ -70,13 +76,6 @@ app-reference-card {
     display: flex;
     gap: 32px;
   }
-
-  // .control-point {
-  //   width: 8px;
-  //   height: 8px;
-  //   border-radius: 50%;
-  //   background-color: var(--white-text);
-  // }
 
   .control-point {
     width: 8px;
@@ -101,8 +100,13 @@ app-reference-card {
     cursor: pointer;
     transition: all 0.2s ease;
 
+<<<<<<< HEAD
+    > img {
+      transition: all 0.2s ease-in-out;
+=======
     &:hover img {
       transform: scale(1.1);
+>>>>>>> 8909374c081f30788b1741f12b0ebfec855fff40
     }
 
     img {
@@ -121,22 +125,50 @@ app-reference-card {
 
 
 .card-wrapper {
-  transition: all 0.5s ease-in-out;
-  opacity: 0.5;
-  transform: scale(0.8);
-}
-
-.card-wrapper.active {
-  transform: scale(1);
-  opacity: 1;
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
 }
 
 .card-wrapper.left,
 .card-wrapper.right {
-  transform: scale(0.8);
   opacity: 0.5;
+  transform: scale(0.8);
   background-color: rgba(61, 207, 182, 0.1);
   border-color: rgba(61, 207, 182, 1);
   border-radius: 8px;
 
+}
+
+.card-wrapper.center {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.carousel-track.left {
+  animation: slide-left 0.5s forwards;
+}
+
+.carousel-track.right {
+  animation: slide-right 0.5s forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(33%);
+  }
 }
