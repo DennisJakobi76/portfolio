@@ -21,17 +21,8 @@ h2 {
 }
 
 .carousel-shadow-wrapper {
-<<<<<<< HEAD
-=======
-  position: relative; /* wichtig für das Overlay */
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // gap: 64px;
-
   width: 1440px;
   height: 274px;
->>>>>>> 8909374c081f30788b1741f12b0ebfec855fff40
   overflow: hidden;
   position: relative;
   display: flex;
@@ -89,7 +80,6 @@ app-reference-card {
 
   .control-point.active {
     background-color: var(--active-font-color);
-
   }
 
   button {
@@ -100,17 +90,8 @@ app-reference-card {
     cursor: pointer;
     transition: all 0.2s ease;
 
-<<<<<<< HEAD
     > img {
       transition: all 0.2s ease-in-out;
-=======
-    &:hover img {
-      transform: scale(1.1);
->>>>>>> 8909374c081f30788b1741f12b0ebfec855fff40
-    }
-
-    img {
-      transition: transform 0.2s ease;
     }
   }
 
@@ -122,7 +103,6 @@ app-reference-card {
     transform: translateX(5px);
   }
 }
-
 
 .card-wrapper {
   flex: 0 0 30%;
@@ -139,7 +119,6 @@ app-reference-card {
   background-color: rgba(61, 207, 182, 0.1);
   border-color: rgba(61, 207, 182, 1);
   border-radius: 8px;
-
 }
 
 .card-wrapper.center {
