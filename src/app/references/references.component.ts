@@ -12,14 +12,16 @@ import { REFERENCES } from './reference.data';
 })
 export class ReferencesComponent {
   references = REFERENCES;
+  currentSlideIndex = 0;
 
   prevSlide(): void {
-    console.log('Previous slide triggered');
-    // Add logic to navigate to the previous slide
+    this.currentSlideIndex =
+      (this.currentSlideIndex - 1 + this.references.length) %
+      this.references.length;
   }
 
   nextSlide(): void {
-    console.log('Next slide triggered');
-    // Add logic to navigate to the next slide
+    this.currentSlideIndex =
+      (this.currentSlideIndex + 1) % this.references.length;
   }
 }
