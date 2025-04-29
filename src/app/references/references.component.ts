@@ -12,4 +12,14 @@ import { REFERENCES } from './reference.data';
 })
 export class ReferencesComponent {
   references = REFERENCES;
+
+  prevSlide(): void {
+    console.log('Previous slide triggered');
+    // Add logic to navigate to the previous slide
+  }
+
+  nextSlide(): void {
+    console.log('Next slide triggered');
+    // Add logic to navigate to the next slide
+  }
 }
