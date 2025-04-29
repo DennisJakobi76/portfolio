@@ -62,11 +62,18 @@ h2 {
     rgba(28, 28, 28, 0) 90%,
     #1c1c1c 100%
   );
-  z-index: 1; /* über dem Inhalt */
-  pointer-events: none; /* verhindert Mausblockade */
+  z-index: 1;
+  pointer-events: none;
+
+  > img {
+    position: absolute;
+    top: 0;
+    left: 27.5%;
+    transform: translateX(-50%);
+  }
 }
 
 .carousel-shadow-wrapper > app-reference-card {
   position: relative;
-  z-index: 0; /* Karten liegen unter dem Overlay */
+  z-index: 0;
 }
