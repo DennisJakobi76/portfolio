@@ -53,27 +53,9 @@ h2 {
   }
 }
 
-.carousel-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 64px;
-  transition: transform 0.3s ease-in-out;
-}
-
-app-reference-card {
-  transition: all 0.3s ease-in-out;
-
-  &.active {
-    transform: scale(1);
-  }
-}
-
 .carousel-track {
   display: flex;
-  transition: all 0.3s ease-in-out;
-  gap: 24px;
-  height: 100%;
+  gap: 32px;
 }
 
 .carousel-controls-container {
@@ -127,28 +109,10 @@ app-reference-card {
   }
 }
 
-.card-wrapper {
-  flex: 0 0 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease,
-    scale 0.3s ease;
-  will-change: transform, opacity, background-color, scale;
-}
-
 .card-wrapper.left,
 .card-wrapper.right {
   opacity: 0.5;
   transform: scale(0.8);
-  background-color: rgba(61, 207, 182, 0.1);
-  border-color: rgba(61, 207, 182, 1);
-  border-radius: 8px;
-}
-
-.card-wrapper.center {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .carousel-track.left {
