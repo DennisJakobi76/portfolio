@@ -5,8 +5,15 @@
 		<img src="assets/icons/quotes.png" alt="Quotes Icon" />
 	</div>
 
-	<div class="carousel-track" [ngClass]="slideDirection">
+	<!-- <div class="carousel-track" [ngClass]="slideDirection">
 		<div *ngFor="let ref of displayedReferences" class="card-wrapper" [ngClass]="ref.position">
+			<app-reference-card [text]="ref.text" [author]="ref.author"></app-reference-card>
+		</div>
+	</div> -->
+
+	<div class="carousel-track" [ngClass]="slideDirection">
+		<div *ngFor="let ref of displayedReferences" class="card-wrapper" [ngClass]="ref.position"
+			(click)="ref.position === 'right' ? nextSlide() : ref.position === 'left' ? prevSlide() : null">
 			<app-reference-card [text]="ref.text" [author]="ref.author"></app-reference-card>
 		</div>
 	</div>
