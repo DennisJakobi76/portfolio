@@ -124,27 +124,31 @@ h2 {
 }
 
 .carousel-track.left {
-  animation: slide-left 0.3s forwards;
+  animation: slide-left 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .carousel-track.right {
-  animation: slide-right 0.3s forwards;
+  animation: slide-right 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes slide-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
+    opacity: 1;
   }
   100% {
-    transform: translateX(-33.33%);
+    transform: translateX(-33.33%) scale(0.8);
+    opacity: 0.5;
   }
 }
 
 @keyframes slide-right {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
+    opacity: 1;
   }
   100% {
-    transform: translateX(33.33%);
+    transform: translateX(33.33%) scale(0.8);
+    opacity: 0.5;
   }
 }
