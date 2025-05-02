@@ -53,11 +53,6 @@ h2 {
   }
 }
 
-.carousel-track {
-  display: flex;
-  gap: 32px;
-}
-
 .carousel-controls-container {
   width: 100%;
   display: flex;
@@ -77,7 +72,7 @@ h2 {
     border-radius: 50%;
     background-color: var(--white-text);
 
-    cursor: pointer;
+    // cursor: pointer;
     transition: 0.3s;
   }
 
@@ -109,10 +104,23 @@ h2 {
   }
 }
 
+.carousel-track {
+  display: flex;
+}
+
+.card-wrapper {
+  transition: all 0.3s ease-in-out;
+}
+
 .card-wrapper.left,
 .card-wrapper.right {
   opacity: 0.5;
   transform: scale(0.8);
+}
+
+.card-wrapper.center {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .carousel-track.left {
