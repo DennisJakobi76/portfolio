@@ -125,9 +125,24 @@
 }
 
 .confirm-policy-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   margin-top: 32px;
 
-  > input {
+  #confirm-policy-checkbox {
+    > img {
+      height: 24px;
+      width: 24px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-radius: 38px;
+        cursor: pointer;
+        content: url("../../../public/assets/icons/check_box_default_hover.png");
+      }
+    }
+
     margin-right: 8px;
   }
 
