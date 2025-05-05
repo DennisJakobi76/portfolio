@@ -1,5 +1,5 @@
 <div class="contact-left-side">
-	<p class="contact-title">Contact me</p>
+	<p id="contact-title" class="contact-title">Contact me</p>
 
 	<h2 class="contact-headline">Let's work together</h2>
 	<p class="contact-subtitle">Got a problem to solve?</p>
@@ -11,9 +11,18 @@
 </div>
 <div class="contact-right-side">
 	<form class="contact-form" action="*">
-		<div class="contact-form-container guests-name-container"></div>
-		<div class="contact-form-container guests-email-container"></div>
-		<div class="contact-form-container guests-message-container"></div>
+		<div class="contact-form-container guests-name-container">
+			<h2>What`s your name?</h2>
+			<input type="text" placeholder="Your name goes here" id="guests-name">
+		</div>
+		<div class="contact-form-container guests-email-container">
+			<h2>What`s your email?</h2>
+			<input type="text" placeholder="youremail@email.com" id="guests-email">
+		</div>
+		<div class="contact-form-container guests-message-container">
+			<h2>How can I help you?</h2>
+			<input type="text" placeholder="Hello Dennis, I am interested in..." id="guests-message">
+		</div>
 		<div class="confirm-policy-container">
 			<input type="checkbox" name="confirm-policy" id="confirm-policy">
 			<label for="confirm-policy">I`ve read the <span>privacy policy</span> and agree to the processing of my data
