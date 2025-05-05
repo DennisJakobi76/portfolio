@@ -112,3 +112,7 @@ a {
   background-attachment: fixed;
   transition: background 0.05s ease;
 }
+
+::placeholder {
+  color: var(--primary-font-color);
+}

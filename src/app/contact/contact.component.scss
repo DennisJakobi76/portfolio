@@ -6,13 +6,16 @@
   padding-right: 80px;
   margin-top: 160px;
   gap: 36px;
+  height: 541px;
 }
 
 .contact-left-side {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   flex: 1;
   gap: 32px;
+  height: 100%;
 
   .contact-title {
     font-family: "Karla";
@@ -73,8 +76,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   flex: 1;
+  height: 100%;
 }
 
 .contact-form-container {
@@ -84,19 +87,41 @@
   justify-content: center;
   flex: 1;
   padding: 32px;
+  gap: 16px;
+
+  > h2 {
+    font-family: "Fira Code";
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: var(--active-font-color);
+  }
+
+  > input {
+    width: 100%;
+    font-family: "Karla";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    color: var(--primary-font-color);
+    background: transparent;
+    border: none;
+  }
 }
 
 .guests-name-container {
-  border-top: 2px solid var(--active-font-color);
+  border-top: 1px solid var(--active-font-color);
 }
 
 .guests-email-container {
-  border-top: 2px solid var(--active-font-color);
-  border-bottom: 2px solid var(--active-font-color);
+  border-top: 1px solid var(--active-font-color);
+  border-bottom: 1px solid var(--active-font-color);
 }
 
 .guests-message-container {
-  border-bottom: 2px solid var(--active-font-color);
+  border-bottom: 1px solid var(--active-font-color);
 }
 
 .confirm-policy-container {
