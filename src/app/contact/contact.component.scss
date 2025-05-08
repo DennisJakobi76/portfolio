@@ -98,7 +98,9 @@
     color: var(--active-font-color);
   }
 
-  > input {
+  > input[type="text"],
+  [type="email"],
+  textarea {
     width: 100%;
     font-family: "Karla";
     font-weight: 400;
@@ -108,6 +110,7 @@
     color: var(--primary-font-color);
     background: transparent;
     border: none;
+    resize: none;
   }
 }
 

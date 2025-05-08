@@ -10,18 +10,21 @@
 	<p class="contact-cta">Need a Frontend developer? <span>Let's talk!</span></p>
 </div>
 <div class="contact-right-side">
-	<form class="contact-form" action="*">
+	<form (ngSubmit)="onSubmit()" name="contactForm" class="contact-form">
 		<div class="contact-form-container guests-name-container">
 			<h2>What`s your name?</h2>
-			<input type="text" placeholder="Your name goes here" id="guests-name">
+			<input [(ngModel)]="contactData.name" name="name" type="text" placeholder="Your name goes here"
+				id="guests-name">
 		</div>
 		<div class="contact-form-container guests-email-container">
 			<h2>What`s your email?</h2>
-			<input type="text" placeholder="youremail@email.com" id="guests-email">
+			<input [(ngModel)]="contactData.email" name="email" type="email" placeholder="youremail@email.com"
+				id="guests-email">
 		</div>
 		<div class="contact-form-container guests-message-container">
 			<h2>How can I help you?</h2>
-			<input type="text" placeholder="Hello Dennis, I am interested in..." id="guests-message">
+			<textarea [(ngModel)]="contactData.message" name="message" placeholder="Hello Dennis, I am interested in..."
+				id="guests-message"></textarea>
 		</div>
 		<div class="confirm-policy-container">
 			<div id="confirm-policy-checkbox">
@@ -31,7 +34,7 @@
 				as outlined. </label>
 		</div>
 		<div class="contact-form-container contact-btn-container">
-			<button class="primary-btn"><span>Say Hello ;)</span></button>
+			<button class="primary-btn"><span>Say Hello ;)</span> <input type="submit" value="Submit"></button>
 		</div>
 
 	</form>
