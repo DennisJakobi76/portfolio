@@ -6,6 +6,7 @@ import { TechnologiesComponent } from './technologies/technologies.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ReferencesComponent } from './references/references.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
     PortfolioComponent,
     ReferencesComponent,
     ContactComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
