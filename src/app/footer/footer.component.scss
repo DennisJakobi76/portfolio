@@ -61,3 +61,22 @@
   letter-spacing: 0%;
   color: var(--active-font-color);
 }
+
+.footer-link-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  > img {
+    opacity: 0;
+  }
+}
+
+.footer-link-wrapper img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.footer-link-wrapper:hover img {
+  opacity: 1;
+}
