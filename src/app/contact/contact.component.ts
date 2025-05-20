@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,12 @@ export class ContactComponent {
     name: '',
     email: '',
     message: '',
+  };
+
+  focused = {
+    name: false,
+    email: false,
+    message: false,
   };
 
   mailTest = true;
