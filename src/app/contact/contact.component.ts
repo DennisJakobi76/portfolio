@@ -26,6 +26,7 @@ export class ContactComponent {
 
   hasInput = false;
   emailPattern = '^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$';
+  confirmedPolicy = false;
   mailTest = true;
 
   post = {
@@ -38,6 +39,10 @@ export class ContactComponent {
       },
     },
   };
+
+  togglePolicy() {
+    this.confirmedPolicy = !this.confirmedPolicy;
+  }
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {

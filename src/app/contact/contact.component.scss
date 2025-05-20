@@ -142,6 +142,10 @@
         border-radius: 38px;
         cursor: pointer;
         content: url("../../../public/assets/icons/check_box_default_hover.png");
+
+        &[src*="check_box_checked_default"] {
+          content: url("../../../public/assets/icons/check_box_checked_hover.png");
+        }
       }
     }
 
@@ -150,6 +154,14 @@
 
   > label span {
     color: var(--active-font-color);
+
+    &:hover {
+      color: var(--primary-font-color);
+      text-decoration: underline;
+      text-decoration-color: var(--active-font-color);
+      text-underline-offset: 6px;
+      cursor: pointer;
+    }
   }
 }
 
