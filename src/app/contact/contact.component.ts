@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -23,6 +24,8 @@ export class ContactComponent {
     message: false,
   };
 
+  hasInput = false;
+  emailPattern = '^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$';
   mailTest = true;
 
   post = {
@@ -52,5 +55,28 @@ export class ContactComponent {
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
+  }
+
+  getEmailPlaceholder(email: any): string {
+    if (this.focused.email) {
+      return 'youremail@email.com';
+    }
+
+    if (email.touched) {
+      if (!this.hasInput) {
+        // Feld leer
+        return 'Hoppla! Your email is required.';
+      } else if (email.errors?.['pattern']) {
+        // Eingabe vorhanden, aber Pattern falsch
+        return 'Please enter a valid email address.';
+      }
+    }
+
+    return 'youremail@email.com';
+  }
+
+  onEmailBlur(email: any) {
+    this.focused.email = false;
+    email.control.markAsTouched();
   }
 }

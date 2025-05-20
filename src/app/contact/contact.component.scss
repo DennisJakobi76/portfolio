@@ -170,3 +170,7 @@ input:focus::placeholder,
 textarea:focus::placeholder {
   color: var(--primary-font-color);
 }
+
+.guests-email-error {
+  color: red;
+}

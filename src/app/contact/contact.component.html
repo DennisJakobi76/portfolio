@@ -13,17 +13,25 @@
 	<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
 		<div class="contact-form-container guests-name-container">
 			<h2>What`s your name?</h2>
-			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text"
+			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required
 				[placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ? 'Oops! It seems your name is missing.' : 'Your name goes here'"
 				id="guests-name" required (focus)="focused.name = true" (blur)="focused.name = false">
+
+
 		</div>
 
 		<div class="contact-form-container guests-email-container">
 			<h2>What`s your email?</h2>
-			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
-				[placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ? 'Hoppla! Your email is required. Please use a valid email address.' : 'youremail@email.com'"
-				id="guests-email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-				(focus)="focused.email = true" (blur)="focused.email = false">
+			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="text" required
+				[pattern]="emailPattern" id="guests-email" [placeholder]="
+    !focused.email && email.touched && email.errors?.['required']
+      ? 'Hoppla! Your email is required.'
+      : (!focused.email && email.touched && email.errors?.['pattern']
+          ? 'Please enter a valid email address.'
+          : 'youremail@email.com')
+  " (focus)="focused.email = true" (blur)="onEmailBlur(email)" />
+			<p class="guests-email-error" *ngIf="!focused.email && email.touched && email.errors?.['pattern']">Please
+				enter a valid email address.</p>
 		</div>
 
 		<div class="contact-form-container guests-message-container">
@@ -38,7 +46,8 @@
 			<div id="confirm-policy-checkbox">
 				<img src="assets/icons/check_box_default.png" alt="Checkbox">
 			</div>
-			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data as outlined.</label>
+			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data as
+				outlined.</label>
 		</div>
 
 		<div class="contact-form-container contact-btn-container">
