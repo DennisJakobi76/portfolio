@@ -159,6 +159,14 @@
   align-items: center;
 }
 
-.error-message {
+input.ng-invalid.ng-touched:not(:disabled):not(:focus)::placeholder,
+textarea.ng-invalid.ng-touched:not(:disabled):not(:focus)::placeholder {
   color: red;
+}
+
+input::placeholder,
+textarea::placeholder,
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: var(--primary-font-color);
 }

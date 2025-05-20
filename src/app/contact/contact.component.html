@@ -14,38 +14,35 @@
 		<div class="contact-form-container guests-name-container">
 			<h2>What`s your name?</h2>
 			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text"
-				placeholder="Your name goes here" id="guests-name" required>
-			@if(!name.valid && name.touched && !name.disabled) {
-			<p class="error-message">Please enter a valid name.</p>
-			}
+				[placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ? 'Oops! It seems your name is missing.' : 'Your name goes here'"
+				id="guests-name" required (focus)="focused.name = true" (blur)="focused.name = false">
 		</div>
+
 		<div class="contact-form-container guests-email-container">
 			<h2>What`s your email?</h2>
 			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
-				placeholder="youremail@email.com" id="guests-email" required
-				pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-			@if(!email.valid && email.touched && !email.disabled) {
-			<p class="error-message">Please enter a valid email address.</p>
-			}
+				[placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ? 'Hoppla! Your email is required. Please use a valid email address.' : 'youremail@email.com'"
+				id="guests-email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+				(focus)="focused.email = true" (blur)="focused.email = false">
 		</div>
+
 		<div class="contact-form-container guests-message-container">
 			<h2>How can I help you?</h2>
 			<textarea #message="ngModel" [(ngModel)]="contactData.message" minlength="4" name="message"
-				placeholder="Hello Dennis, I am interested in..." id="guests-message" required></textarea>
-			@if(!message.valid && message.touched && !message.disabled) {
-			<p class="error-message">Please enter a valid message.</p>
-			}
+				[placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ? 'What do you want to develop?' : 'Hello Dennis, I am interested in...'"
+				id="guests-message" required (focus)="focused.message = true"
+				(blur)="focused.message = false"></textarea>
 		</div>
+
 		<div class="confirm-policy-container">
 			<div id="confirm-policy-checkbox">
 				<img src="assets/icons/check_box_default.png" alt="Checkbox">
 			</div>
-			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data
-				as outlined. </label>
+			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data as outlined.</label>
 		</div>
+
 		<div class="contact-form-container contact-btn-container">
 			<input class="primary-btn" type="submit" value="Say Hello ;)">
 		</div>
-
 	</form>
 </div>
