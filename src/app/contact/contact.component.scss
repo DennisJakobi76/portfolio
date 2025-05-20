@@ -175,7 +175,7 @@
 
 input.ng-invalid.ng-touched:not(:disabled):not(:focus)::placeholder,
 textarea.ng-invalid.ng-touched:not(:disabled):not(:focus)::placeholder {
-  color: red;
+  color: var(--error-color);
 }
 
 input::placeholder,
@@ -186,14 +186,14 @@ textarea:focus::placeholder {
 }
 
 .guests-email-error {
-  color: red;
+  color: var(--error-color);
 }
 
 .policy-error {
   position: absolute;
   bottom: 24px;
   left: 32px;
-  color: var(--error-color, red);
+  color: var(--error-color);
   text-align: left;
   font-size: 14px;
 }
