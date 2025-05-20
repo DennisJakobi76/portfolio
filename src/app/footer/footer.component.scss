@@ -1,0 +1,63 @@
+:host {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  height: 198px;
+  padding-left: 96px;
+  padding-right: 96px;
+  margin-top: 80px;
+}
+
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.footer-logo-img {
+  > img {
+    width: 35.17px;
+    height: 48px;
+  }
+}
+
+.footer-logo-first-name {
+  margin-top: -2px;
+}
+
+.footer-name-container {
+  font-family: "Karla";
+  font-weight: 640;
+  font-size: 20px;
+  height: 48px;
+  text-shadow: -1px -1px 0 var(--portfolio-bg), 1px -1px 0 var(--portfolio-bg),
+    -1px 1px 0 var(--portfolio-bg), 1px 1px 0 var(--portfolio-bg);
+}
+
+.footer-logo-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-logo-container:hover {
+  filter: invert(1);
+}
+
+.footer-parts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#footer-copyright {
+  font-family: "Fira Code";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: var(--active-font-color);
+}
