@@ -45,39 +45,35 @@ export class ContactComponent {
   }
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http
-        .post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
+    if (ngForm.submitted) {
+      if (ngForm.form.invalid) {
+        Object.keys(ngForm.form.controls).forEach((key) => {
+          const control = ngForm.form.get(key);
+          control?.markAsTouched();
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      ngForm.resetForm();
-    }
-  }
+        return;
+      }
 
-  getEmailPlaceholder(email: any): string {
-    if (this.focused.email) {
-      return 'youremail@email.com';
-    }
+      if (!this.confirmedPolicy) {
+        return;
+      }
 
-    if (email.touched) {
-      if (!this.hasInput) {
-        // Feld leer
-        return 'Hoppla! Your email is required.';
-      } else if (email.errors?.['pattern']) {
-        // Eingabe vorhanden, aber Pattern falsch
-        return 'Please enter a valid email address.';
+      if (!this.mailTest && this.confirmedPolicy) {
+        this.http
+          .post(this.post.endPoint, this.post.body(this.contactData))
+          .subscribe({
+            next: (response) => {
+              ngForm.resetForm();
+            },
+            error: (error) => {
+              console.error(error);
+            },
+            complete: () => console.info('send post complete'),
+          });
+      } else if (this.mailTest && this.confirmedPolicy) {
+        ngForm.resetForm();
       }
     }
-
-    return 'youremail@email.com';
   }
 
   onEmailBlur(email: any) {

@@ -73,6 +73,7 @@
 }
 
 .contact-right-side {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -128,6 +129,7 @@
 }
 
 .confirm-policy-container {
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -185,4 +187,13 @@ textarea:focus::placeholder {
 
 .guests-email-error {
   color: red;
+}
+
+.policy-error {
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  color: var(--error-color, red);
+  text-align: left;
+  font-size: 14px;
 }

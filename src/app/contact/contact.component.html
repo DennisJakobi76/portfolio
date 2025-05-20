@@ -48,9 +48,10 @@
 				<img [src]="confirmedPolicy ? 'assets/icons/check_box_checked_default.png' : 'assets/icons/check_box_default.png'"
 					alt="Checkbox" (click)="togglePolicy()">
 			</div>
-			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data as
-				outlined.</label>
+			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data as outlined.</label>
 		</div>
+		<p class="policy-error" *ngIf="!confirmedPolicy && contactForm.submitted">Please accept the privacy policy to
+			continue.</p>
 
 		<div class="contact-form-container contact-btn-container">
 			<input class="primary-btn" type="submit" value="Say Hello ;)">
