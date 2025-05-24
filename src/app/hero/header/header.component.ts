@@ -1,15 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslationService } from '../../shared/services/translation.service';
+import { CommonModule } from '@angular/common';
+import { take } from 'rxjs/operators'; // Neuer Import für take
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  isGerman: boolean = false;
+export class HeaderComponent implements OnInit {
+  constructor(public translationService: TranslationService) {}
+
+  ngOnInit() {
+    // Initialer Zustand
+    this.translationService.isGerman$.subscribe((isGerman) => {
+      const languageSwitch = document.getElementById('language-switch');
+      if (languageSwitch) {
+        languageSwitch.classList.toggle('german', isGerman);
+      }
+    });
+  }
 
   toggleLanguage() {
-    this.isGerman = !this.isGerman;
+    this.translationService.isGerman$.pipe(take(1)).subscribe((isGerman) => {
+      this.translationService.setLanguage(!isGerman);
+    });
   }
 }

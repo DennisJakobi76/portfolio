@@ -12,10 +12,11 @@
   justify-content: space-between;
   align-items: flex-start;
 
-  width: 409px;
+  width: 460px;
   height: 28px;
   gap: 24px;
   color: rgba(255, 255, 255, 1);
+
   > #language-switch {
     background-image: url("../../../../public/assets/icons/default_language_switch.png");
     background-size: contain;
@@ -32,7 +33,7 @@
       }
     }
 
-    &:hover {
+    &:not(.german):hover {
       background-image: url("../../../../public/assets/icons/default_language_switch_hover.png");
       cursor: pointer;
     }
@@ -42,6 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
+    min-width: max-content;
   }
 }
 
