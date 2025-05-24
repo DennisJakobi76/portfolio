@@ -59,3 +59,20 @@
     background-image: url("../../../public/assets/icons/details_close_hover.png");
   }
 }
+
+.content-wrapper {
+  height: 500px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+
+  > div.legal-notice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
