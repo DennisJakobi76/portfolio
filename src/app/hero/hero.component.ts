@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { TranslationService } from '../shared/services/translation.service';
 import { HeaderComponent } from './header/header.component';
 import { MarqueeComponent } from './marquee/marquee.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [HeaderComponent, MarqueeComponent],
+  imports: [CommonModule, HeaderComponent, MarqueeComponent],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss',
+  styleUrls: ['./hero.component.scss'],
 })
-export class HeroComponent {}
+export class HeroComponent {
+  constructor(public translationService: TranslationService) {}
+}

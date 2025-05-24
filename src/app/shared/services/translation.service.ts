@@ -27,6 +27,28 @@ export class TranslationService {
         projects: 'Projekte',
       },
     },
+    hero: {
+      en: {
+        title: 'Fullstack Developer',
+        checkWork: 'Check my work',
+        contact: 'Contact me',
+      },
+      de: {
+        title: 'Fullstack Entwickler',
+        checkWork: 'Meine Projekte',
+        contact: 'Kontakt',
+      },
+    },
+    marquee: {
+      en: {
+        content:
+          '* Fullstack Developer * Employed And Happy * Based In North Rhine-Westphalia * Open To Interesting Contacts *',
+      },
+      de: {
+        content:
+          '* Fullstack Entwickler * Angestellt Und Glücklich * Ansässig In Nordrhein-Westfalen * Offen Für Interessante Kontakte *',
+      },
+    },
     // Weitere Übersetzungen hier hinzufügen...
   };
 
