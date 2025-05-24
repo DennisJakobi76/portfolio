@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ImprintService } from '../shared/services/imprint.service';
 
 @Component({
@@ -9,17 +9,19 @@ import { ImprintService } from '../shared/services/imprint.service';
   styleUrls: ['./imprint.component.scss'],
 })
 export class ImprintComponent implements OnInit {
+  @Input() type: 'legal' | 'privacy' = 'legal';
   isVisible = false;
 
   constructor(private imprintService: ImprintService) {}
 
   ngOnInit() {
-    this.imprintService.showImprint$.subscribe(
-      (show) => (this.isVisible = show)
-    );
+    this.imprintService.showImprint$.subscribe(({ show, type }) => {
+      this.isVisible = show;
+      this.type = type;
+    });
   }
 
   closeCard() {
-    this.isVisible = false;
+    this.imprintService.toggleImprint();
   }
 }

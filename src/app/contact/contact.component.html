@@ -6,7 +6,7 @@
 	<p class="contact-text">Whether you have an idea ready to come to life or you're facing a technical challenge – I'm
 		here to help. With a passion for modern web technologies and a focus on tailored solutions, I’ll support you in
 		bringing your project to success.<br><br>
-		<span>Let’s build something great together!</span>
+		Let’s build something <span>great together!</span>
 	</p>
 	<p class="contact-cta">Need a Frontend developer? <span>Let's talk!</span></p>
 </div>
@@ -48,7 +48,8 @@
 				<img [src]="confirmedPolicy ? 'assets/icons/check_box_checked_default.png' : 'assets/icons/check_box_default.png'"
 					alt="Checkbox" (click)="togglePolicy()">
 			</div>
-			<label>I`ve read the <span>privacy policy</span> and agree to the processing of my data as outlined.</label>
+			<label>I`ve read the <span (click)="showPrivacyPolicy()">privacy policy</span> and agree to the processing
+				of my data as outlined.</label>
 		</div>
 		<p class="policy-error" *ngIf="!confirmedPolicy && contactForm.submitted">Please accept the privacy policy to
 			continue.</p>

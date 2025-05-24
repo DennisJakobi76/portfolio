@@ -8,6 +8,8 @@ import { ReferencesComponent } from './references/references.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
+import { CommonModule } from '@angular/common';
+import { ImprintService } from './shared/services/imprint.service';
 
 @Component({
   selector: 'app-root',
@@ -21,12 +23,21 @@ import { ImprintComponent } from './imprint/imprint.component';
     ContactComponent,
     FooterComponent,
     ImprintComponent,
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Dennis Jakobi';
+  type: 'legal' | 'privacy' = 'legal';
+
+  constructor(private imprintService: ImprintService) {
+    this.imprintService.showImprint$.subscribe(({ type }) => {
+      this.type = type;
+    });
+  }
+
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     const x = (event.clientX / window.innerWidth) * 100 + '%';

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ImprintService } from '../shared/services/imprint.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactComponent {
   http = inject(HttpClient);
+  private imprintService = inject(ImprintService);
 
   contactData = {
     name: '',
@@ -79,5 +81,9 @@ export class ContactComponent {
   onEmailBlur(email: any) {
     this.focused.email = false;
     email.control.markAsTouched();
+  }
+
+  showPrivacyPolicy() {
+    this.imprintService.toggleImprint('privacy');
   }
 }

@@ -6,72 +6,79 @@
 <app-contact />
 <app-footer />
 <app-imprint>
-	<div class="legal-notice">
-		<h1>Legal Notice</h1>
-		<div>
-			<p>Dennis Jakobi<br />
-				Gartenstraße 90<br />45699 Herten</p>
+	<div [ngSwitch]="type">
+		<div *ngSwitchCase="'legal'" class="legal-notice">
+			<h1>Legal Notice</h1>
+			<div>
+				<p>Dennis Jakobi<br />
+					Gartenstraße 90<br />45699 Herten</p>
+			</div>
+			<div>
+				<p>
+					Telefon: +4917687903079<br />
+					E-Mail:
+					<a href="mailto:dennis.jakobi76@gmail.com">dennis.jakobi76&#64;gmail.com</a><br />
+				</p>
+			</div>
 		</div>
-		<div>
-			<p>
-				Telefon: +4917687903079<br />
-				E-Mail:
-				<a href="mailto:dennis.jakobi76@gmail.com">dennis.jakobi76&#64;gmail.com</a><br />
-			</p>
+		<div *ngSwitchCase="'privacy'">
+			<h1>Privacy Policy</h1>
+
+
+			<div>
+				<p>Protecting your personal data is very important to me. I therefore process your data exclusively
+					based on the
+					applicable legal regulations (GDPR, TMG). This privacy policy informs you about the most important
+					aspects
+					of data processing on this website.</p>
+			</div>
+			<div>
+				<h2>1. General Information</h2>
+				<p>This website serves as a personal portfolio page and provides information about my work as a web
+					developer.
+					No cookies are set and no tracking technologies are used when you visit this site.</p>
+
+			</div>
+			<div>
+				<h2>2. Contact Form</h2>
+				<p>If you contact me via the contact form on this website, the information you provide (name, email
+					address,
+					message) will be stored for the purpose of processing your request and in case of follow-up
+					questions.</p>
+				<p>This data will <strong>not</strong> be shared with third parties without your explicit consent.</p>
+				<p>The legal basis for processing your data is Art. 6(1)(b) GDPR (processing necessary for the
+					performance of
+					pre-contractual measures).</p>
+
+			</div>
+			<div>
+				<h2>3. Your Rights</h2>
+				<p>You have the following rights under the GDPR:</p>
+
+				<p>Right of access (Art. 15 GDPR)</p>
+				<p>Right to rectification (Art. 16 GDPR)</p>
+				<p>Right to erasure (Art. 17 GDPR)</p>
+				<p>Right to restriction of processing (Art. 18 GDPR)</p>
+				<p>Right to data portability (Art. 20 GDPR)</p>
+				<p>Right to object to processing (Art. 21 GDPR)</p>
+				<p>Right to lodge a complaint with the competent supervisory authority</p>
+
+				<p>If you believe that the processing of your data violates data protection law or your rights have been
+					otherwise infringed, you can contact the relevant data protection authority.</p>
+
+			</div>
+			<div>
+				<h2>4. Contact</h2>
+				<p>Responsible for data processing on this website:</p>
+				<p>
+					<strong>Dennis Jakobi</strong><br>
+					Gartenstraße 90, 45699 Herten<br>
+					Email: <a href="mailto:dennis.jakobi76@gmail.com">dennis.jakobi76&#64;gmail.com</a><br>
+
+				</p>
+			</div>
 		</div>
 	</div>
 
-</app-imprint>
-<app-imprint>
-
-	<h1>Privacy Policy</h1>
-
-
-	<div>
-		<p>Protecting your personal data is very important to me. I therefore process your data exclusively based on the
-			applicable legal regulations (GDPR, TMG). This privacy policy informs you about the most important aspects
-			of data processing on this website.</p>
-	</div>
-	<div>
-		<h2>1. General Information</h2>
-		<p>This website serves as a personal portfolio page and provides information about my work as a web developer.
-			No cookies are set and no tracking technologies are used when you visit this site.</p>
-
-	</div>
-	<div>
-		<h2>2. Contact Form</h2>
-		<p>If you contact me via the contact form on this website, the information you provide (name, email address,
-			message) will be stored for the purpose of processing your request and in case of follow-up questions.</p>
-		<p>This data will <strong>not</strong> be shared with third parties without your explicit consent.</p>
-		<p>The legal basis for processing your data is Art. 6(1)(b) GDPR (processing necessary for the performance of
-			pre-contractual measures).</p>
-
-	</div>
-	<div>
-		<h2>3. Your Rights</h2>
-		<p>You have the following rights under the GDPR:</p>
-
-		<p>Right of access (Art. 15 GDPR)</p>
-		<p>Right to rectification (Art. 16 GDPR)</p>
-		<p>Right to erasure (Art. 17 GDPR)</p>
-		<p>Right to restriction of processing (Art. 18 GDPR)</p>
-		<p>Right to data portability (Art. 20 GDPR)</p>
-		<p>Right to object to processing (Art. 21 GDPR)</p>
-		<p>Right to lodge a complaint with the competent supervisory authority</p>
-
-		<p>If you believe that the processing of your data violates data protection law or your rights have been
-			otherwise infringed, you can contact the relevant data protection authority.</p>
-
-	</div>
-	<div>
-		<h2>4. Contact</h2>
-		<p>Responsible for data processing on this website:</p>
-		<p>
-			<strong>Dennis Jakobi</strong><br>
-			Gartenstraße 90, 45699 Herten<br>
-			Email: <a href="mailto:dennis.jakobi76@gmail.com">dennis.jakobi76&#64;gmail.com</a><br>
-
-		</p>
-	</div>
 </app-imprint>
 <router-outlet />
