@@ -7,6 +7,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ReferencesComponent } from './references/references.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { ImprintComponent } from './imprint/imprint.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     ReferencesComponent,
     ContactComponent,
     FooterComponent,
+    ImprintComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
