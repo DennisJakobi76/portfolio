@@ -3,37 +3,29 @@
 	<img src="assets/img/main_photo.jpg" alt="Photo" id="about-me-photo">
 </div>
 
-<app-info-card class="about-me-info-card" title="Who I Am" headline="About me">
-	Hi, I'm Dennis – a code enthusiast with a passion for modern web technologies and well-designed software. I've been
-	developing since 2016, rooted in backend (.NET/C#) and increasingly drawn to the frontend.
-	What drives me is the joy of coding: creating things, solving problems creatively, and constantly learning – that’s
-	what this job means to me.
+<app-info-card class="about-me-info-card" [title]="translationService.getTranslation('aboutMe', 'title')"
+	[headline]="translationService.getTranslation('aboutMe', 'headline')">
+	{{ translationService.getTranslation('aboutMe', 'intro') }}
 	<div class="about-me-content-container">
 		<div class="about-me-content-img-and-text-container">
 			<div class="about-me-img-container">
 				<img id="location-icon" class="about-me-content-icon" src="assets/icons/location_icon.png"
 					alt="Location Icon">
 			</div>
-
-			<p>Based in North Rhine-Westphalia. Loving the opportunity to work remotely all over the world. </p>
+			<p>{{ translationService.getTranslation('aboutMe', 'location') }}</p>
 		</div>
 		<div class="about-me-content-img-and-text-container">
 			<div class="about-me-img-container">
-				<img class="about-me-content-icon" src="assets/icons/cognition_icon.png" alt="Coginition Icon">
-
+				<img class="about-me-content-icon" src="assets/icons/cognition_icon.png" alt="Cognition Icon">
 			</div>
-			<p>The tech world is constantly evolving – and that’s exactly what fascinates me. New tools and concepts
-				motivate me to stay curious and continuously improve my skills.</p>
+			<p>{{ translationService.getTranslation('aboutMe', 'evolution') }}</p>
 		</div>
 		<div class="about-me-content-img-and-text-container">
 			<div class="about-me-img-container">
 				<img id="new-releases-icon" class="about-me-content-icon" src="assets/icons/new_releases_icon.png"
 					alt="New Releases Icon">
 			</div>
-
-			<p>I tackle challenges with a structured mindset and a focus on what truly matters. Analytical thinking,
-				curiosity, and the drive to find the best possible solution – often as part of a team – guide me along
-				the way.</p>
+			<p>{{ translationService.getTranslation('aboutMe', 'mindset') }}</p>
 		</div>
 	</div>
 </app-info-card>
