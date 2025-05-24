@@ -1,8 +1,9 @@
 <div class="header-button-container">
-	<div class="header-button" id="language-switch" (click)="toggleLanguage()" [class.german]="isGerman"></div>
+	<div class="header-button" id="language-switch" (click)="toggleLanguage()"
+		[class.german]="translationService.isGerman$ | async"></div>
 	<div class="link-point-wrapper">
 		<div class="header-button">
-			<a href="#about-me-container">About me</a>
+			<a href="#about-me-container">{{ translationService.getTranslation('header', 'aboutMe') }}</a>
 		</div>
 		<div id="header-about-me-point-container" class="header-point-container">
 			<img src="assets/icons/link_check_radio_button.png" alt="Point">
@@ -11,7 +12,7 @@
 
 	<div class="link-point-wrapper">
 		<div class="header-button">
-			<a href="#technologies-content-container">Skills</a>
+			<a href="#technologies-content-container">{{ translationService.getTranslation('header', 'skills') }}</a>
 		</div>
 		<div id="header-skills-point-container" class="header-point-container">
 			<img src="assets/icons/link_check_radio_button.png" alt="Point">
@@ -19,7 +20,7 @@
 	</div>
 	<div class="link-point-wrapper">
 		<div class="header-button">
-			<a href="#featured-projects">Projects</a>
+			<a href="#featured-projects">{{ translationService.getTranslation('header', 'projects') }}</a>
 		</div>
 		<div id="header-projects-point-container" class="header-point-container">
 			<img src="assets/icons/link_check_radio_button.png" alt="Point">
