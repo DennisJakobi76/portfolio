@@ -20,14 +20,22 @@
     background-image: url("../../../../public/assets/icons/default_language_switch.png");
     background-size: contain;
     background-repeat: no-repeat;
-
     width: 84px;
     height: 48px;
     transition: all 0.3s ease-in-out;
-  }
-  & #language-switch:hover {
-    background-image: url("../../../../public/assets/icons/default_language_switch_hover.png");
-    cursor: pointer;
+
+    &.german {
+      background-image: url("../../../../public/assets/icons/german_language_switch.png");
+
+      &:hover {
+        background-image: url("../../../../public/assets/icons/german_language_switch_hover.png");
+      }
+    }
+
+    &:hover {
+      background-image: url("../../../../public/assets/icons/default_language_switch_hover.png");
+      cursor: pointer;
+    }
   }
 
   > .header-button {
