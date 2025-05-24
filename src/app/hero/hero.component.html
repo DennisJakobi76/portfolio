@@ -6,15 +6,17 @@
 			<div class="hero-container-seperator"></div>
 		</div>
 		<div class="hero-container-center">
-			<h2>Fullstack Developer</h2>
+			<h2>{{ translationService.getTranslation('hero', 'title') }}</h2>
 			<h1>Dennis Jakobi</h1>
 			<div class="title-button-container">
 				<a href="#featured-projects">
-					<button class="primary-btn"><span>Check my work</span></button>
+					<button class="primary-btn"><span>{{ translationService.getTranslation('hero', 'checkWork')
+							}}</span></button>
 				</a>
 
 				<a href="#contact-title">
-					<button class="primary-btn"><span>Contact me</span></button>
+					<button class="primary-btn"><span>{{ translationService.getTranslation('hero', 'contact')
+							}}</span></button>
 				</a>
 
 			</div>
