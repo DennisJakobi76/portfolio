@@ -2,13 +2,24 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ImprintService {
-  private showImprintSource = new BehaviorSubject<boolean>(false);
-  showImprint$ = this.showImprintSource.asObservable();
+  private showImprintSubject = new BehaviorSubject<{
+    show: boolean;
+    type: 'legal' | 'privacy';
+  }>({
+    show: false,
+    type: 'legal',
+  });
 
-  toggleImprint() {
-    this.showImprintSource.next(!this.showImprintSource.value);
+  showImprint$ = this.showImprintSubject.asObservable();
+
+  toggleImprint(type: 'legal' | 'privacy' = 'legal') {
+    const currentValue = this.showImprintSubject.value;
+    this.showImprintSubject.next({
+      show: !currentValue.show,
+      type: type,
+    });
   }
 }

@@ -156,13 +156,13 @@
 
   > label span {
     color: var(--active-font-color);
+    cursor: pointer;
 
     &:hover {
       color: var(--primary-font-color);
       text-decoration: underline;
       text-decoration-color: var(--active-font-color);
       text-underline-offset: 6px;
-      cursor: pointer;
     }
   }
 }

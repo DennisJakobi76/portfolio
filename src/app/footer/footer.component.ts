@@ -11,6 +11,6 @@ export class FooterComponent {
 
   showImprint(event: Event) {
     event.preventDefault();
-    this.imprintService.toggleImprint();
+    this.imprintService.toggleImprint('legal');
   }
 }
