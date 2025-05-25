@@ -70,7 +70,7 @@ export class TranslationService {
         evolution:
           'Die Tech-Welt entwickelt sich ständig weiter – genau das fasziniert mich. Neue Tools und Konzepte motivieren mich, ständig am Ball zu bleiben und meine Fähigkeiten gezielt weiterzuentwickeln.',
         mindset:
-          'Ich gehe Herausforderungen strukturiert an und konzentriere mich auf das Wesentliche. Analytisches Denken, Neugier und der Anspruch, die bestmögliche Lösung zu finden – oft im Team – begleiten mich dabei',
+          'Ich gehe Herausforderungen strukturiert an und konzentriere mich auf das Wesentliche. Analytisches Denken, Neugier und der Anspruch, die bestmögliche Lösung zu finden – oft im Team – begleiten mich dabei.',
       },
     },
     technologies: {
