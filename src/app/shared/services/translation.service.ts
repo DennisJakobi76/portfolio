@@ -73,6 +73,28 @@ export class TranslationService {
           'Ich gehe Herausforderungen strukturiert an und konzentriere mich auf das Wesentliche. Analytisches Denken, Neugier und der Anspruch, die bestmögliche Lösung zu finden – oft im Team – begleiten mich dabei',
       },
     },
+    technologies: {
+      en: {
+        title: 'Technologies',
+        headline: 'Skill Set',
+        description: `I'm passionate about working with modern front-end technologies such as HTML, CSS, JavaScript, TypeScript, Angular, and SCSS. I also bring experience in backend development, especially with C#, .NET, and databases using SQL. For me, keeping up with the latest developments isn't just important – I genuinely enjoy exploring new technologies and continuously growing my skill set. I see the rapid changes in web development as an exciting opportunity to keep learning and evolving.`,
+        needSkill: 'You need',
+        anotherSkill: 'another skill?',
+        contactText:
+          'Feel free to contact me. I look forward to expanding on my previous knowledge.',
+        letsTalk: 'Let`s Talk',
+      },
+      de: {
+        title: 'Technologien',
+        headline: 'Fähigkeiten',
+        description: `Ich arbeite leidenschaftlich gern mit modernen Frontend-Technologien wie HTML, CSS, JavaScript, TypeScript, Angular und SCSS. Gleichzeitig bringe ich Erfahrung im Backend mit, vor allem mit C#, .NET sowie Datenbanken und SQL. Für mich ist es nicht nur wichtig, mit aktuellen Entwicklungen Schritt zu halten – ich habe richtig Freude daran, neue Technologien auszuprobieren und mich stetig weiterzuentwickeln. Die schnelle Veränderung in der Webentwicklung sehe ich als spannende Chance, ständig dazuzulernen.`,
+        needSkill: 'Du brauchst',
+        anotherSkill: 'andere Fähigkeiten?',
+        contactText:
+          'Kontaktiere mich gerne. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.',
+        letsTalk: 'Lass uns reden',
+      },
+    },
     // Weitere Übersetzungen hier hinzufügen...
   };
 
