@@ -132,7 +132,8 @@ export class TranslationService {
         subtitle: 'Got a problem to solve?',
         description:
           "Whether you have an idea ready to come to life or you're facing a technical challenge – I'm here to help. With a passion for modern web technologies and a focus on tailored solutions, I'll support you in bringing your project to success.",
-        buildTogether: 'great together!',
+        buildTogether: "Let's build something",
+        somethingGreat: 'great together!',
         needDeveloper: 'Need a Frontend developer?',
         letsTalk: "Let's talk!",
         nameQuestion: "What's your name?",
