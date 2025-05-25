@@ -110,3 +110,27 @@
 .header-logo-container:hover {
   filter: invert(1);
 }
+
+@media (max-width: 1300px) {
+  :host {
+    width: 100vw;
+    max-width: 1300px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .header-button-container {
+    width: 380px;
+    gap: 12px;
+  }
+
+  .header-logo-container {
+    transform: scale(0.85);
+  }
+
+  .header-name-container {
+    font-size: 16px;
+  }
+}
