@@ -17,6 +17,20 @@ export class TechnologiesComponent {
     this.initSkillIcons();
   }
 
+  getTitle(): string {
+    return this.translationService.getTranslation(
+      'technologies',
+      'title'
+    ) as string;
+  }
+
+  getHeadline(): string {
+    return this.translationService.getTranslation(
+      'technologies',
+      'headline'
+    ) as string;
+  }
+
   private initSkillIcons(): void {
     const skillIconNames = [
       'Angular',

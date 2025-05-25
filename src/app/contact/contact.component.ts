@@ -3,16 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ImprintService } from '../shared/services/imprint.service';
+import { TranslationService } from '../shared/services/translation.service';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
   http = inject(HttpClient);
   private imprintService = inject(ImprintService);
+  constructor(public translationService: TranslationService) {}
 
   contactData = {
     name: '',

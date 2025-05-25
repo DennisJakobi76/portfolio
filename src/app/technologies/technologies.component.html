@@ -1,17 +1,19 @@
 <div class="technologies-container">
 	<div id="technologies-content-container" class="technologies-content-container">
-		<app-info-card [title]="translationService.getTranslation('technologies', 'title')"
-			[headline]="translationService.getTranslation('technologies', 'headline')">
+		<app-info-card [title]="getTitle()" [headline]="getHeadline()">
 			<p>{{ translationService.getTranslation('technologies', 'description') }}</p>
 			<h2 id="another-skill">
 				{{ translationService.getTranslation('technologies', 'needSkill') }}
-				<span id="another-skill-span">{{ translationService.getTranslation('technologies', 'anotherSkill')
-					}}</span>
+				<span id="another-skill-span">
+					{{ translationService.getTranslation('technologies', 'anotherSkill') }}
+				</span>
 			</h2>
 			<p>{{ translationService.getTranslation('technologies', 'contactText') }}</p>
 			<div class="another-skill-button-container">
 				<button class="primary-btn">
-					<span>{{ translationService.getTranslation('technologies', 'letsTalk') }}</span>
+					<a href="#contact-title">
+						<span>{{ translationService.getTranslation('technologies', 'letsTalk') }}</span>
+					</a>
 				</button>
 			</div>
 		</app-info-card>

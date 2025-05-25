@@ -6,6 +6,7 @@ import {
 } from './project-details.data';
 import { CommonModule } from '@angular/common';
 import { ProjectDetailsService } from '../../shared/services/project-details.service';
+import { TranslationService } from '../../shared/services/translation.service';
 
 @Component({
   selector: 'app-project-details-card',
@@ -19,7 +20,10 @@ export class ProjectDetailsCardComponent implements OnInit {
   projectDetails = POKEDEX_PROJECT;
   isVisible = false;
 
-  constructor(private projectDetailsService: ProjectDetailsService) {}
+  constructor(
+    public translationService: TranslationService,
+    private projectDetailsService: ProjectDetailsService
+  ) {}
 
   ngOnInit() {
     this.projectDetailsService.showDetails$.subscribe((project) => {

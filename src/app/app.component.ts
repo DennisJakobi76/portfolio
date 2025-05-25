@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { CommonModule } from '@angular/common';
 import { ImprintService } from './shared/services/imprint.service';
+import { TranslationService } from './shared/services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,10 @@ export class AppComponent {
   title = 'Dennis Jakobi';
   type: 'legal' | 'privacy' = 'legal';
 
-  constructor(private imprintService: ImprintService) {
+  constructor(
+    private imprintService: ImprintService,
+    public translationService: TranslationService
+  ) {
     this.imprintService.showImprint$.subscribe(({ type }) => {
       this.type = type;
     });
@@ -45,5 +49,10 @@ export class AppComponent {
 
     document.documentElement.style.setProperty('--x', x);
     document.documentElement.style.setProperty('--y', y);
+  }
+
+  getRights(): string[] {
+    const rights = this.translationService.getTranslation('imprint', 'rights');
+    return Array.isArray(rights) ? rights : [];
   }
 }

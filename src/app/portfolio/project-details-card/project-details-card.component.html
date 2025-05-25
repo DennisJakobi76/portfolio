@@ -5,7 +5,9 @@
 			<h3 class="details-card-title">{{projectDetails.title}}</h3>
 		</div>
 		<div class="details-card-description-container">
-			<p class="details-card-description">{{projectDetails.description}}</p>
+			<p class="details-card-description">
+				{{ projectDetails.description[(translationService.isGerman$ | async) ? 'de' : 'en'] }}
+			</p>
 			<div class="details-card-tech-container">
 				<div class="details-tech-img-and-name-container" *ngFor="let tech of projectDetails.technologies">
 					<img [src]="tech.iconSrc" [alt]="tech.iconAlt">
@@ -42,7 +44,9 @@
 			<img [src]="projectDetails.detailImage.src" [alt]="projectDetails.detailImage.alt">
 		</div>
 		<div class="details-card-next-project-btn-container" (click)="showNextProject()">
-			<div class="details-card-next-project-text">Next project</div>
+			<div class="details-card-next-project-text">
+				{{ translationService.getTranslation('projectDetails', 'nextProject') }}
+			</div>
 			<div class="details-card-next-project-arrow">
 				<img src="assets/icons/details_next_arrow.png" alt="Arrow">
 			</div>
