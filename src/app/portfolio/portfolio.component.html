@@ -1,8 +1,6 @@
 <div id="featured-projects" class="portfolio-header">
-	<h2>Portfolio</h2>
-	<h1>Featured Projects</h1>
-
-	<p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
-
+	<h2>{{ translationService.getTranslation('portfolio', 'title') }}</h2>
+	<h1>{{ translationService.getTranslation('portfolio', 'headline') }}</h1>
+	<p>{{ translationService.getTranslation('portfolio', 'description') }}</p>
 	<app-projects></app-projects>
 </div>

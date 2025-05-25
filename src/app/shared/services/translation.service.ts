@@ -95,6 +95,20 @@ export class TranslationService {
         letsTalk: 'Lass uns reden',
       },
     },
+    portfolio: {
+      en: {
+        title: 'Portfolio',
+        headline: 'Featured Projects',
+        description:
+          'Explore a selection of my work here - Interact with projects to see my skills in action.',
+      },
+      de: {
+        title: 'Portfolio',
+        headline: 'Aktuelle Projekte',
+        description:
+          'Entdecke eine Auswahl meiner Arbeiten - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+      },
+    },
     // Weitere Übersetzungen hier hinzufügen...
   };
 
