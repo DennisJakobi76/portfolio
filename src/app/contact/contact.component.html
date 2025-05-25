@@ -1,61 +1,65 @@
 <div class="contact-left-side">
-	<p id="contact-title" class="contact-title">Contact me</p>
-
-	<h2 class="contact-headline">Let's work together</h2>
-	<p class="contact-subtitle">Got a problem to solve?</p>
-	<p class="contact-text">Whether you have an idea ready to come to life or you're facing a technical challenge – I'm
-		here to help. With a passion for modern web technologies and a focus on tailored solutions, I’ll support you in
-		bringing your project to success.<br><br>
-		Let’s build something <span>great together!</span>
+	<p id="contact-title" class="contact-title">{{ translationService.getTranslation('contact', 'title') }}</p>
+	<h2 class="contact-headline">{{ translationService.getTranslation('contact', 'headline') }}</h2>
+	<p class="contact-subtitle">{{ translationService.getTranslation('contact', 'subtitle') }}</p>
+	<p class="contact-text">{{ translationService.getTranslation('contact', 'description') }}<br><br>
+		{{ translationService.getTranslation('contact', 'buildTogether') }} <span>{{
+			translationService.getTranslation('contact', 'somethingGreat') }}</span>
 	</p>
-	<p class="contact-cta">Need a Frontend developer? <span>Let's talk!</span></p>
+	<p class="contact-cta">{{ translationService.getTranslation('contact', 'needDeveloper') }}
+		<span>{{ translationService.getTranslation('contact', 'letsTalk') }}</span>
+	</p>
 </div>
 <div class="contact-right-side">
 	<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+		<!-- Name section -->
 		<div class="contact-form-container guests-name-container">
-			<h2>What`s your name?</h2>
-			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required
-				[placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ? 'Oops! It seems your name is missing.' : 'Your name goes here'"
-				id="guests-name" required (focus)="focused.name = true" (blur)="focused.name = false">
-
-
+			<h2>{{ translationService.getTranslation('contact', 'nameQuestion') }}</h2>
+			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required [placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ?
+                    translationService.getTranslation('contact', 'nameError') :
+                    translationService.getTranslation('contact', 'namePlaceholder')" id="guests-name"
+				(focus)="focused.name = true" (blur)="focused.name = false">
 		</div>
 
-		<div class="contact-form-container guests-email-container">
-			<h2>What`s your email?</h2>
-			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="text" required
-				[pattern]="emailPattern" id="guests-email" [placeholder]="
-    !focused.email && email.touched && email.errors?.['required']
-      ? 'Hoppla! Your email is required.'
-      : (!focused.email && email.touched && email.errors?.['pattern']
-          ? 'Please enter a valid email address.'
-          : 'youremail@email.com')
-  " (focus)="focused.email = true" (blur)="onEmailBlur(email)" />
-			<p class="guests-email-error" *ngIf="!focused.email && email.touched && email.errors?.['pattern']">Please
-				enter a valid email address.</p>
+		<!-- Email section -->
+		<div class="contact-form-container">
+			<h2>{{ translationService.getTranslation('contact', 'emailQuestion') }}</h2>
+			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email" required [placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ?
+                translationService.getTranslation('contact', 'emailRequired') :
+                translationService.getTranslation('contact', 'emailPlaceholder')" pattern="{{ emailPattern }}"
+				(focus)="focused.email = true" (blur)="focused.email = false">
+			<p class="guests-email-error" *ngIf="email.errors?.['pattern'] && email.touched && !focused.email">
+				{{ translationService.getTranslation('contact', 'emailInvalid') }}
+			</p>
 		</div>
 
-		<div class="contact-form-container guests-message-container">
-			<h2>How can I help you?</h2>
-			<textarea #message="ngModel" [(ngModel)]="contactData.message" minlength="4" name="message"
-				[placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ? 'What do you want to develop?' : 'Hello Dennis, I am interested in...'"
-				id="guests-message" required (focus)="focused.message = true"
-				(blur)="focused.message = false"></textarea>
+		<!-- Message section -->
+		<div class="contact-form-container">
+			<h2>{{ translationService.getTranslation('contact', 'messageQuestion') }}</h2>
+			<textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" required [placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ?
+                    translationService.getTranslation('contact', 'messageError') :
+                    translationService.getTranslation('contact', 'messagePlaceholder')"
+				(focus)="focused.message = true" (blur)="focused.message = false"></textarea>
 		</div>
 
+		<!-- Policy section -->
 		<div class="confirm-policy-container">
 			<div id="confirm-policy-checkbox">
 				<img [src]="confirmedPolicy ? 'assets/icons/check_box_checked_default.png' : 'assets/icons/check_box_default.png'"
 					alt="Checkbox" (click)="togglePolicy()">
 			</div>
-			<label>I`ve read the <span (click)="showPrivacyPolicy()">privacy policy</span> and agree to the processing
-				of my data as outlined.</label>
+			<label>{{ translationService.getTranslation('contact', 'policyText') }}
+				<span (click)="showPrivacyPolicy()">{{ translationService.getTranslation('contact', 'policyLink')
+					}}</span>
+				{{ translationService.getTranslation('contact', 'policyAgree') }}</label>
 		</div>
-		<p class="policy-error" *ngIf="!confirmedPolicy && contactForm.submitted">Please accept the privacy policy to
-			continue.</p>
+		<p class="policy-error" *ngIf="!confirmedPolicy && contactForm.submitted">
+			{{ translationService.getTranslation('contact', 'policyError') }}
+		</p>
 
+		<!-- Submit button -->
 		<div class="contact-form-container contact-btn-container">
-			<input class="primary-btn" type="submit" value="Say Hello ;)">
+			<input class="primary-btn" type="submit" [value]="translationService.getTranslation('contact', 'submit')">
 		</div>
 	</form>
 </div>

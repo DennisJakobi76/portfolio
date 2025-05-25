@@ -1,4 +1,4 @@
-<h2>What my colleagues say about me</h2>
+<h2>{{ translationService.getTranslation('references', 'title') }}</h2>
 
 <div class="carousel-shadow-wrapper">
 	<div class="carousel-overlay">
@@ -7,7 +7,9 @@
 	<div class="carousel-track" [ngClass]="slideDirection">
 		<div *ngFor="let ref of displayedReferences" class="card-wrapper" [ngClass]="ref.position"
 			(click)="ref.position === 'right' ? nextSlide() : ref.position === 'left' ? prevSlide() : null">
-			<app-reference-card [text]="ref.text" [author]="ref.author"></app-reference-card>
+			<app-reference-card [text]="ref.text[(translationService.isGerman$ | async) ? 'de' : 'en']"
+				[author]="ref.author">
+			</app-reference-card>
 		</div>
 	</div>
 </div>

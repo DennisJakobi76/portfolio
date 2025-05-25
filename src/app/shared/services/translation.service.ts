@@ -11,7 +11,7 @@ export class TranslationService {
   translations: {
     [section: string]: {
       [language: string]: {
-        [key: string]: string;
+        [key: string]: string | string[]; // Erlaubt sowohl Strings als auch String-Arrays
       };
     };
   } = {
@@ -106,7 +106,161 @@ export class TranslationService {
         title: 'Portfolio',
         headline: 'Aktuelle Projekte',
         description:
-          'Entdecke eine Auswahl meiner Arbeiten - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+          'Entdecke eine Auswahl meiner Arbeiten - Probiere die Projekte gerne aus, um meine Fähigkeiten in Aktion zu sehen.',
+      },
+    },
+    projectDetails: {
+      en: {
+        nextProject: 'Next project',
+      },
+      de: {
+        nextProject: 'Nächstes Projekt',
+      },
+    },
+    references: {
+      en: {
+        title: 'What my colleagues say about me',
+      },
+      de: {
+        title: 'Was meine Kollegen über mich sagen',
+      },
+    },
+    contact: {
+      en: {
+        title: 'Contact me',
+        headline: "Let's work together",
+        subtitle: 'Got a problem to solve?',
+        description:
+          "Whether you have an idea ready to come to life or you're facing a technical challenge – I'm here to help. With a passion for modern web technologies and a focus on tailored solutions, I'll support you in bringing your project to success.",
+        buildTogether: 'great together!',
+        needDeveloper: 'Need a Frontend developer?',
+        letsTalk: "Let's talk!",
+        nameQuestion: "What's your name?",
+        namePlaceholder: 'Your name goes here',
+        nameError: 'Oops! It seems your name is missing.',
+        emailQuestion: "What's your email?",
+        emailPlaceholder: 'youremail@email.com',
+        emailRequired: 'Hoppla! Your email is required.',
+        emailInvalid: 'Please enter a valid email address.',
+        messageQuestion: 'How can I help you?',
+        messagePlaceholder: 'Hello Dennis, I am interested in...',
+        messageError: 'What do you want to develop?',
+        policyText: "I've read the",
+        policyLink: 'privacy policy',
+        policyAgree: 'and agree to the processing of my data as outlined.',
+        policyError: 'Please accept the privacy policy to continue.',
+        submit: 'Say Hello ;)',
+      },
+      de: {
+        title: 'Kontakt',
+        headline: 'Lass uns zusammenarbeiten',
+        subtitle: 'Es gibt ein Problem zu lösen?',
+        description:
+          'Ob du eine Idee hast, die zum Leben erweckt werden soll, oder vor einer technischen Herausforderung stehst – ich bin hier, um zu helfen. Mit Leidenschaft für moderne Webtechnologien und Fokus auf maßgeschneiderte Lösungen unterstütze ich dich dabei, dein Projekt zum Erfolg zu führen.',
+        buildTogether: 'Entwickeln wir ',
+        somethingGreat: 'gemeinsam Großartiges!',
+        needDeveloper: 'Frontend-Entwickler gesucht?',
+        letsTalk: 'Lass uns reden!',
+        nameQuestion: 'Wie ist dein Name?',
+        namePlaceholder: 'Hier gehört dein Name hin',
+        nameError: 'Ups! Dein Name fehlt noch.',
+        emailQuestion: 'Wie lautet deine E-Mail?',
+        emailPlaceholder: 'deine@email.de',
+        emailRequired: 'Hoppla! Deine E-Mail wird benötigt.',
+        emailInvalid: 'Bitte gib eine gültige E-Mail-Adresse ein.',
+        messageQuestion: 'Wie kann ich dir helfen?',
+        messagePlaceholder: 'Hallo Dennis, ich interessiere mich für...',
+        messageError: 'Was möchtest du entwickeln?',
+        policyText: 'Ich habe die',
+        policyLink: 'Datenschutzerklärung',
+        policyAgree:
+          'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
+        policyError:
+          'Bitte akzeptiere die Datenschutzerklärung um fortzufahren.',
+        submit: 'Sag Hallo ;)',
+      },
+    },
+    footer: {
+      en: {
+        job: 'Web Developer',
+        location: 'NRW Germany',
+        legalNotice: 'Legal Notice',
+      },
+      de: {
+        job: 'Web Entwickler',
+        location: 'NRW Deutschland',
+        legalNotice: 'Impressum',
+      },
+    },
+    imprint: {
+      en: {
+        legalNoticeTitle: 'Legal Notice',
+        privacyPolicyTitle: 'Privacy Policy',
+        phone: 'Phone',
+        email: 'Email',
+        // Privacy Policy texts
+        privacyIntro:
+          'Protecting your personal data is very important to me. I therefore process your data exclusively based on the applicable legal regulations (GDPR, TMG). This privacy policy informs you about the most important aspects of data processing on this website.',
+        generalTitle: '1. General Information',
+        generalText:
+          'This website serves as a personal portfolio page and provides information about my work as a web developer. No cookies are set and no tracking technologies are used when you visit this site.',
+        contactFormTitle: '2. Contact Form',
+        contactFormText:
+          'If you contact me via the contact form on this website, the information you provide (name, email address, message) will be stored for the purpose of processing your request and in case of follow-up questions.',
+        dataSharing:
+          'This data will not be shared with third parties without your explicit consent.',
+        legalBasis:
+          'The legal basis for processing your data is Art. 6(1)(b) GDPR (processing necessary for the performance of pre-contractual measures).',
+        rightsTitle: '3. Your Rights',
+        rightsIntro: 'You have the following rights under the GDPR:',
+        rights: [
+          'Right of access (Art. 15 GDPR)',
+          'Right to rectification (Art. 16 GDPR)',
+          'Right to erasure (Art. 17 GDPR)',
+          'Right to restriction of processing (Art. 18 GDPR)',
+          'Right to data portability (Art. 20 GDPR)',
+          'Right to object to processing (Art. 21 GDPR)',
+          'Right to lodge a complaint with the competent supervisory authority',
+        ],
+        rightsNote:
+          'If you believe that the processing of your data violates data protection law or your rights have been otherwise infringed, you can contact the relevant data protection authority.',
+        contactTitle: '4. Contact',
+        responsiblePerson: 'Responsible for data processing on this website:',
+      },
+      de: {
+        legalNoticeTitle: 'Impressum',
+        privacyPolicyTitle: 'Datenschutzerklärung',
+        phone: 'Telefon',
+        email: 'E-Mail',
+        // Privacy Policy texts
+        privacyIntro:
+          'Der Schutz Ihrer personenbezogenen Daten ist mir sehr wichtig. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der geltenden gesetzlichen Bestimmungen (DSGVO, TMG). In dieser Datenschutzerklärung informiere ich Sie über die wichtigsten Aspekte der Datenverarbeitung auf dieser Website.',
+        generalTitle: '1. Allgemeine Informationen',
+        generalText:
+          'Diese Website dient als persönliche Portfolio-Seite und informiert über meine Arbeit als Webentwickler. Bei Ihrem Besuch werden keine Cookies gesetzt und keine Tracking-Technologien verwendet.',
+        contactFormTitle: '2. Kontaktformular',
+        contactFormText:
+          'Wenn Sie mich über das Kontaktformular auf dieser Website kontaktieren, werden die von Ihnen angegebenen Informationen (Name, E-Mail-Adresse, Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen gespeichert.',
+        dataSharing:
+          'Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.',
+        legalBasis:
+          'Die Rechtsgrundlage für die Verarbeitung Ihrer Daten ist Art. 6 Abs. 1 lit. b DSGVO (Verarbeitung zur Durchführung vorvertraglicher Maßnahmen).',
+        rightsTitle: '3. Ihre Rechte',
+        rightsIntro: 'Sie haben nach der DSGVO folgende Rechte:',
+        rights: [
+          'Recht auf Auskunft (Art. 15 DSGVO)',
+          'Recht auf Berichtigung (Art. 16 DSGVO)',
+          'Recht auf Löschung (Art. 17 DSGVO)',
+          'Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)',
+          'Recht auf Datenübertragbarkeit (Art. 20 DSGVO)',
+          'Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)',
+          'Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde',
+        ],
+        rightsNote:
+          'Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der zuständigen Datenschutzbehörde beschweren.',
+        contactTitle: '4. Kontakt',
+        responsiblePerson:
+          'Verantwortlich für die Datenverarbeitung auf dieser Website:',
       },
     },
     // Weitere Übersetzungen hier hinzufügen...
@@ -116,7 +270,7 @@ export class TranslationService {
     this.isGermanSubject.next(isGerman);
   }
 
-  getTranslation(section: string, key: string): string {
+  getTranslation(section: string, key: string): string | string[] {
     const language = this.isGermanSubject.value ? 'de' : 'en';
     return this.translations[section][language][key];
   }

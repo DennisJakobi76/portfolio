@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReferenceCardComponent } from './reference-card/reference-card.component';
 import { REFERENCES } from './reference.data';
+import { TranslationService } from '../shared/services/translation.service';
 
 @Component({
   selector: 'app-references',
@@ -13,6 +14,8 @@ import { REFERENCES } from './reference.data';
 export class ReferencesComponent {
   references = REFERENCES;
   currentSlideIndex = Math.floor(this.references.length / 2);
+
+  constructor(public translationService: TranslationService) {}
 
   get displayedReferences() {
     const len = this.references.length;

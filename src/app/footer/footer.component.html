@@ -9,8 +9,8 @@
 		</div>
 	</div>
 	<div class="footer-short-info">
-		<p>Web Developer</p>
-		<p>NRW Germany</p>
+		<p>{{ translationService.getTranslation('footer', 'job') }}</p>
+		<p>{{ translationService.getTranslation('footer', 'location') }}</p>
 	</div>
 </div>
 <div class="footer-parts">
@@ -31,7 +31,7 @@
 	</div>
 	<div class="footer-link-wrapper">
 		<img src="assets/icons/link_check_radio_button.png" alt="Point">
-		<a href="#" (click)="showImprint($event)">Legal Notice</a>
+		<a href="#" (click)="showImprint($event)">{{ translationService.getTranslation('footer', 'legalNotice') }}</a>
 	</div>
 
 </div>

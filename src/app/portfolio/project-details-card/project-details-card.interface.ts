@@ -1,7 +1,10 @@
 export interface ProjectDetails {
   id: string;
   title: string;
-  description: string;
+  description: {
+    en: string;
+    de: string;
+  };
   technologies: {
     name: string;
     iconSrc: string;

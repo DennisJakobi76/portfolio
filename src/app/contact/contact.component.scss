@@ -82,6 +82,7 @@
 }
 
 .contact-form-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -186,7 +187,12 @@ textarea:focus::placeholder {
 }
 
 .guests-email-error {
+  position: absolute;
   color: var(--error-color);
+  margin-top: 4px;
+  font-size: 14px;
+  bottom: -24px;
+  left: 32px;
 }
 
 .policy-error {

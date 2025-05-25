@@ -1,5 +1,8 @@
 export interface Reference {
   id: string;
-  text: string;
+  text: {
+    en: string;
+    de: string;
+  };
   author: string;
 }
