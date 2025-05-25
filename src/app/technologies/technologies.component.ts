@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { InfoCardComponent } from '../cards/info-card/info-card.component';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../shared/services/translation.service';
 
 @Component({
   selector: 'app-technologies',
+  standalone: true,
   imports: [InfoCardComponent, CommonModule],
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss',
@@ -11,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class TechnologiesComponent {
   skillIcons: { id: string; path: string; title: string }[] = [];
 
-  constructor() {
+  constructor(public translationService: TranslationService) {
     this.initSkillIcons();
   }
 
