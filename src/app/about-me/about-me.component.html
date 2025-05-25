@@ -3,8 +3,7 @@
 	<img src="assets/img/main_photo.jpg" alt="Photo" id="about-me-photo">
 </div>
 
-<app-info-card class="about-me-info-card" [title]="translationService.getTranslation('aboutMe', 'title')"
-	[headline]="translationService.getTranslation('aboutMe', 'headline')">
+<app-info-card class="about-me-info-card" [title]="getTitle()" [headline]="getHeadline()">
 	{{ translationService.getTranslation('aboutMe', 'intro') }}
 	<div class="about-me-content-container">
 		<div class="about-me-content-img-and-text-container">

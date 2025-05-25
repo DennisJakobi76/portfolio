@@ -12,4 +12,15 @@ import { TranslationService } from '../shared/services/translation.service';
 })
 export class AboutMeComponent {
   constructor(public translationService: TranslationService) {}
+
+  getTitle(): string {
+    return this.translationService.getTranslation('aboutMe', 'title') as string;
+  }
+
+  getHeadline(): string {
+    return this.translationService.getTranslation(
+      'aboutMe',
+      'headline'
+    ) as string;
+  }
 }
