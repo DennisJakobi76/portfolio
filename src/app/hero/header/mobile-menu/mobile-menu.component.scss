@@ -1,0 +1,18 @@
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 238px;
+  height: 252px;
+  border-radius: 30px;
+  border: 1px solid rgba(61, 207, 182, 1);
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 77px;
+  padding-right: 77px;
+  margin-top: 100px;
+}
