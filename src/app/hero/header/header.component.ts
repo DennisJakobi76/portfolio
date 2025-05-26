@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslationService } from '../../shared/services/translation.service';
 import { CommonModule } from '@angular/common';
-import { take } from 'rxjs/operators'; // Neuer Import für take
+import { take } from 'rxjs/operators';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component'; // Neuer Import für take
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, MobileMenuComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
