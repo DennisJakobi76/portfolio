@@ -82,6 +82,10 @@ main {
   margin-top: 248px;
 }
 
+#hero-mobile-email-link {
+  display: none;
+}
+
 #hero-github-link {
   background-image: url("../../../public/assets/icons/github_icon_default.png");
   background-size: contain;
@@ -224,5 +228,64 @@ main {
       width: 140px !important;
       min-width: 0 !important;
     }
+  }
+
+  .hero-container-email-right {
+    transform: rotate(0deg);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+  }
+
+  #hero-email-link {
+    display: none;
+  }
+  #hero-mobile-email-link {
+    display: flex;
+  }
+  #mobile-mail-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url("../../../public/assets/icons/mail_icon_default.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-image: url("../../../public/assets/icons/mail_icon_hover.png");
+    }
+  }
+
+  .hero-container-social-medialink {
+    display: flex;
+    align-items: center;
+
+    #email-point-container img {
+      transition: opacity 0.3s;
+    }
+
+    &:hover #email-point-container img,
+    &:hover #mobile-mail-icon {
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+  }
+
+  #email-point-container img {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-container-left,
+  .hero-container-right {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .hero-container-center {
+    width: calc(100% - 24px);
   }
 }
