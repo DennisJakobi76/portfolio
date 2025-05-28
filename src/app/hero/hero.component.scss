@@ -279,13 +279,35 @@ main {
 }
 
 @media (max-width: 360px) {
-  .hero-container-left,
-  .hero-container-right {
+  .hero-container-left {
     margin-left: 12px;
+  }
+  .hero-container-right {
     margin-right: 12px;
   }
 
   .hero-container-center {
-    width: calc(100% - 24px);
+    flex: none;
+    width: calc(100% - 90px);
+    // background: red;
+    > h1 {
+      font-size: 32px;
+    }
+  }
+
+  .title-button-container {
+    gap: 8px;
+    .primary-btn {
+      height: 32px;
+
+      width: 128px !important;
+      min-width: 0 !important;
+
+      > span {
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+      }
+    }
   }
 }
