@@ -127,3 +127,9 @@ a {
 ::placeholder {
   color: var(--primary-font-color);
 }
+
+@media (max-width: 1240px) {
+  body {
+    width: 100%;
+  }
+}
