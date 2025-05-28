@@ -184,3 +184,45 @@ main {
 .title-button-container button:hover span {
   transform: translateX(-140%);
 }
+
+@media (max-width: 920px) {
+  .hero-container-center {
+    > h2 {
+      font-size: 32px;
+    }
+    > h1 {
+      font-size: 62px;
+    }
+    gap: 8px;
+  }
+
+  .title-button-container {
+    justify-content: space-between;
+  }
+
+  .primary-btn {
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 470px) {
+  .hero-container-center {
+    > h2 {
+      font-size: 20px;
+    }
+    > h1 {
+      font-size: 40px;
+    }
+  }
+
+  .title-button-container {
+    gap: 12px;
+    .primary-btn {
+      height: 32px;
+      font-size: 12px;
+      width: 140px !important;
+      min-width: 0 !important;
+    }
+  }
+}
