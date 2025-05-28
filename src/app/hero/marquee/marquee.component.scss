@@ -36,3 +36,11 @@
     transform: translateX(-100%);
   }
 }
+
+@media (max-width: 360px) {
+  .hero-marquee {
+    height: 53px;
+    font-size: 24px;
+    bottom: 28px;
+  }
+}
