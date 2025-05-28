@@ -27,7 +27,6 @@
 				<img src="assets/icons/link_check_radio_button.png" alt="Point">
 			</div>
 		</div>
-		<app-mobile-menu></app-mobile-menu>
 	</div>
 
 	<div class="header-logo-container">
@@ -40,10 +39,15 @@
 		</div>
 	</div>
 
-	<div class="burger-menu-wrapper" (click)="toggleMobileMenu()" #burgerMenu>
-		<div class="burger-menu-img"></div>
+	<div class="header-menu-wrapper">
+		<div class="burger-menu-wrapper" (click)="toggleMobileMenu()" #burgerMenu>
+			<div class="burger-menu-img"></div>
+		</div>
+
+		<app-mobile-menu *ngIf="mobileMenuOpen" [style.position]="'absolute'" [style.right.px]="24"
+			[style.top.px]="72"></app-mobile-menu>
+
 
 	</div>
+
 </div>
-<app-mobile-menu *ngIf="mobileMenuOpen" [style.position]="'absolute'" [style.right.px]="24"
-	[style.top.px]="72"></app-mobile-menu>
