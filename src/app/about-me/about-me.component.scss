@@ -89,3 +89,28 @@ img {
   width: 32px;
   height: 32px;
 }
+
+@media (max-width: 1140px) {
+  img {
+    width: 358px;
+    height: 358px;
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me-info-card {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 375px) {
+  img {
+    width: 304px;
+    height: 304px;
+  }
+}

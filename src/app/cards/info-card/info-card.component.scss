@@ -42,3 +42,35 @@ h3 {
     margin-bottom: 24px;
   }
 }
+
+@media (max-width: 1140px) {
+  :host {
+    width: 358px;
+    height: 661px;
+  }
+
+  .info-card-body {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  :host {
+    width: 304px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .info-card-body {
+    > h1 {
+      font-size: 56px;
+      line-height: 80%;
+      letter-spacing: -3%;
+    }
+  }
+}
