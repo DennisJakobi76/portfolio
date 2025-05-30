@@ -132,9 +132,17 @@ p {
   width: 100%;
 }
 
+@media (max-width: 1300px) {
+  .technologies-container {
+    padding: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
 @media (max-width: 1140px) {
   .technologies-container {
-    margin-top: 80px;
+    margin-top: 240px;
   }
 
   .tech-skill-icon-container {
