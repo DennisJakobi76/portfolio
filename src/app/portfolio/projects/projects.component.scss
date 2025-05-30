@@ -1,3 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .projects-and-thumbnails-container {
   display: flex;
   margin-top: 32px;
@@ -77,6 +84,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .project-img-container {
@@ -126,4 +134,105 @@
   ~ .project-thumbnails-container
   #pokedex-project-thumbnail {
   display: block;
+}
+
+@media (max-width: 920px) {
+  .single-project-container {
+    width: calc(100% - 16px);
+  }
+
+  .project-img-container {
+    height: 150px;
+    width: 253.24px;
+  }
+
+  .project-img {
+    width: 253px;
+    height: 150px;
+  }
+
+  #join-project-thumbnail {
+    margin-left: 12px;
+  }
+
+  #el-pollo-loco-project-thumbnail {
+    margin-left: 12px;
+  }
+
+  #pokedex-project-thumbnail {
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-thumbnails-container {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .single-project-container {
+    padding: 40px 16px 40px 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .single-project-container {
+    width: calc(100% - 40px);
+    padding: 40px 8px 40px 8px;
+  }
+}
+
+@media (max-width: 570px) {
+  .single-project-container {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 520px) {
+  .single-project-container {
+    width: calc(100% - 130px);
+  }
+}
+
+@media (max-width: 470px) {
+  .single-project-container {
+    width: calc(100%);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-title-container {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+
+  .project-tech-name {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+}
+
+@media (max-width: 330px) {
+  .single-project-container {
+    width: calc(100% - 30px);
+  }
+
+  .project-title-container {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
+
+  .project-tech-name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0%;
+  }
 }
