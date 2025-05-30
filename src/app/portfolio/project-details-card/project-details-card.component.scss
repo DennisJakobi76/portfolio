@@ -342,11 +342,78 @@
   .project-details-container {
     flex-direction: column-reverse;
     align-items: center;
-    width: 100%;
+    width: 70%;
     height: auto;
     padding: 8px;
     gap: 24px;
     padding-bottom: 10px;
+    padding-left: 16px;
+  }
+  #project-details-card-right-side {
+    width: 100%;
+    align-items: flex-end;
+    padding-right: 16px;
+
+    > .details-card-img-container {
+      width: 100%;
+      align-self: center !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #project-details-card-left-side {
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .details-card-img-container {
+    > img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  .details-card-description-container {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .details-card-id-and-title-container {
+    gap: 0px;
+  }
+  .details-card-description-container {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .details-card-id {
+    font-size: 48px;
+    margin-bottom: -40px;
+  }
+  .details-card-title {
+    font-size: 24px;
+    margin-bottom: -40px;
+  }
+  .details-card-description {
+    font-size: 16px;
+    line-height: 1.4;
+    width: 100%;
+    margin-bottom: 40px;
+    white-space: pre-wrap;
+  }
+}
+
+@media (max-width: 570px) {
+  .project-details-container {
+    width: 100%;
+    padding: 16px;
+    gap: 16px;
+    height: auto;
   }
 
   #project-details-card-left-side,
@@ -356,6 +423,9 @@
   }
   #project-details-card-left-side {
     gap: 24px;
+  }
+  #project-details-card-right-side {
+    padding: 0;
   }
 
   .details-card-id-and-title-container {
@@ -367,6 +437,7 @@
     .details-card-id {
       font-size: 64px;
       height: auto;
+      margin-bottom: 8px;
     }
 
     .details-card-title {
@@ -374,6 +445,7 @@
       line-height: 1.1;
       width: 100%;
       height: auto;
+      margin-bottom: 8px;
     }
   }
 
@@ -394,6 +466,7 @@
     flex-wrap: wrap;
     gap: 12px;
     width: 100%;
+    margin-top: 24px;
 
     .details-tech-img-and-name-container {
       p {
@@ -464,5 +537,11 @@
       width: 24px;
       height: 24px;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .details-card-tech-container {
+    margin-top: 48px;
   }
 }
