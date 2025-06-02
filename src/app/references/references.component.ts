@@ -17,6 +17,14 @@ export class ReferencesComponent {
 
   constructor(public translationService: TranslationService) {}
 
+  /**
+   * Returns an array of three references representing the current, previous, and next slides.
+   * The references are positioned as 'left', 'center', and 'right', based on the current slide index.
+   * This method ensures a circular navigation over the references.
+   *
+   * @returns An array of reference objects with their respective positions.
+   */
+
   get displayedReferences() {
     const len = this.references.length;
     const left = (this.currentSlideIndex - 1 + len) % len;
@@ -31,6 +39,12 @@ export class ReferencesComponent {
 
   slideDirection: 'left' | 'right' | null = null;
 
+  /**
+   * Shows the next slide of the references carousel.
+   * The slide direction is set to 'left' to animate the slide out to the left.
+   * After a timeout of 300ms, the current slide index is incremented and wrapped around the array length.
+   * The slide direction is then set back to null to reset the animation.
+   */
   nextSlide(): void {
     this.slideDirection = 'left';
     setTimeout(() => {
@@ -40,6 +54,12 @@ export class ReferencesComponent {
     }, 300);
   }
 
+  /**
+   * Shows the previous slide of the references carousel.
+   * The slide direction is set to 'right' to animate the slide out to the right.
+   * After a timeout of 300ms, the current slide index is decremented and wrapped around the array length.
+   * The slide direction is then set back to null to reset the animation.
+   */
   prevSlide(): void {
     this.slideDirection = 'right';
     setTimeout(() => {

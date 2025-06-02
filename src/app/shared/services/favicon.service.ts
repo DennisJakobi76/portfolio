@@ -8,6 +8,12 @@ export class FaviconService {
     this.initFavicon();
   }
 
+  /**
+   * Initializes the favicon of the page by setting it to the right
+   * theme based on the user's system theme. Also sets up an event
+   * listener to watch for changes in the user's system theme and
+   * update the favicon accordingly.
+   */
   private initFavicon(): void {
     const favicon = document.getElementById('favicon') as HTMLLinkElement;
     if (

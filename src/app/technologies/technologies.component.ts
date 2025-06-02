@@ -17,6 +17,11 @@ export class TechnologiesComponent {
     this.initSkillIcons();
   }
 
+  /**
+   * Retrieves the title for the 'Technologies' section in the current language.
+   *
+   * @returns {string} The translated title string.
+   */
   getTitle(): string {
     return this.translationService.getTranslation(
       'technologies',
@@ -24,6 +29,11 @@ export class TechnologiesComponent {
     ) as string;
   }
 
+  /**
+   * Retrieves the headline for the 'Technologies' section in the current language.
+   *
+   * @returns {string} The translated headline string.
+   */
   getHeadline(): string {
     return this.translationService.getTranslation(
       'technologies',
@@ -31,6 +41,11 @@ export class TechnologiesComponent {
     ) as string;
   }
 
+  /**
+   * Initializes the skillIcons property by looping over an array of technology names, creating an object
+   * for each technology with an id, path to the icon and the title of the technology, and adding it to the
+   * skillIcons array.
+   */
   private initSkillIcons(): void {
     const skillIconNames = [
       'Angular',

@@ -1,5 +1,8 @@
+:host {
+  height: auto;
+}
+
 .technologies-container {
-  padding-top: 260px;
   padding-bottom: 180px;
 }
 
@@ -133,62 +136,4 @@ p {
   width: 100%;
 }
 
-@media (max-width: 1300px) {
-  .technologies-container {
-    padding: 40px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-  }
-}
-
-@media (max-width: 1140px) {
-  .technologies-container {
-    margin-top: 240px;
-  }
-
-  .tech-skill-icon-container {
-    gap: 40px;
-  }
-}
-
-@media (max-width: 770px) {
-  .technologies-content-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tech-skill-icon-container {
-    gap: 80px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 0%;
-  }
-}
-
-@media (max-width: 640px) {
-  .tech-skill-icon-container {
-    width: 100%;
-    height: auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
-    gap: 40px;
-  }
-
-  .skill-icon-img img {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 350px) {
-  .tech-skill-icon-container {
-    gap: 20px;
-  }
-
-  .skill-icon-and-title-container {
-    margin-bottom: 8px;
-  }
-}
+@import "./technologies-media-queries.scss";
