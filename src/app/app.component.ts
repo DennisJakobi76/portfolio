@@ -43,6 +43,14 @@ export class AppComponent {
   }
 
   @HostListener('document:mousemove', ['$event'])
+  /**
+   * Handles the document mouse move event and updates the CSS custom properties
+   * '--x' and '--y' with the current mouse position relative to the window size.
+   * The values are given in percent and are used to set the initial position of the
+   * cursor on the hero section.
+   *
+   * @param event The MouseEvent object.
+   */
   onMouseMove(event: MouseEvent) {
     const x = (event.clientX / window.innerWidth) * 100 + '%';
     const y = (event.clientY / window.innerHeight) * 100 + '%';
@@ -51,6 +59,12 @@ export class AppComponent {
     document.documentElement.style.setProperty('--y', y);
   }
 
+  /**
+   * Retrieves the rights array from the translation service for the 'imprint' key.
+   * If the value is not an array, an empty array is returned.
+   *
+   * @returns An array of strings containing the rights.
+   */
   getRights(): string[] {
     const rights = this.translationService.getTranslation('imprint', 'rights');
     return Array.isArray(rights) ? rights : [];

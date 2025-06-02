@@ -264,13 +264,26 @@ export class TranslationService {
           'Verantwortlich für die Datenverarbeitung auf dieser Website:',
       },
     },
-    // Weitere Übersetzungen hier hinzufügen...
+    // Insert further sections here as needed
   };
+
+  /**
+   * Sets the current language of the application.
+   *
+   * @param {boolean} isGerman - If true, switches the language to German; if false, switches to English.
+   */
 
   setLanguage(isGerman: boolean) {
     this.isGermanSubject.next(isGerman);
   }
 
+  /**
+   * Retrieves a translation for a given key from the given section.
+   *
+   * @param {string} section - The section of the translation object to retrieve the translation from.
+   * @param {string} key - The key of the translation to retrieve.
+   * @returns {string | string[]} The translation string or array of strings associated with the key.
+   */
   getTranslation(section: string, key: string): string | string[] {
     const language = this.isGermanSubject.value ? 'de' : 'en';
     return this.translations[section][language][key];

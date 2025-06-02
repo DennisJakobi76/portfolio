@@ -21,13 +21,28 @@ export class ProjectsComponent {
 
   constructor(private projectDetailsService: ProjectDetailsService) {}
 
+  /**
+   * Sets the active project to the given projectId. This will
+   * cause the corresponding thumbnail to become visible.
+   * @param projectId The id of the project to show.
+   */
   showThumbnail(projectId: string) {
     this.activeProject = projectId;
   }
 
+  /**
+   * Resets the active project, hiding any visible project thumbnail.
+   */
+
   hideThumbnail() {
     this.activeProject = null;
   }
+
+  /**
+   * Displays the details of the specified project by setting the project details
+   * in the ProjectDetailsService and making the project details component visible.
+   * @param project A string identifier for the project ('join', 'pollo', or 'pokedex').
+   */
 
   showDetails(project: string) {
     if (project === 'join') {
@@ -39,6 +54,10 @@ export class ProjectsComponent {
     }
     this.isProjectDetailsVisible = true;
   }
+
+  /**
+   * Hides the project details component by setting the visibility flag to false.
+   */
 
   closeDetails() {
     this.isProjectDetailsVisible = false;

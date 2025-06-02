@@ -45,10 +45,26 @@ export class ContactComponent {
     },
   };
 
+  /**
+   * Toggles the `confirmedPolicy` property.
+   *
+   * @returns {void}
+   */
   togglePolicy() {
     this.confirmedPolicy = !this.confirmedPolicy;
   }
 
+  /**
+   * Submits the contact form.
+   *
+   * This function is called when the submit button is clicked. It first checks if the form is invalid and if the policy checkbox is unchecked. If either condition is true, it will not submit the form.
+   *
+   * If the `mailTest` property is false and the policy checkbox is checked, it will send a POST request to the specified endpoint with the contact form data. If the request is successful, it will reset the form.
+   *
+   * If the `mailTest` property is true and the policy checkbox is checked, it will simply reset the form.
+   *
+   * @param ngForm The contact form.
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted) {
       if (ngForm.form.invalid) {
@@ -81,10 +97,25 @@ export class ContactComponent {
     }
   }
 
+  /**
+   * Sets the `focused.email` property to false and marks the email form control as touched when the email input field loses focus.
+   *
+   * @param email The email form control.
+   *
+   * @returns {void}
+   */
   onEmailBlur(email: any) {
     this.focused.email = false;
     email.control.markAsTouched();
   }
+
+  /**
+   * Toggles the visibility of the privacy policy imprint.
+   *
+   * This function calls the `toggleImprint` method from the `ImprintService`
+   * to change the imprint type to 'privacy', which displays the privacy policy
+   * to the user.
+   */
 
   showPrivacyPolicy() {
     this.imprintService.toggleImprint('privacy');

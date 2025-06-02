@@ -9,6 +9,10 @@ export class ProjectDetailsService {
   private showDetailsSource = new Subject<ProjectDetails>();
   showDetails$ = this.showDetailsSource.asObservable();
 
+  /**
+   * Publishes the given project details to all subscribers of the showDetails$ observable.
+   * @param project The project details to publish.
+   */
   showProjectDetails(project: ProjectDetails) {
     this.showDetailsSource.next(project);
   }

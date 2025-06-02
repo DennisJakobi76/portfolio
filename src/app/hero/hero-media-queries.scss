@@ -1,0 +1,121 @@
+@media (max-width: 920px) {
+  .hero-container-center {
+    > h2 {
+      font-size: 32px;
+    }
+    > h1 {
+      font-size: 62px;
+    }
+    gap: 8px;
+  }
+
+  .title-button-container {
+    justify-content: space-between;
+  }
+
+  .primary-btn {
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 470px) {
+  .hero-container-center {
+    > h2 {
+      font-size: 20px;
+    }
+    > h1 {
+      font-size: 40px;
+    }
+  }
+
+  .title-button-container {
+    gap: 12px;
+    .primary-btn {
+      height: 32px;
+      font-size: 12px;
+      width: 140px !important;
+      min-width: 0 !important;
+    }
+  }
+
+  .hero-container-email-right {
+    transform: rotate(0deg);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+  }
+
+  #hero-email-link {
+    display: none;
+  }
+  #hero-mobile-email-link {
+    display: flex;
+  }
+  #mobile-mail-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url("../../../public/assets/icons/mail_icon_default.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-image: url("../../../public/assets/icons/mail_icon_hover.png");
+    }
+  }
+
+  .hero-container-social-medialink {
+    display: flex;
+    align-items: center;
+
+    #email-point-container img {
+      transition: opacity 0.3s;
+    }
+
+    &:hover #email-point-container img,
+    &:hover #mobile-mail-icon {
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+  }
+
+  #email-point-container img {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-container-left {
+    margin-left: 12px;
+  }
+  .hero-container-right {
+    margin-right: 12px;
+  }
+
+  .hero-container-center {
+    flex: none;
+    width: calc(100% - 90px);
+    > h1 {
+      font-size: 32px;
+    }
+  }
+
+  .title-button-container {
+    gap: 8px;
+    .primary-btn {
+      height: 32px;
+
+      width: 128px !important;
+      min-width: 0 !important;
+
+      > span {
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

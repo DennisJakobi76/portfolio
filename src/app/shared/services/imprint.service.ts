@@ -15,6 +15,13 @@ export class ImprintService {
 
   showImprint$ = this.showImprintSubject.asObservable();
 
+  /**
+   * Toggles the visibility of the imprint card and updates its type.
+   *
+   * @param type The type of imprint to display, either 'legal' or 'privacy'.
+   *             Defaults to 'legal'.
+   */
+
   toggleImprint(type: 'legal' | 'privacy' = 'legal') {
     const currentValue = this.showImprintSubject.value;
     this.showImprintSubject.next({
