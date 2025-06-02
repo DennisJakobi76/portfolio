@@ -196,12 +196,11 @@ textarea:focus::placeholder {
 }
 
 .policy-error {
-  position: absolute;
-  bottom: 24px;
-  left: 32px;
   color: var(--error-color);
   text-align: left;
   font-size: 14px;
+  margin-top: 12px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 1300px) {
