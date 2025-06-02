@@ -154,7 +154,7 @@ export class TranslationService {
       },
       de: {
         title: 'Kontakt',
-        headline: 'Lass uns zusammenarbeiten',
+        headline: 'Lass es uns gemeinsam angehen',
         subtitle: 'Es gibt ein Problem zu lösen?',
         description:
           'Ob du eine Idee hast, die zum Leben erweckt werden soll, oder vor einer technischen Herausforderung stehst – ich bin hier, um zu helfen. Mit Leidenschaft für moderne Webtechnologien und Fokus auf maßgeschneiderte Lösungen unterstütze ich dich dabei, dein Projekt zum Erfolg zu führen.',
