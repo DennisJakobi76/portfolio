@@ -227,3 +227,28 @@ h2 {
     gap: 12px;
   }
 }
+
+@media (max-width: 390px) {
+  :host {
+    gap: 18px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .carousel-overlay {
+    .overlay-anchor {
+      width: 300px;
+    }
+    > img {
+      width: 32px;
+      height: 32px;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateX(-138px);
+    }
+  }
+
+  .carousel-controls-container {
+    margin-top: -16px;
+  }
+}
