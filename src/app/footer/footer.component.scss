@@ -1,12 +1,13 @@
 :host {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
+  position: relative;
   height: 198px;
   padding-left: 96px;
   padding-right: 96px;
   margin-top: 80px;
+  flex-wrap: wrap;
 }
 
 .footer-logo-container {
@@ -15,6 +16,7 @@
   align-items: center;
   gap: 5px;
   margin-bottom: 16px;
+  transition: all 0.3s ease-in-out;
 }
 
 .footer-logo-img {
@@ -37,10 +39,6 @@
     -1px 1px 0 var(--portfolio-bg), 1px 1px 0 var(--portfolio-bg);
 }
 
-.footer-logo-container {
-  transition: all 0.3s ease-in-out;
-}
-
 .footer-logo-container:hover {
   filter: invert(1);
 }
@@ -49,8 +47,26 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
   gap: 8px;
+}
+
+.footer-parts:nth-child(1) {
+  align-items: flex-start;
+}
+
+.footer-parts:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-parts:nth-child(3) {
+  align-items: flex-start;
+  margin-left: auto;
 }
 
 #footer-copyright {
@@ -71,12 +87,69 @@
   > img {
     opacity: 0;
   }
+
+  img {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
 }
 
-.footer-link-wrapper img {
-  transition: opacity 0.3s ease-in-out;
+@media (max-width: 700px) {
+  :host {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .footer-parts {
+    width: 45%;
+    position: static;
+    transform: none;
+  }
+
+  .footer-parts:nth-child(1) {
+    order: 1;
+  }
+
+  .footer-parts:nth-child(3) {
+    order: 2;
+    margin-left: 0;
+  }
+
+  .footer-parts:nth-child(2) {
+    order: 3;
+    width: 100%;
+    position: static;
+    transform: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
 }
 
-.footer-link-wrapper:hover img {
-  opacity: 1;
+@media (max-width: 480px) {
+  :host {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .footer-short-info {
+    font-size: 14px;
+  }
+
+  .footer-link-wrapper {
+    > a {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+
+  #footer-copyright {
+    font-size: 14px;
+  }
 }
