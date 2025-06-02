@@ -98,7 +98,7 @@
   width: 480px;
   height: 24px;
   gap: 16px;
-  margin-top: 20px; // Fügt Abstand nach oben hinzu
+  margin-top: 20px;
 }
 
 .details-tech-img-and-name-container {
@@ -198,8 +198,8 @@
   }
 
   .details-card-next-project-text {
-    width: auto; // Entfernt die feste Breite
-    min-width: 103px; // Optional: Mindestbreite beibehalten
+    width: auto;
+    min-width: 103px;
     height: 22px;
     font-family: "Karla";
     font-weight: 400;
@@ -210,7 +210,7 @@
     margin-right: -8px;
     color: var(--active-font-color);
     transition: all 0.2s ease-in-out;
-    white-space: nowrap; // Verhindert Zeilenumbruch
+    white-space: nowrap;
   }
 
   .details-card-next-project-arrow {
