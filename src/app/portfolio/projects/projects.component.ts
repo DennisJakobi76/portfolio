@@ -17,6 +17,7 @@ import {
 })
 export class ProjectsComponent {
   activeProject: string | null = null;
+  isProjectDetailsVisible = false;
 
   constructor(private projectDetailsService: ProjectDetailsService) {}
 
@@ -36,5 +37,10 @@ export class ProjectsComponent {
     } else if (project === 'pokedex') {
       this.projectDetailsService.showProjectDetails(POKEDEX_PROJECT);
     }
+    this.isProjectDetailsVisible = true;
+  }
+
+  closeDetails() {
+    this.isProjectDetailsVisible = false;
   }
 }

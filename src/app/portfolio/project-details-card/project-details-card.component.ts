@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {
   JOIN_PROJECT,
   EPL_PROJECT,
@@ -16,9 +16,9 @@ import { TranslationService } from '../../shared/services/translation.service';
   styleUrls: ['./project-details-card.component.scss'],
 })
 export class ProjectDetailsCardComponent implements OnInit {
+  @Output() close = new EventEmitter<void>();
   projectDatas = [JOIN_PROJECT, EPL_PROJECT, POKEDEX_PROJECT];
   projectDetails = POKEDEX_PROJECT;
-  isVisible = false;
 
   constructor(
     public translationService: TranslationService,
@@ -28,12 +28,11 @@ export class ProjectDetailsCardComponent implements OnInit {
   ngOnInit() {
     this.projectDetailsService.showDetails$.subscribe((project) => {
       this.projectDetails = project;
-      this.isVisible = true;
     });
   }
 
   closeCard() {
-    this.isVisible = false;
+    this.close.emit();
   }
 
   showNextProject() {
