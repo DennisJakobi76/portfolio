@@ -228,6 +228,20 @@ textarea:focus::placeholder {
   }
 }
 
+@media (max-width: 700px) {
+  #contact-title {
+    font-size: 18px;
+  }
+  .contact-left-side {
+    .contact-headline {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -3%;
+    }
+  }
+}
+
 @media (max-width: 500px) {
   #contact-title {
     font-size: 18px;
