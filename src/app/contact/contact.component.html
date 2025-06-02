@@ -34,7 +34,7 @@
 		</div>
 
 		<!-- Message section -->
-		<div class="contact-form-container">
+		<div class="contact-form-container" id="message-container">
 			<h2>{{ translationService.getTranslation('contact', 'messageQuestion') }}</h2>
 			<textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" required [placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ?
                     translationService.getTranslation('contact', 'messageError') :
