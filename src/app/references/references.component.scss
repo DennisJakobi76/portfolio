@@ -184,21 +184,46 @@ h2 {
   .carousel-overlay {
     width: 100%;
     .overlay-anchor {
-      width: 362px; // neue Card-Breite
+      width: 362px;
     }
     > img {
       left: 50%;
-      transform: translateX(-50%) translateX(-316x);
+      transform: translateX(-50%) translateX(-316px);
     }
   }
 
   .carousel-controls-container {
-    gap: 16px !important;
+    gap: 16px;
   }
 }
 
-@media (max-width: 900px) {
-  .carousel-track {
-    gap: -200px;
+@media (max-width: 700px) {
+  :host {
+    gap: 24px;
+  }
+  h2 {
+    align-self: center;
+    width: 320px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  .carousel-overlay {
+    .overlay-anchor {
+      width: 320px;
+    }
+    > img {
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) translateX(-138px);
+    }
+  }
+
+  .carousel-controls-container {
+    margin: 0;
+    gap: 12px;
   }
 }
