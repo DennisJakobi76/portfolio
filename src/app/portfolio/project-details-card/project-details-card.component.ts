@@ -18,12 +18,24 @@ import { TranslationService } from '../../shared/services/translation.service';
 export class ProjectDetailsCardComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
   projectDatas = [JOIN_PROJECT, EPL_PROJECT, POKEDEX_PROJECT];
-  projectDetails = POKEDEX_PROJECT;
+  projectDetails: typeof JOIN_PROJECT | null = null;
+
+  /**
+   * Creates an instance of ProjectDetailsCardComponent.
+   *
+   * @param {TranslationService} translationService - Service for handling translations.
+   * @param {ProjectDetailsService} projectDetailsService - Service for managing project details.
+   */
 
   constructor(
     public translationService: TranslationService,
     private projectDetailsService: ProjectDetailsService
   ) {}
+
+  /**
+   * Initializes the component by subscribing to the project details stream.
+   * Updates the project details when a new project is emitted.
+   */
 
   ngOnInit() {
     this.projectDetailsService.showDetails$.subscribe((project) => {
@@ -31,13 +43,22 @@ export class ProjectDetailsCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Emits a close event to close the project details card.
+   */
   closeCard() {
     this.close.emit();
   }
 
+  /**
+   * Updates `projectDetails` to the next project in the `projectDatas` array.
+   * Loops back to the first project if the current project is the last one.
+   */
+
   showNextProject() {
+    if (!this.projectDetails) return; // Falls noch kein Projekt geladen ist
     const currentIndex = this.projectDatas.findIndex(
-      (project) => project.id === this.projectDetails.id
+      (project) => project.id === this.projectDetails!.id
     );
     const nextIndex = (currentIndex + 1) % this.projectDatas.length;
     this.projectDetails = this.projectDatas[nextIndex];
