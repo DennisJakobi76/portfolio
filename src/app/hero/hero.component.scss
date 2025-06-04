@@ -44,13 +44,22 @@ main {
   color: rgba(255, 255, 255, 1);
 }
 
+.hero-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
 .hero-container-left-button {
   background-image: url("../../../public/assets/img/scroll_btn_default.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   width: 30px;
   height: 48px;
-  margin-top: 420px;
+  margin: 0 auto;
 
   transition: all 0.3s ease-in-out;
 
@@ -68,8 +77,6 @@ main {
 
 .hero-container-seperator {
   position: relative;
-  bottom: 0;
-  left: 50%;
   width: 2px;
   height: 310px;
   background-color: var(--active-font-color);
@@ -78,8 +85,7 @@ main {
 
 .hero-container-email-right {
   transform: rotate(-90deg);
-  margin-bottom: 24px;
-  margin-top: 248px;
+  margin-bottom: 108px;
 }
 
 #hero-mobile-email-link {
@@ -90,6 +96,7 @@ main {
   background-image: url("../../../public/assets/icons/github_icon_default.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-in-out;
@@ -106,6 +113,7 @@ main {
   background-image: url("../../../public/assets/icons/linkedin_icon_default.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   width: 32px;
   height: 32px;
   transition: all 0.3s ease-in-out;
@@ -123,6 +131,10 @@ main {
 
 .hero-container-right {
   width: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .hero-container-social-media-link {
