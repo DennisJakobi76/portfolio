@@ -1,21 +1,21 @@
-<div class="project-details-container">
+<div class="project-details-container" *ngIf="projectDetails as details">
 	<div id="project-details-card-left-side" class="project-details-card-side-wrapper">
 		<div class="details-card-id-and-title-container">
-			<span class="details-card-id">{{projectDetails.id}}</span>
-			<h3 class="details-card-title">{{projectDetails.title}}</h3>
+			<span class="details-card-id">{{ details.id }}</span>
+			<h3 class="details-card-title">{{ details.title }}</h3>
 		</div>
 		<div class="details-card-description-container">
 			<p class="details-card-description">
-				{{ projectDetails.description[(translationService.isGerman$ | async) ? 'de' : 'en'] }}
+				{{ details.description[(translationService.isGerman$ | async) ? 'de' : 'en'] }}
 			</p>
 			<div class="details-card-tech-container">
-				<div class="details-tech-img-and-name-container" *ngFor="let tech of projectDetails.technologies">
+				<div class="details-tech-img-and-name-container" *ngFor="let tech of details.technologies">
 					<img [src]="tech.iconSrc" [alt]="tech.iconAlt">
-					<p>{{tech.name}}</p>
+					<p>{{ tech.name }}</p>
 				</div>
 			</div>
 			<div class="details-link-buttons-container">
-				<a [href]="projectDetails.links.github" target="_blank" class="details-button">
+				<a [href]="details.links.github" target="_blank" class="details-button">
 					<div class="details-button-text-and-arrow-container">
 						<span>Github</span>
 						<div class="details-link-arrow-container">
@@ -23,7 +23,7 @@
 						</div>
 					</div>
 				</a>
-				<a [href]="projectDetails.links.live" target="_blank" class="details-button">
+				<a [href]="details.links.live" target="_blank" class="details-button">
 					<div class="details-button-text-and-arrow-container">
 						<span>Live Test</span>
 						<div class="details-link-arrow-container">
@@ -41,7 +41,7 @@
 			</div>
 		</div>
 		<div class="details-card-img-container">
-			<img [src]="projectDetails.detailImage.src" [alt]="projectDetails.detailImage.alt">
+			<img [src]="details.detailImage.src" [alt]="details.detailImage.alt">
 		</div>
 		<div class="details-card-next-project-btn-container" (click)="showNextProject()">
 			<div class="details-card-next-project-text">
