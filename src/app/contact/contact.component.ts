@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ImprintService } from '../shared/services/imprint.service';
@@ -32,16 +32,14 @@ export class ContactComponent {
   hasInput = false;
   emailPattern = '^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$';
   confirmedPolicy = false;
-  mailTest = true;
+  mailTest = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://dennisjakobi.net/Portfolio/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      responseType: 'text' as const,
     },
   };
 
@@ -65,6 +63,7 @@ export class ContactComponent {
    *
    * @param ngForm The contact form.
    */
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted) {
       if (ngForm.form.invalid) {
@@ -75,24 +74,27 @@ export class ContactComponent {
         return;
       }
 
-      if (!this.confirmedPolicy) {
-        return;
-      }
+      if (!this.confirmedPolicy) return;
 
-      if (!this.mailTest && this.confirmedPolicy) {
+      if (!this.mailTest) {
         this.http
-          .post(this.post.endPoint, this.post.body(this.contactData))
+          .post(
+            this.post.endPoint,
+            this.post.body(this.contactData),
+            this.post.options
+          )
           .subscribe({
             next: (response) => {
+              console.log('Antwort vom Server:', response);
               ngForm.resetForm();
             },
             error: (error) => {
-              console.error(error);
+              console.error('Fehler beim Senden:', error);
             },
-            complete: () => console.info('send post complete'),
+            complete: () => console.info('POST abgeschlossen'),
           });
-      } else if (this.mailTest && this.confirmedPolicy) {
-        ngForm.resetForm();
+      } else {
+        ngForm.resetForm(); // Nur Reset bei mailTest=true
       }
     }
   }
