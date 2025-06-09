@@ -1,44 +1,4 @@
-@media (max-width: 920px) {
-  .hero-container-center {
-    > h2 {
-      font-size: 32px;
-    }
-    > h1 {
-      font-size: 62px;
-    }
-    gap: 8px;
-  }
-
-  .title-button-container {
-    justify-content: space-between;
-  }
-
-  .primary-btn {
-    height: 40px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 470px) {
-  .hero-container-center {
-    > h2 {
-      font-size: 20px;
-    }
-    > h1 {
-      font-size: 40px;
-    }
-  }
-
-  .title-button-container {
-    gap: 12px;
-    .primary-btn {
-      height: 32px;
-      font-size: 12px;
-      width: 140px !important;
-      min-width: 0 !important;
-    }
-  }
-
+@media (max-width: 1060px) {
   .hero-container-email-right {
     transform: rotate(0deg);
     margin-bottom: 8px;
@@ -87,17 +47,44 @@
   }
 }
 
-@media (max-width: 360px) {
-  .hero-container-left {
-    margin-left: 12px;
-  }
-  .hero-container-right {
-    margin-right: 12px;
+@media (max-width: 920px) {
+  .hero-container-center {
+    > h2 {
+      font-size: 32px;
+    }
+    > h1 {
+      font-size: 62px;
+    }
+    gap: 8px;
   }
 
+  .title-button-container {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 470px) {
+  .hero-container-center {
+    > h2 {
+      font-size: 20px;
+    }
+    > h1 {
+      font-size: 40px;
+    }
+  }
+
+  .title-button-container {
+    gap: 12px;
+    .primary-btn {
+      width: 140px !important;
+      min-width: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 360px) {
   .hero-container-center {
     flex: none;
-    width: calc(100% - 90px);
     > h1 {
       font-size: 32px;
     }
@@ -106,13 +93,10 @@
   .title-button-container {
     gap: 8px;
     .primary-btn {
-      height: 32px;
-
       width: 128px !important;
       min-width: 0 !important;
 
       > span {
-        font-size: 12px;
         text-align: center;
         width: 100%;
       }
