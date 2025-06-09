@@ -11,6 +11,7 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   height: calc(100vh - 98px);
+  overflow: hidden;
 }
 
 .hero-container-center {
