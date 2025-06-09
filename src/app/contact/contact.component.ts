@@ -94,7 +94,7 @@ export class ContactComponent {
             complete: () => console.info('POST abgeschlossen'),
           });
       } else {
-        ngForm.resetForm(); // Nur Reset bei mailTest=true
+        ngForm.resetForm();
       }
     }
   }
