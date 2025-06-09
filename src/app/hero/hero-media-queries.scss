@@ -45,6 +45,44 @@
   #email-point-container img {
     opacity: 0;
   }
+
+  // BLA BLA
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    padding: 0 16px;
+  }
+
+  .hero-container-left,
+  .hero-container-right {
+    width: 45%;
+    position: static;
+    transform: none;
+  }
+
+  .hero-container-center {
+    order: 1;
+    width: 100%;
+    position: static;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .hero-container-left {
+    order: 2;
+  }
+
+  .hero-container-right {
+    order: 3;
+  }
 }
 
 @media (max-width: 920px) {
