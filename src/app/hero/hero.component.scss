@@ -164,7 +164,6 @@ main {
   justify-content: flex-end;
   align-items: center;
 }
-
 .link-check-point {
   display: flex;
   justify-content: center;
@@ -173,6 +172,13 @@ main {
   > img {
     opacity: 0;
   }
+}
+
+.eight-pixel-wrapper {
+  display: flex;
+}
+.eight-pixel-align {
+  width: 8px;
 }
 
 #github-point {
