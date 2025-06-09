@@ -83,7 +83,6 @@ a {
   align-items: center;
   min-width: 160px;
   height: 48px;
-  padding: 0 24px;
   color: var(--primary-font-color);
   border-radius: 100px;
   gap: 10px;
@@ -131,4 +130,32 @@ a {
 
 ::placeholder {
   color: var(--primary-font-color);
+}
+
+.btn-scroll-text {
+  overflow: hidden;
+
+  > span {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &:hover span {
+    animation: button-span-loop 1.8s infinite linear;
+  }
+
+  @keyframes button-span-loop {
+    0% {
+      transform: translateX(0);
+    }
+    49% {
+      transform: translateX(-200%);
+    }
+    50% {
+      transform: translateX(200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
