@@ -207,11 +207,25 @@ main {
 
 .title-button-container button span {
   display: inline-block;
-  transition: all 0.8s ease-in-out;
 }
 
 .title-button-container button:hover span {
-  transform: translateX(-140%);
+  animation: button-span-loop 1.8s infinite linear;
+}
+
+@keyframes button-span-loop {
+  0% {
+    transform: translateX(0);
+  }
+  49% {
+    transform: translateX(-200%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @import "./hero-media-queries.scss";
