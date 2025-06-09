@@ -9,12 +9,16 @@ main {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: calc(100vh - 98px);
   overflow: hidden;
+  width: 100%;
+  padding-left: 96px;
+  padding-right: 96px;
 }
 
 .hero-container-center {
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -51,6 +55,7 @@ main {
   justify-content: flex-end;
   align-items: center;
   height: 100%;
+  width: 48px;
 }
 
 .hero-container-left-button {
@@ -143,11 +148,11 @@ main {
 }
 
 .hero-container-right {
-  width: 48px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  width: 48px;
 }
 
 .hero-container-social-media-link {
