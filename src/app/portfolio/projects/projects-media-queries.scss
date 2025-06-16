@@ -64,21 +64,14 @@
 
   .project-arrow-container {
     > img {
-      padding-top: 8px;
+      padding-top: 6px;
     }
   }
 
   .project-tech-name {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 120%;
     letter-spacing: 0%;
-  }
-}
-
-// TODO: Add media queries for smaller screens
-@media (max-width: 340px) {
-  .portfolio-header {
-    width: 100%;
   }
 }
