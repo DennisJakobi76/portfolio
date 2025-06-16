@@ -38,57 +38,34 @@
   }
 }
 
-@media (max-width: 600px) {
-  .single-project-container {
-    width: calc(100% - 40px);
-    padding: 40px 8px 40px 8px;
-  }
-}
-
 @media (max-width: 570px) {
-  .single-project-container {
-    width: calc(100% - 80px);
-  }
-}
-
-@media (max-width: 520px) {
-  .single-project-container {
-    width: calc(100% - 130px);
-  }
-}
-
-@media (max-width: 470px) {
-  .single-project-container {
-    width: calc(100%);
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .project-title-container {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 120%;
     letter-spacing: 0%;
   }
 
   .project-tech-name {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     letter-spacing: 0%;
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 470px) {
   .single-project-container {
-    width: calc(100% - 30px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
   }
 
-  .project-title-container {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: 0%;
+  .project-arrow-container {
+    > img {
+      padding-top: 8px;
+    }
   }
 
   .project-tech-name {
@@ -96,5 +73,12 @@
     font-size: 14px;
     line-height: 120%;
     letter-spacing: 0%;
+  }
+}
+
+// TODO: Add media queries for smaller screens
+@media (max-width: 340px) {
+  .portfolio-header {
+    width: 100%;
   }
 }
