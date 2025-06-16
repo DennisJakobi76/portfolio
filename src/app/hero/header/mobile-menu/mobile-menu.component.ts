@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TranslationService } from '../../../shared/services/translation.service';
 import { take } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./mobile-menu.component.scss'],
 })
 export class MobileMenuComponent {
+  @Output() closeMenu = new EventEmitter<void>();
+
   constructor(public translationService: TranslationService) {}
 
   ngOnInit() {
