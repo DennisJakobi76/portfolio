@@ -1,7 +1,9 @@
 <div class="menu-container">
 	<div class="link-point-wrapper">
 		<div class="mobile-button">
-			<a href="#about-me-container">{{ translationService.getTranslation('header', 'aboutMe') }}</a>
+			<a href="#about-me-container" (click)="closeMenu.emit()">
+				{{ translationService.getTranslation('header', 'aboutMe') }}
+			</a>
 		</div>
 
 		<div id="header-about-me-point-container" class="header-point-container">
@@ -10,7 +12,9 @@
 	</div>
 	<div class="link-point-wrapper">
 		<div class="mobile-button">
-			<a href="#technologies-content-container">{{ translationService.getTranslation('header', 'skills') }}</a>
+			<a href="#technologies-content-container" (click)="closeMenu.emit()">
+				{{ translationService.getTranslation('header', 'skills') }}
+			</a>
 		</div>
 		<div id="header-skills-point-container" class="header-point-container">
 			<img src="assets/icons/link_check_radio_button.png" alt="Point">
@@ -18,7 +22,9 @@
 	</div>
 	<div class="link-point-wrapper">
 		<div class="mobile-button">
-			<a href="#featured-projects">{{ translationService.getTranslation('header', 'projects') }}</a>
+			<a href="#featured-projects" (click)="closeMenu.emit()">
+				{{ translationService.getTranslation('header', 'projects') }}
+			</a>
 		</div>
 		<div id="header-projects-point-container" class="header-point-container">
 			<img src="assets/icons/link_check_radio_button.png" alt="Point">
