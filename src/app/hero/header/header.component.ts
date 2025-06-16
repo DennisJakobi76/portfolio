@@ -102,4 +102,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.documentClickListener = null;
     }
   }
+
+  /**
+   * If the window is resized and the mobile menu is open, close the mobile menu
+   * and remove the document event listener that detects clicks outside of the
+   * menu. This ensures that the mobile menu is closed when the window is resized
+   * to a width larger than 670px.
+   */
+  @HostListener('window:resize', [])
+  onWindowResize() {
+    if (this.mobileMenuOpen && window.innerWidth > 670) {
+      this.mobileMenuOpen = false;
+      this.removeDocumentClickListener();
+    }
+  }
 }
