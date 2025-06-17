@@ -188,12 +188,8 @@ textarea:focus::placeholder {
 }
 
 .guests-email-error {
-  position: absolute;
   color: var(--error-color);
   margin-top: 4px;
-  font-size: 14px;
-  bottom: -24px;
-  left: 32px;
 }
 
 .policy-error {

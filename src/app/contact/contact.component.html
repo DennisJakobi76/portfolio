@@ -22,7 +22,7 @@
 		</div>
 
 		<!-- Email section -->
-		<div class="contact-form-container">
+		<div class="contact-form-container guests-email-container">
 			<h2>{{ translationService.getTranslation('contact', 'emailQuestion') }}</h2>
 			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email" required [placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ?
                 translationService.getTranslation('contact', 'emailRequired') :
