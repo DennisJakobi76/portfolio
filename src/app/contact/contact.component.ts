@@ -43,6 +43,9 @@ export class ContactComponent {
     },
   };
 
+  successMessage: string | null = null;
+  private successTimeout: any;
+
   /**
    * Toggles the `confirmedPolicy` property.
    *
@@ -85,18 +88,28 @@ export class ContactComponent {
           )
           .subscribe({
             next: (response) => {
-              console.log('Antwort vom Server:', response);
               ngForm.resetForm();
+              this.showSuccessMessage();
             },
-            error: (error) => {
-              console.error('Fehler beim Senden:', error);
-            },
-            complete: () => console.info('POST abgeschlossen'),
+            error: (error) => {},
           });
       } else {
         ngForm.resetForm();
+        this.showSuccessMessage();
       }
     }
+  }
+
+  showSuccessMessage() {
+    const msg = this.translationService.getTranslation(
+      'contact',
+      'successMessage'
+    );
+    this.successMessage = typeof msg === 'string' ? msg : null;
+    clearTimeout(this.successTimeout);
+    this.successTimeout = setTimeout(() => {
+      this.successMessage = null;
+    }, 4000);
   }
 
   /**

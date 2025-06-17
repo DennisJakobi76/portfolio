@@ -151,6 +151,7 @@ export class TranslationService {
         policyAgree: 'and agree to the processing of my data as outlined.',
         policyError: 'Please accept the privacy policy to continue.',
         submit: 'Say Hello ;)',
+        successMessage: 'Message sent successfully!',
       },
       de: {
         title: 'Kontakt',
@@ -179,6 +180,7 @@ export class TranslationService {
         policyError:
           'Bitte akzeptiere die Datenschutzerklärung um fortzufahren.',
         submit: 'Sag Hallo ;)',
+        successMessage: 'Nachricht erfolgreich versendet!',
       },
     },
     footer: {

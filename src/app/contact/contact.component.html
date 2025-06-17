@@ -62,4 +62,7 @@
 			<input class="primary-btn" type="submit" [value]="translationService.getTranslation('contact', 'submit')">
 		</div>
 	</form>
+	<div *ngIf="successMessage" class="success-notification">
+		{{ successMessage }}
+	</div>
 </div>
