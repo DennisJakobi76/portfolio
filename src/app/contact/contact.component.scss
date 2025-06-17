@@ -204,4 +204,25 @@ textarea:focus::placeholder {
   margin-bottom: 0;
 }
 
+.success-notification {
+  border: 1px solid rgba(61, 207, 182, 1);
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: var(--primary-font-color);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @import url("./contact-media-queries.scss");
