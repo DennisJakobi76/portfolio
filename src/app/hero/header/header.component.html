@@ -1,4 +1,4 @@
-<div class="header-main-row">
+<div id="top-header" class="header-main-row">
 	<div class="header-button-container">
 		<div class="header-button" id="language-switch" (click)="toggleLanguage()"
 			[class.german]="translationService.isGerman$ | async"></div>
@@ -44,12 +44,7 @@
 			<div class="burger-menu-img"></div>
 		</div>
 
-		<app-mobile-menu
-			*ngIf="mobileMenuOpen"
-			[style.position]="'absolute'"
-			[style.right.px]="8"
-			[style.top.px]="-50"
-			(closeMenu)="mobileMenuOpen = false"
-		></app-mobile-menu>
+		<app-mobile-menu *ngIf="mobileMenuOpen" [style.position]="'absolute'" [style.right.px]="8" [style.top.px]="-50"
+			(closeMenu)="mobileMenuOpen = false"></app-mobile-menu>
 	</div>
 </div>
