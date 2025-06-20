@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { ImprintService } from '../shared/services/imprint.service';
 import { TranslationService } from '../shared/services/translation.service';
 import { RouterLink } from '@angular/router';
 
@@ -15,7 +14,6 @@ import { RouterLink } from '@angular/router';
 })
 export class ContactComponent {
   http = inject(HttpClient);
-  private imprintService = inject(ImprintService);
   constructor(public translationService: TranslationService) {}
 
   contactData = {
@@ -123,17 +121,5 @@ export class ContactComponent {
   onEmailBlur(email: any) {
     this.focused.email = false;
     email.control.markAsTouched();
-  }
-
-  /**
-   * Toggles the visibility of the privacy policy imprint.
-   *
-   * This function calls the `toggleImprint` method from the `ImprintService`
-   * to change the imprint type to 'privacy', which displays the privacy policy
-   * to the user.
-   */
-
-  showPrivacyPolicy() {
-    this.imprintService.toggleImprint('privacy');
   }
 }
