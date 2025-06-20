@@ -42,12 +42,12 @@ export class TechnologiesComponent {
   }
 
   /**
-   * Initializes the skillIcons property by looping over an array of technology names, creating an object
-   * for each technology with an id, path to the icon and the title of the technology, and adding it to the
-   * skillIcons array.
+   * Retrieves a list of skill icon names to be used in the 'Technologies' section.
+   *
+   * @returns {string[]} A list of skill icon names.
    */
-  private initSkillIcons(): void {
-    const skillIconNames = [
+  private getSkillIconNames() {
+    return [
       'Angular',
       'C_Sharp',
       'CSS',
@@ -63,6 +63,18 @@ export class TechnologiesComponent {
       'TypeScript',
       'Growth Mindset',
     ];
+  }
+
+  /**
+   * Initializes the skill icons array with icon data.
+   *
+   * Iterates over the list of skill icon names and constructs an array of
+   * skill icon objects, each containing a unique id, the path to its image,
+   * and its title.
+   */
+
+  private initSkillIcons(): void {
+    const skillIconNames = this.getSkillIconNames();
 
     skillIconNames.forEach((iconName, index) => {
       this.skillIcons.push({

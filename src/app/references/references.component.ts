@@ -24,7 +24,6 @@ export class ReferencesComponent {
    *
    * @returns An array of reference objects with their respective positions.
    */
-
   get displayedReferences() {
     const len = this.references.length;
     const left = (this.currentSlideIndex - 1 + len) % len;

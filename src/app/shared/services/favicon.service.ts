@@ -9,20 +9,23 @@ export class FaviconService {
   }
 
   /**
-   * Initializes the favicon of the page by setting it to the right
-   * theme based on the user's system theme. Also sets up an event
-   * listener to watch for changes in the user's system theme and
-   * update the favicon accordingly.
+   * Returns whether the user prefers a dark color scheme.
+   *
+   * @returns True if the user prefers a dark color scheme, false otherwise.
    */
-  private initFavicon(): void {
-    const favicon = document.getElementById('favicon') as HTMLLinkElement;
-    if (
+  private isDarkModeActive() {
+    return (
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      favicon.href = 'favicon_dark_theme.png';
-    }
+    );
+  }
 
+  /**
+   * Sets the favicon based on the user's preferred color scheme.
+   *
+   * @param favicon The favicon element.
+   */
+  private setFaviconBasedOnColorScheme(favicon: HTMLLinkElement) {
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (e) => {
@@ -30,5 +33,19 @@ export class FaviconService {
           ? 'favicon_dark_theme.png'
           : 'favicon_light_theme.png';
       });
+  }
+
+  /**
+   * Initializes the favicon based on the user's preferred color scheme.
+   *
+   * Sets the favicon to the light or dark theme based on the user's preferred color scheme.
+   * Also sets up a listener to change the favicon when the user's preferred color scheme changes.
+   */
+  private initFavicon(): void {
+    const favicon = document.getElementById('favicon') as HTMLLinkElement;
+    if (this.isDarkModeActive()) {
+      favicon.href = 'favicon_dark_theme.png';
+    }
+    this.setFaviconBasedOnColorScheme(favicon);
   }
 }

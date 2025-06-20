@@ -201,7 +201,6 @@ export class TranslationService {
         privacyPolicyTitle: 'Privacy Policy',
         phone: 'Phone',
         email: 'Email',
-        // Privacy Policy texts
         privacyIntro:
           'Protecting your personal data is very important to me. I therefore process your data exclusively based on the applicable legal regulations (GDPR, TMG). This privacy policy informs you about the most important aspects of data processing on this website.',
         generalTitle: '1. General Information',
@@ -235,7 +234,6 @@ export class TranslationService {
         privacyPolicyTitle: 'Datenschutzerklärung',
         phone: 'Telefon',
         email: 'E-Mail',
-        // Privacy Policy texts
         privacyIntro:
           'Der Schutz Ihrer personenbezogenen Daten ist mir sehr wichtig. Ich verarbeite Ihre Daten daher ausschließlich auf Grundlage der geltenden gesetzlichen Bestimmungen (DSGVO, TMG). In dieser Datenschutzerklärung informiere ich Sie über die wichtigsten Aspekte der Datenverarbeitung auf dieser Website.',
         generalTitle: '1. Allgemeine Informationen',
@@ -266,7 +264,6 @@ export class TranslationService {
           'Verantwortlich für die Datenverarbeitung auf dieser Website:',
       },
     },
-    // Insert further sections here as needed
   };
 
   /**
@@ -274,7 +271,6 @@ export class TranslationService {
    *
    * @param {boolean} isGerman - If true, switches the language to German; if false, switches to English.
    */
-
   setLanguage(isGerman: boolean) {
     this.isGermanSubject.next(isGerman);
   }

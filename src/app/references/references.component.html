@@ -1,5 +1,4 @@
 <h2>{{ translationService.getTranslation('references', 'title') }}</h2>
-
 <div class="carousel-shadow-wrapper">
 	<div class="carousel-overlay">
 		<div class="overlay-anchor"></div>
@@ -14,15 +13,12 @@
 		</div>
 	</div>
 </div>
-
 <div class="carousel-controls-container">
 	<button id="prev-button" (click)="prevSlide()">
 		<img src="assets/icons/arrow_left_default.png" alt="Arrow Left Icon" />
 	</button>
-
 	<div class="control-point" *ngFor="let ref of references; let i = index" [class.active]="i === currentSlideIndex">
 	</div>
-
 	<button id="next-button" (click)="nextSlide()">
 		<img src="assets/icons/arrow_right_default.png" alt="Arrow Right Icon" />
 	</button>

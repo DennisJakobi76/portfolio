@@ -55,50 +55,97 @@ export class ContactComponent {
   }
 
   /**
-   * Submits the contact form.
+   * Checks if the form is valid and marks all invalid controls as touched.
    *
-   * This function is called when the submit button is clicked. It first checks if the form is invalid and if the policy checkbox is unchecked. If either condition is true, it will not submit the form.
-   *
-   * If the `mailTest` property is false and the policy checkbox is checked, it will send a POST request to the specified endpoint with the contact form data. If the request is successful, it will reset the form.
-   *
-   * If the `mailTest` property is true and the policy checkbox is checked, it will simply reset the form.
-   *
-   * @param ngForm The contact form.
+   * @param ngForm The form to check.
+   * @returns {boolean} True if the form is valid, false otherwise.
    */
+  checkIsFormValid(ngForm: NgForm) {
+    if (ngForm.form.invalid) {
+      Object.keys(ngForm.form.controls).forEach((key) => {
+        const control = ngForm.form.get(key);
+        control?.markAsTouched();
+      });
+      return false;
+    } else {
+      return true;
+    }
+  }
 
+  /**
+   * Checks if the user confirmed the privacy policy.
+   *
+   * @returns {boolean} True if the user confirmed the privacy policy, false otherwise.
+   */
+  checkIsPolicyConfirmed() {
+    if (!this.confirmedPolicy) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  /**
+   * Resets the form and shows a success message.
+   *
+   * @param ngForm The form to reset.
+   * @returns {void}
+   */
+  resetFormAndShowSuccessMessage(ngForm: NgForm) {
+    ngForm.resetForm();
+    this.showSuccessMessage();
+  }
+
+  /**
+   * Posts the contact data to the mail server and resets the form and shows a success message on success.
+   *
+   * @param ngForm The form to reset.
+   * @returns {void}
+   */
+  postMessageAsMail(ngForm: NgForm) {
+    this.http
+      .post(
+        this.post.endPoint,
+        this.post.body(this.contactData),
+        this.post.options
+      )
+      .subscribe({
+        next: () => {
+          this.resetFormAndShowSuccessMessage(ngForm);
+        },
+      });
+  }
+
+  /**
+   * Called when the form is submitted.
+   * Checks if the form is valid and if the policy is confirmed.
+   * If the mail test is set, it resets the form and shows a success message.
+   * Otherwise, it posts the contact data to the mail server and resets the form and shows a success message on success.
+   * @param ngForm The form to check and reset.
+   * @returns {void}
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted) {
-      if (ngForm.form.invalid) {
-        Object.keys(ngForm.form.controls).forEach((key) => {
-          const control = ngForm.form.get(key);
-          control?.markAsTouched();
-        });
-        return;
-      }
+      if (!this.checkIsFormValid(ngForm)) return;
 
-      if (!this.confirmedPolicy) return;
+      if (!this.checkIsPolicyConfirmed()) return;
 
       if (!this.mailTest) {
-        this.http
-          .post(
-            this.post.endPoint,
-            this.post.body(this.contactData),
-            this.post.options
-          )
-          .subscribe({
-            next: (response) => {
-              ngForm.resetForm();
-              this.showSuccessMessage();
-            },
-            error: (error) => {},
-          });
+        this.postMessageAsMail(ngForm);
       } else {
-        ngForm.resetForm();
-        this.showSuccessMessage();
+        this.resetFormAndShowSuccessMessage(ngForm);
       }
     }
   }
 
+  /**
+   * Shows the success message.
+   *
+   * This function gets the success message translation and sets the `successMessage` property to it. It also clears any previous timeout and sets a new one to hide the success message after 4 seconds.
+   *
+   * @returns {void}
+   */
+  /*******  fa563eae-975d-4712-91f8-baa73452e26d  *******/
   showSuccessMessage() {
     const msg = this.translationService.getTranslation(
       'contact',

@@ -31,6 +31,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private elementRef: ElementRef
   ) {}
 
+  /**
+   * Subscribes to the current language state and sets the language switch
+   * element's class to 'german' if the language is German, or removes the
+   * class if the language is not German.
+   */
   ngOnInit() {
     this.translationService.isGerman$.subscribe((isGerman) => {
       const languageSwitch = document.getElementById('language-switch');
@@ -40,16 +45,30 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**
+   * Removes the document-level click event listener to prevent memory leaks
+   * when the component is destroyed.
+   */
   ngOnDestroy() {
     this.removeDocumentClickListener();
   }
 
+  /**
+   * Toggles the language of the application between German and the default language
+   * by subscribing to the current language state and setting it to the opposite value.
+   */
   toggleLanguage() {
     this.translationService.isGerman$.pipe(take(1)).subscribe((isGerman) => {
       this.translationService.setLanguage(!isGerman);
     });
   }
 
+  /**
+   * Toggles the visibility of the mobile menu. If the menu is opened, it adds a
+   * document-level click event listener to close the menu when a click is
+   * detected outside of it. If the menu is closed, it removes the click event
+   * listener.
+   */
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
     if (this.mobileMenuOpen) {
@@ -60,27 +79,62 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Adds an event listener to the document to detect clicks outside of the
-   * mobile menu. When a click is detected outside of the menu, the mobile menu
-   * is closed.
+   * Returns an object containing the menu element and the burger menu element.
+   *
+   * These elements are used to determine if a click is outside of the mobile menu
+   * to close it.
+   *
+   * @returns {Object} with properties menuEl and burgerEl
+   */
+  private getMenuAndBurgerElements() {
+    const menuEl = this.elementRef.nativeElement.querySelector(
+      'app-mobile-menu .menu-container'
+    );
+    const burgerEl = this.elementRef.nativeElement.querySelector(
+      '.burger-menu-wrapper'
+    );
+    return { menuEl, burgerEl };
+  }
+
+  /**
+   * Checks if a click is outside of the mobile menu.
+   *
+   * @param {Element} menuEl - The menu element.
+   * @param {MouseEvent} event - The event object of the click event.
+   * @param {Element} burgerEl - The burger menu element.
+   * @returns {boolean} - True if the click is outside of the menu, false otherwise.
+   */
+  private isClickOutsideMenu(menuEl: any, event: MouseEvent, burgerEl: any) {
+    return (
+      menuEl &&
+      !menuEl.contains(event.target as Node) &&
+      burgerEl &&
+      !burgerEl.contains(event.target as Node)
+    );
+  }
+
+  /**
+   * Closes the mobile menu by setting its visibility to false and removing the
+   * document-level click event listener.
+   */
+  private closeMobileMenu() {
+    this.mobileMenuOpen = false;
+    this.removeDocumentClickListener();
+  }
+
+  /**
+   * Adds a document-level event listener that detects clicks outside of the
+   * mobile menu and closes the menu if a click is detected. The event listener
+   * is set to capture phase to prevent the event from bubbling up the DOM tree.
+   * This is necessary because the menu is not a descendant of the element that
+   * triggered the event (the document). If the click is outside of the menu, the
+   * mobile menu is closed and the event listener is removed from the document.
    */
   addDocumentClickListener() {
     this.documentClickListener = (event: MouseEvent) => {
-      // Finde das menu-container-Element innerhalb von app-mobile-menu
-      const menuEl = this.elementRef.nativeElement.querySelector(
-        'app-mobile-menu .menu-container'
-      );
-      const burgerEl = this.elementRef.nativeElement.querySelector(
-        '.burger-menu-wrapper'
-      );
-      if (
-        menuEl &&
-        !menuEl.contains(event.target as Node) &&
-        burgerEl &&
-        !burgerEl.contains(event.target as Node)
-      ) {
-        this.mobileMenuOpen = false;
-        this.removeDocumentClickListener();
+      const { menuEl, burgerEl } = this.getMenuAndBurgerElements();
+      if (this.isClickOutsideMenu(menuEl, event, burgerEl)) {
+        this.closeMobileMenu();
       }
     };
     document.addEventListener('mousedown', this.documentClickListener, true);

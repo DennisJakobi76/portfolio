@@ -33,7 +33,6 @@ export class ProjectsComponent {
   /**
    * Resets the active project, hiding any visible project thumbnail.
    */
-
   hideThumbnail() {
     this.activeProject = null;
   }
@@ -43,7 +42,6 @@ export class ProjectsComponent {
    * in the ProjectDetailsService and making the project details component visible.
    * @param project A string identifier for the project ('join', 'pollo', or 'pokedex').
    */
-
   showDetails(project: string) {
     if (project === 'join') {
       this.projectDetailsService.showProjectDetails(JOIN_PROJECT);
@@ -58,7 +56,6 @@ export class ProjectsComponent {
   /**
    * Hides the project details component by setting the visibility flag to false.
    */
-
   closeDetails() {
     this.isProjectDetailsVisible = false;
   }

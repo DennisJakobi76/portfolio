@@ -12,7 +12,6 @@
 </div>
 <div class="contact-right-side">
 	<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
-		<!-- Name section -->
 		<div class="contact-form-container guests-name-container">
 			<h2>{{ translationService.getTranslation('contact', 'nameQuestion') }}</h2>
 			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required [placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ?
@@ -20,8 +19,6 @@
                     translationService.getTranslation('contact', 'namePlaceholder')" id="guests-name"
 				(focus)="focused.name = true" (blur)="focused.name = false">
 		</div>
-
-		<!-- Email section -->
 		<div class="contact-form-container guests-email-container">
 			<h2>{{ translationService.getTranslation('contact', 'emailQuestion') }}</h2>
 			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email" required [placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ?
@@ -32,8 +29,6 @@
 				{{ translationService.getTranslation('contact', 'emailInvalid') }}
 			</p>
 		</div>
-
-		<!-- Message section -->
 		<div class="contact-form-container" id="message-container">
 			<h2>{{ translationService.getTranslation('contact', 'messageQuestion') }}</h2>
 			<textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" required [placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ?
@@ -41,8 +36,6 @@
                     translationService.getTranslation('contact', 'messagePlaceholder')"
 				(focus)="focused.message = true" (blur)="focused.message = false"></textarea>
 		</div>
-
-		<!-- Policy section -->
 		<div class="confirm-policy-container">
 			<div id="confirm-policy-checkbox">
 				<img [src]="confirmedPolicy ? 'assets/icons/check_box_checked_default.png' : 'assets/icons/check_box_default.png'"
@@ -56,8 +49,6 @@
 		<p class="policy-error" *ngIf="!confirmedPolicy && contactForm.submitted">
 			{{ translationService.getTranslation('contact', 'policyError') }}
 		</p>
-
-		<!-- Submit button -->
 		<div class="contact-form-container contact-btn-container">
 			<input class="primary-btn" type="submit" [value]="translationService.getTranslation('contact', 'submit')">
 		</div>

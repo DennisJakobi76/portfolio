@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'Dennis Jakobi';
-  // type: 'legal' | 'privacy' = 'legal';
 
   @HostListener('document:mousemove', ['$event'])
   /**

@@ -1,7 +1,7 @@
 :root {
   --portfolio-bg: rgba(28, 28, 28, 1);
   --active-font-color: rgba(61, 207, 182, 1);
-  --primary-font-color: rgba(217, 217, 2127, 1);
+  --primary-font-color: rgba(217, 217, 255, 1);
   --banner-bg: #434343;
   --cursor-shadow-color: rgba(48, 112, 102, 1);
   --white-text: rgba(255, 255, 255, 1);
@@ -76,7 +76,7 @@ a {
 }
 
 .primary-btn {
-  border: 1px solid rgba(255, 255, 255, 1);
+  border: 1px solid var(--white-text);
   background: none;
   display: flex;
   justify-content: center;

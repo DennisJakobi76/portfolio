@@ -15,8 +15,10 @@ export class MobileMenuComponent {
 
   constructor(public translationService: TranslationService) {}
 
+  /**
+   * Toggles the language switch button class based on the current language.
+   */
   ngOnInit() {
-    // Initialer Zustand
     this.translationService.isGerman$.subscribe((isGerman) => {
       const languageSwitch = document.getElementById('mobile-language-switch');
       if (languageSwitch) {
@@ -24,6 +26,11 @@ export class MobileMenuComponent {
       }
     });
   }
+
+  /**
+   * Toggles the language of the application between German and the default language
+   * by subscribing to the current language state and setting it to the opposite value.
+   */
   toggleLanguage() {
     this.translationService.isGerman$.pipe(take(1)).subscribe((isGerman) => {
       this.translationService.setLanguage(!isGerman);
