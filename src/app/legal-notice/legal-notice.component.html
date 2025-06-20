@@ -1,0 +1,25 @@
+<div class="imprint-container">
+	<div class="impress-card-close-btn-container">
+		<div class="close-btn-container">
+			<div class="close-btn" [routerLink]="['/']"></div>
+		</div>
+	</div>
+
+
+
+	<div class="legal-notice">
+		<h1>{{ translationService.getTranslation('imprint', 'legalNoticeTitle') }}</h1>
+		<div>
+			<p>Dennis Jakobi<br />
+				Gartenstraße 90<br />45699 Herten</p>
+		</div>
+		<div>
+			<p>
+				{{ translationService.getTranslation('imprint', 'phone') }}: +4917687903079<br />
+				{{ translationService.getTranslation('imprint', 'email') }}:
+				<a href="mailto:info@dennisjakobi.net">info&#64;dennisjakobi.net</a><br />
+			</p>
+		</div>
+	</div>
+
+</div>
