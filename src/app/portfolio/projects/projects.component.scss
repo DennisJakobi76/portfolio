@@ -22,8 +22,7 @@
 }
 
 .single-project-container {
-  width: 100%;
-  height: 109px;
+  width: 880px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,6 +94,7 @@
   position: relative;
   height: 192px;
   width: 292.24px;
+  margin-right: 80px;
   border-radius: 16px;
   background-image: url("../../../../public/assets/img/project_thumbnails/project_thumbnail_bg.png");
   display: none;
