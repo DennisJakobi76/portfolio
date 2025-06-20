@@ -11,7 +11,7 @@ export class TranslationService {
   translations: {
     [section: string]: {
       [language: string]: {
-        [key: string]: string | string[]; // Erlaubt sowohl Strings als auch String-Arrays
+        [key: string]: string | string[];
       };
     };
   } = {
