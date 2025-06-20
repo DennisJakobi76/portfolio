@@ -49,7 +49,7 @@
 					alt="Checkbox" (click)="togglePolicy()">
 			</div>
 			<label>{{ translationService.getTranslation('contact', 'policyText') }}
-				<span (click)="showPrivacyPolicy()">{{ translationService.getTranslation('contact', 'policyLink')
+				<span [routerLink]="['/privacy']">{{ translationService.getTranslation('contact', 'policyLink')
 					}}</span>
 				{{ translationService.getTranslation('contact', 'policyAgree') }}</label>
 		</div>
