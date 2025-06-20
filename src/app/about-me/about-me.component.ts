@@ -18,7 +18,6 @@ export class AboutMeComponent {
    *
    * @returns {string} The translated title string.
    */
-
   getTitle(): string {
     return this.translationService.getTranslation('aboutMe', 'title') as string;
   }

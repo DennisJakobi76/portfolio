@@ -72,8 +72,5 @@
 		</div>
 	</div>
 </div>
-
-<app-project-details-card
-  *ngIf="isProjectDetailsVisible"
-  (close)="closeDetails()">
+<app-project-details-card *ngIf="isProjectDetailsVisible" (close)="closeDetails()">
 </app-project-details-card>

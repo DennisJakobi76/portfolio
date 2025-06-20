@@ -20,13 +20,6 @@ export class ProjectDetailsCardComponent implements OnInit {
   projectDatas = [JOIN_PROJECT, EPL_PROJECT, POKEDEX_PROJECT];
   projectDetails: typeof JOIN_PROJECT | null = null;
 
-  /**
-   * Creates an instance of ProjectDetailsCardComponent.
-   *
-   * @param {TranslationService} translationService - Service for handling translations.
-   * @param {ProjectDetailsService} projectDetailsService - Service for managing project details.
-   */
-
   constructor(
     public translationService: TranslationService,
     private projectDetailsService: ProjectDetailsService
@@ -36,7 +29,6 @@ export class ProjectDetailsCardComponent implements OnInit {
    * Initializes the component by subscribing to the project details stream.
    * Updates the project details when a new project is emitted.
    */
-
   ngOnInit() {
     this.projectDetailsService.showDetails$.subscribe((project) => {
       this.projectDetails = project;
@@ -54,7 +46,6 @@ export class ProjectDetailsCardComponent implements OnInit {
    * Updates `projectDetails` to the next project in the `projectDatas` array.
    * Loops back to the first project if the current project is the last one.
    */
-
   showNextProject() {
     if (!this.projectDetails) return; // Falls noch kein Projekt geladen ist
     const currentIndex = this.projectDatas.findIndex(

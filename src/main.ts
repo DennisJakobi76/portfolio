@@ -6,7 +6,10 @@ bootstrapApplication(AppComponent, appConfig).catch((err) =>
   console.error(err)
 );
 
-// Initial favicon setup based on system theme
+/**
+ * This code sets the favicon based on the user's preferred color scheme.
+ * It checks if the user prefers a dark theme and sets the favicon accordingly.
+ */
 const favicon = document.getElementById('favicon') as HTMLLinkElement | null;
 if (
   window.matchMedia &&
@@ -17,7 +20,10 @@ if (
   }
 }
 
-// Watch for theme changes
+/**
+ * Sets the favicon based on the user's preferred color scheme.
+ * It listens for changes in the user's color scheme preference and updates the favicon accordingly.
+ **/
 window
   .matchMedia('(prefers-color-scheme: dark)')
   .addEventListener('change', (e) => {
