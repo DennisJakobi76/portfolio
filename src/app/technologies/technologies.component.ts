@@ -30,6 +30,19 @@ export class TechnologiesComponent {
   }
 
   /**
+   * Replaces the skill icon name 'dot_NET' with '.NET' for a consistent display.
+   *
+   * @param {string} iconName The skill icon name to be replaced.
+   * @returns {string} The replaced skill icon name.
+   */
+  changeIconNameDotNet(iconName: string) {
+    if (iconName === 'dot_NET') {
+      return '.NET';
+    }
+    return iconName;
+  }
+
+  /**
    * Retrieves the headline for the 'Technologies' section in the current language.
    *
    * @returns {string} The translated headline string.
@@ -56,7 +69,7 @@ export class TechnologiesComponent {
       'HTML',
       'JavaScript',
       'Material Design',
-      '.NET',
+      'dot_NET',
       'Rest-Api',
       'Scrum',
       'SQL',
@@ -72,7 +85,6 @@ export class TechnologiesComponent {
    * skill icon objects, each containing a unique id, the path to its image,
    * and its title.
    */
-
   private initSkillIcons(): void {
     const skillIconNames = this.getSkillIconNames();
 
@@ -80,7 +92,7 @@ export class TechnologiesComponent {
       this.skillIcons.push({
         id: `skill-icon-${index}`,
         path: `assets/icons/skill_icons/${iconName}.png`,
-        title: iconName,
+        title: this.changeIconNameDotNet(iconName),
       });
     });
   }
