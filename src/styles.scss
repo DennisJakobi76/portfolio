@@ -29,6 +29,8 @@
 
 html,
 body {
+  width: 100%;
+  min-height: 100vh;
   font-family: "Fira Code", "Karla", sans-serif;
   color: var(--primary-font-color);
   background-color: var(--portfolio-bg);
@@ -40,16 +42,12 @@ body {
 }
 
 html {
-  background-color: var(--portfolio-bg);
-  width: 100%;
-  min-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 body {
-  width: 100%;
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 .display-none {
