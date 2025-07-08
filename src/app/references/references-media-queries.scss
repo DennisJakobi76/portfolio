@@ -8,9 +8,9 @@
     text-align: center;
   }
 
-  .carousel-shadow-wrapper {
-    width: 100%;
-  }
+  // .carousel-shadow-wrapper {
+  //   width: 100%;
+  // }
   .carousel-overlay {
     width: 100%;
     .overlay-anchor {
@@ -60,7 +60,7 @@
 
 @media (max-width: 390px) {
   :host {
-    gap: 18px;
+    gap: 16px;
   }
   h2 {
     font-size: 20px;
@@ -81,4 +81,8 @@
   .carousel-controls-container {
     margin-top: -16px;
   }
+
+  // .carousel-track {
+  //   overflow: hidden;
+  // }
 }
