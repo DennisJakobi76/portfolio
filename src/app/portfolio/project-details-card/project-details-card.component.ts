@@ -47,7 +47,7 @@ export class ProjectDetailsCardComponent implements OnInit {
    * Loops back to the first project if the current project is the last one.
    */
   showNextProject() {
-    if (!this.projectDetails) return; // Falls noch kein Projekt geladen ist
+    if (!this.projectDetails) return;
     const currentIndex = this.projectDatas.findIndex(
       (project) => project.id === this.projectDetails!.id
     );
