@@ -65,7 +65,7 @@ function createFirefly() {
  * after 1 second of being invisible.
  **/
 function handleScroll() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 2; i++) {
     createFirefly();
   }
 
