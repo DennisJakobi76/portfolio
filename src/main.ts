@@ -37,13 +37,17 @@ window
 const fireflyOverlay = document.getElementById('firefly-overlay');
 let scrollTimeout: any;
 
+/**
+ * Creates a new firefly element with a random position and adds it to the
+ * firefly overlay. The firefly will fade out after a random time between 2 and
+ * 4 seconds, and will be removed from the DOM after 1 second of being invisible.
+ */
 function createFirefly() {
   const firefly = document.createElement('div');
   firefly.classList.add('firefly');
   firefly.style.left = `${Math.random() * window.innerWidth}px`;
   firefly.style.top = `${Math.random() * window.innerHeight}px`;
 
-  // Optional: individuelle Flugrichtung per CSS-Variante
   firefly.style.setProperty('--x', `${Math.random() * 100}%`);
   firefly.style.setProperty('--y', `${Math.random() * 100}%`);
 
@@ -52,9 +56,14 @@ function createFirefly() {
   setTimeout(() => {
     firefly.style.opacity = '0';
     setTimeout(() => firefly.remove(), 1000);
-  }, 2000 + Math.random() * 2000); // bleibt 2–4s sichtbar
+  }, 2000 + Math.random() * 2000);
 }
 
+/**
+ * Handles the window scroll event and creates a set of fireflies at random positions on the
+ * screen. The fireflies will fade out after a short delay, and will be removed from the DOM
+ * after 1 second of being invisible.
+ **/
 function handleScroll() {
   for (let i = 0; i < 5; i++) {
     createFirefly();
@@ -64,7 +73,7 @@ function handleScroll() {
   scrollTimeout = setTimeout(() => {
     const fireflies = document.querySelectorAll('.firefly');
     fireflies.forEach((f) => ((f as HTMLElement).style.opacity = '0'));
-  }, 300); // 300ms nach Scrollende werden Glühwürmchen ausgeblendet
+  }, 300);
 }
 
 window.addEventListener('scroll', handleScroll);
