@@ -50,6 +50,11 @@ body {
   overflow: hidden;
 }
 
+#hero-bg {
+  width: 100%;
+  height: 100vh;
+}
+
 .display-none {
   display: none;
 }
@@ -176,7 +181,7 @@ a {
   box-shadow: 0 0 6px 3px rgba(61, 207, 182, 0.5);
   animation: moveFirefly 2s infinite ease-in-out alternate;
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 1s ease-out;
 }
 
 @keyframes moveFirefly {
