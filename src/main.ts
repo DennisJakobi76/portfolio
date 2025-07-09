@@ -33,3 +33,38 @@ window
         : 'favicon_light_theme.png';
     }
   });
+
+const fireflyOverlay = document.getElementById('firefly-overlay');
+let scrollTimeout: any;
+
+function createFirefly() {
+  const firefly = document.createElement('div');
+  firefly.classList.add('firefly');
+  firefly.style.left = `${Math.random() * window.innerWidth}px`;
+  firefly.style.top = `${Math.random() * window.innerHeight}px`;
+
+  // Optional: individuelle Flugrichtung per CSS-Variante
+  firefly.style.setProperty('--x', `${Math.random() * 100}%`);
+  firefly.style.setProperty('--y', `${Math.random() * 100}%`);
+
+  fireflyOverlay?.appendChild(firefly);
+
+  setTimeout(() => {
+    firefly.style.opacity = '0';
+    setTimeout(() => firefly.remove(), 1000);
+  }, 2000 + Math.random() * 2000); // bleibt 2–4s sichtbar
+}
+
+function handleScroll() {
+  for (let i = 0; i < 5; i++) {
+    createFirefly();
+  }
+
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    const fireflies = document.querySelectorAll('.firefly');
+    fireflies.forEach((f) => ((f as HTMLElement).style.opacity = '0'));
+  }, 300); // 300ms nach Scrollende werden Glühwürmchen ausgeblendet
+}
+
+window.addEventListener('scroll', handleScroll);

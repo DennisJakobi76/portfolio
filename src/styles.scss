@@ -155,3 +155,38 @@ a {
     }
   }
 }
+
+#firefly-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.firefly {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(61, 207, 182, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 6px 3px rgba(61, 207, 182, 0.5);
+  animation: moveFirefly 2s infinite ease-in-out alternate;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+@keyframes moveFirefly {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(
+      calc(-30px + 60px * random()),
+      calc(-30px + 60px * random())
+    );
+  }
+}
