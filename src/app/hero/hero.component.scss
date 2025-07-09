@@ -10,8 +10,9 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: calc(100vh - 98px);
+  min-height: calc(100vh - 98px);
   overflow: hidden;
+  max-width: 1920px;
   width: 100%;
   padding-left: 96px;
   padding-right: 96px;
@@ -54,7 +55,6 @@ main {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 100%;
   width: 48px;
 }
 
