@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslationService } from '../shared/services/translation.service';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { HeaderComponent } from '../hero/header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-privacy-policy',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss',
 })

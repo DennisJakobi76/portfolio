@@ -1,72 +1,17 @@
 :host {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
 }
 
 .imprint-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 48px;
-
-  width: 1248px;
-  height: 656px;
-  border-radius: 30px;
-  border: 1px solid var(--active-font-color);
-  background: linear-gradient(55.22deg, #1c1c1c 36.26%, #08463b 93.28%);
-  padding: 62px;
-}
-
-.impress-card-close-btn-container {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 56px;
-  width: 56px;
-}
-
-.close-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.close-btn {
-  width: 17.85px;
-  height: 17.85px;
-  background-image: url("../../../public/assets/icons/details_close.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-image 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    width: 24px;
-    height: 24px;
-    background-image: url("../../../public/assets/icons/details_close_hover.png");
-  }
-}
-
-@media (max-width: 1300px) {
-  :host {
-    width: 95%;
-  }
-  .imprint-container {
-    width: 100%;
-    height: 100%;
-    padding: 48px;
-  }
-  .content-wrapper {
-    font-size: smaller;
-  }
+  min-height: 100vh;
+  width: 100%;
 }
