@@ -14,14 +14,16 @@
 	<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
 		<div class="contact-form-container guests-name-container">
 			<h2>{{ translationService.getTranslation('contact', 'nameQuestion') }}</h2>
-			<input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required [placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ?
+			<input autocomplete="off" #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required
+				[placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ?
                     translationService.getTranslation('contact', 'nameError') :
                     translationService.getTranslation('contact', 'namePlaceholder')" id="guests-name"
 				(focus)="focused.name = true" (blur)="focused.name = false">
 		</div>
 		<div class="contact-form-container guests-email-container">
 			<h2>{{ translationService.getTranslation('contact', 'emailQuestion') }}</h2>
-			<input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email" required [placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ?
+			<input autocomplete="off" #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
+				required [placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ?
                 translationService.getTranslation('contact', 'emailRequired') :
                 translationService.getTranslation('contact', 'emailPlaceholder')" [pattern]="emailPattern"
 				(focus)="focused.email = true" (blur)="focused.email = false">
@@ -31,7 +33,8 @@
 		</div>
 		<div class="contact-form-container" id="message-container">
 			<h2>{{ translationService.getTranslation('contact', 'messageQuestion') }}</h2>
-			<textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" required [placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ?
+			<textarea autocomplete="off" #message="ngModel" [(ngModel)]="contactData.message" name="message" required
+				[placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ?
                     translationService.getTranslation('contact', 'messageError') :
                     translationService.getTranslation('contact', 'messagePlaceholder')"
 				(focus)="focused.message = true" (blur)="focused.message = false"></textarea>
