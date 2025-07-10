@@ -30,8 +30,8 @@ export class FaviconService {
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (e) => {
         favicon.href = e.matches
-          ? 'favicon_dark_theme.png'
-          : 'favicon_light_theme.png';
+          ? '/favicon_dark_theme.png'
+          : '/favicon_light_theme.png';
       });
   }
 
@@ -44,7 +44,7 @@ export class FaviconService {
   private initFavicon(): void {
     const favicon = document.getElementById('favicon') as HTMLLinkElement;
     if (this.isDarkModeActive()) {
-      favicon.href = 'favicon_dark_theme.png';
+      favicon.href = '/favicon_dark_theme.png';
     }
     this.setFaviconBasedOnColorScheme(favicon);
   }

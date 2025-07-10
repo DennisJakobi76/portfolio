@@ -35,7 +35,7 @@ export const JOIN_PROJECT: ProjectDetails = {
   },
   links: {
     github: 'https://github.com/DennisJakobi76/Join',
-    live: '../Join/pages/',
+    live: 'https://join.dennisjakobi.net/',
   },
 };
 
@@ -69,7 +69,7 @@ export const EPL_PROJECT: ProjectDetails = {
   },
   links: {
     github: 'https://github.com/DennisJakobi76/El_Pollo_Loco',
-    live: '../ElPolloLoco/',
+    live: 'https://elpolloloco.dennisjakobi.net/',
   },
 };
 
@@ -108,6 +108,6 @@ export const POKEDEX_PROJECT: ProjectDetails = {
   },
   links: {
     github: 'https://github.com/DennisJakobi76/Pokedex',
-    live: '../Pokedex/',
+    live: 'https://pokedex.dennisjakobi.net/',
   },
 };
