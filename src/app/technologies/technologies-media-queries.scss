@@ -15,18 +15,10 @@
 }
 
 @media (max-width: 900px) {
-  .tech-skill-icon-container {
-    height: auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 40px;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 770px) {
   .technologies-content-container {
     flex-direction: column;
     align-items: center;
+    margin-top: 80px;
   }
 
   .tech-skill-icon-container {
@@ -49,6 +41,24 @@
   .skill-icon-img img {
     width: 50px;
     height: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tech-skill-icon-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
+  }
+
+  .skill-icon-img img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skill-icon-name {
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
   }
 }
 
