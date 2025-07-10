@@ -11,7 +11,9 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './privacy-policy.component.scss',
 })
 export class PrivacyPolicyComponent {
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService) {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }
 
   /**
    * Returns an array of strings containing the rights specified in the translation service.
