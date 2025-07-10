@@ -1,9 +1,5 @@
 <div class="imprint-container">
-	<div class="impress-card-close-btn-container">
-		<div class="close-btn-container">
-			<div class="close-btn" [routerLink]="['/']"></div>
-		</div>
-	</div>
+	<app-header></app-header>
 	<div class="legal-notice">
 		<h1>{{ translationService.getTranslation('imprint', 'legalNoticeTitle') }}</h1>
 		<div>
@@ -18,4 +14,5 @@
 			</p>
 		</div>
 	</div>
+	<app-footer></app-footer>
 </div>
