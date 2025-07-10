@@ -34,7 +34,7 @@ export class ContactComponent {
   mailTest = false;
 
   post = {
-    endPoint: 'https://dennisjakobi.net/Portfolio/sendMail.php',
+    endPoint: '/app/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

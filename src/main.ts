@@ -16,7 +16,7 @@ if (
   window.matchMedia('(prefers-color-scheme: dark)').matches
 ) {
   if (favicon) {
-    favicon.href = 'favicon_dark_theme.png';
+    favicon.href = '/favicon_dark_theme.png';
   }
 }
 
@@ -29,8 +29,8 @@ window
   .addEventListener('change', (e) => {
     if (favicon) {
       favicon.href = e.matches
-        ? 'favicon_dark_theme.png'
-        : 'favicon_light_theme.png';
+        ? '/favicon_dark_theme.png'
+        : '/favicon_light_theme.png';
     }
   });
 
