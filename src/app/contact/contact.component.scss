@@ -183,6 +183,12 @@ textarea.ng-invalid.ng-touched:not(:disabled):not(:focus)::placeholder {
   color: var(--error-color);
 }
 
+.primary-btn.disabled-btn {
+  border-color: #bdbdbd;
+  color: #888;
+  cursor: not-allowed;
+}
+
 input::placeholder,
 textarea::placeholder,
 input:focus::placeholder,
