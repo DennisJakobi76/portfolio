@@ -16,16 +16,16 @@
 			<h2>{{ translationService.getTranslation('contact', 'nameQuestion') }}</h2>
 			<input autocomplete="nöope" #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" required
 				[placeholder]="(!name.valid && name.touched && !name.disabled && !focused.name) ?
-                    translationService.getTranslation('contact', 'nameError') :
-                    translationService.getTranslation('contact', 'namePlaceholder')" id="guests-name"
-				(focus)="focused.name = true" (blur)="focused.name = false">
+					translationService.getTranslation('contact', 'nameError') :
+					translationService.getTranslation('contact', 'namePlaceholder')" id="guests-name" (focus)="focused.name = true"
+				(blur)="focused.name = false">
 		</div>
 		<div class="contact-form-container guests-email-container">
 			<h2>{{ translationService.getTranslation('contact', 'emailQuestion') }}</h2>
 			<input autocomplete="nöope" #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
 				required [placeholder]="(!email.valid && email.touched && !email.disabled && !focused.email) ?
-                translationService.getTranslation('contact', 'emailRequired') :
-                translationService.getTranslation('contact', 'emailPlaceholder')" [pattern]="emailPattern"
+				translationService.getTranslation('contact', 'emailRequired') :
+				translationService.getTranslation('contact', 'emailPlaceholder')" [pattern]="emailPattern"
 				(focus)="focused.email = true" (blur)="focused.email = false">
 			<p class="guests-email-error" *ngIf="email.errors?.['pattern'] && email.touched && !focused.email">
 				{{ translationService.getTranslation('contact', 'emailInvalid') }}
@@ -35,9 +35,9 @@
 			<h2>{{ translationService.getTranslation('contact', 'messageQuestion') }}</h2>
 			<textarea autocomplete="nöope" #message="ngModel" [(ngModel)]="contactData.message" name="message" required
 				[placeholder]="(!message.valid && message.touched && !message.disabled && !focused.message) ?
-                    translationService.getTranslation('contact', 'messageError') :
-                    translationService.getTranslation('contact', 'messagePlaceholder')"
-				(focus)="focused.message = true" (blur)="focused.message = false"></textarea>
+					translationService.getTranslation('contact', 'messageError') :
+					translationService.getTranslation('contact', 'messagePlaceholder')" (focus)="focused.message = true"
+				(blur)="focused.message = false"></textarea>
 		</div>
 		<div class="confirm-policy-container">
 			<div id="confirm-policy-checkbox">
@@ -53,7 +53,9 @@
 			{{ translationService.getTranslation('contact', 'policyError') }}
 		</p>
 		<div class="contact-form-container contact-btn-container">
-			<input class="primary-btn" type="submit" [value]="translationService.getTranslation('contact', 'submit')">
+			<input class="primary-btn" type="submit" [value]="translationService.getTranslation('contact', 'submit')"
+				[disabled]="!contactForm.form.valid || !confirmedPolicy"
+				[ngClass]="{'disabled-btn': !contactForm.form.valid || !confirmedPolicy}">
 		</div>
 	</form>
 	<div *ngIf="successMessage" class="success-notification">
