@@ -1,21 +1,26 @@
-name: Portfolio veröffentlichen
+name: Portfolio prüfen und veröffentlichen
 
 on:
   push:
     branches:
       - main
+
+  pull_request:
+    branches:
+      - main
+
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: portfolio-production
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    name: Angular bauen und zu IONOS übertragen
+  quality-check:
+    name: Qualität und Sicherheit prüfen
     runs-on: ubuntu-latest
 
     steps:
@@ -23,13 +28,16 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Node.js einrichten
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
 
       - name: Abhängigkeiten installieren
         run: npm ci
+
+      - name: Abhängigkeiten auf Sicherheitslücken prüfen
+        run: npm audit --audit-level=high
 
       - name: Angular-Anwendung bauen
         run: npm run build
@@ -38,6 +46,31 @@ jobs:
         run: |
           test -f dist/Portfolio/browser/index.html
           ls -la dist/Portfolio/browser
+
+      - name: Build für das Deployment bereitstellen
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: portfolio-build
+          path: dist/Portfolio/browser
+          if-no-files-found: error
+          retention-days: 3
+
+  deploy:
+    name: Portfolio zu IONOS übertragen
+    needs: quality-check
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+
+    steps:
+      - name: Geprüften Build herunterladen
+        uses: actions/download-artifact@v8
+        with:
+          name: portfolio-build
+          path: dist/Portfolio/browser
 
       - name: Portfolio per SFTP veröffentlichen
         uses: wangyucode/sftp-upload-action@v3
