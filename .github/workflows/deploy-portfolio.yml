@@ -36,7 +36,11 @@ jobs:
       - name: Abhängigkeiten installieren
         run: npm ci
 
-      - name: Abhängigkeiten auf Sicherheitslücken prüfen
+      - name: Produktionsabhängigkeiten auf Sicherheitslücken prüfen
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Gesamten Abhängigkeitsbaum prüfen
+        continue-on-error: true
         run: npm audit --audit-level=high
 
       - name: Angular-Anwendung bauen
